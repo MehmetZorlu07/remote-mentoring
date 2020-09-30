@@ -2,7 +2,7 @@
 
 * PROJECT NAME: A web platform for handling remote mentoring/supervision
 * STUDENT NAME: Mehmet Zorlu
-* STUDENT_ID: 2328759
+* STUDENT_ID: 2328759z
 * SUPERVISOR NAME: Dr Sofiat Olaosebikan 
 
 ## Guidance
@@ -14,13 +14,13 @@
 
 ## Week 1
 
-### 19 Oct 2019
+### 21 Sep 2020
 
-* *4 hours* Read the project guidance notes
-* *0.5 hour* Created GitLab repository and cloned the cookiecutter for the projects
-* *1 hour* Modified dissertation template, compiled  
+* *1 hour* Read the project guidance notes and the marking sheet.
 
-## 20 Oct 2019
+## 22 Sep 2020
 
-* *1 hour* meeting with supervisor
-* *2 hours* writing initial version of test harness
+* *3 hours* Evaluated the project proposals.
+* *0.5 hour* Continued reading the project guidance notes.
+
+## 23 Sep 2020
