@@ -57,4 +57,4 @@
 
 ### 30 Sep 2020
 
-* *1.5 hours* Continued editing project wiki.
+* *2 hours* Continued editing project wiki.
