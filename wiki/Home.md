@@ -1,4 +1,4 @@
 # Contents
 
 
-[Timelog](https://github.com/MehmetZorlu07/remote-mentoring/edit/master/wiki/timelog.md)
+[Timelog](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/timelog.md)
