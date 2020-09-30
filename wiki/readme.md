@@ -2,7 +2,11 @@
 
 [Project Description](#project-description)
 
-[Timelog](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/timelog.md)
+* [Timelog](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/timelog.md)
+* [Weekly Plan](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/plan.md)
+* [Meeting Notes](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/minutes.md)
+* [Status Reports](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/status-reports.md)
+* [Questions and Ideas](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/questions.md)
 
 
 ## Project Description 
