@@ -58,3 +58,8 @@
 ### 30 Sep 2020
 
 * *2 hours* Continued editing project wiki.
+
+### 01 Oct 2020
+
+* *0.5 hour* Created the React app ready to be developed.
+* *3 hours* Planning the project (not finished).
