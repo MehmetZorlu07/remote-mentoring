@@ -2,20 +2,20 @@
 
 * PROJECT NAME: A web platform for handling remote mentoring/supervision
 * STUDENT NAME: Mehmet Zorlu
-* STUDENT_ID: 2328759
-* SUPERVISOR NAME: Dr Sofiat Olaosebikan 
+* STUDENT_ID: 2328759z
+* SUPERVISOR NAME: Dr. Sofiat Olaosebikan 
 
 Week-by-week plan for the whole project. Update this as you go along.
 
 ## Winter semester
 
-* **Week 1** Plan before 29/09/2020
-Read project guidance and create a summary.
-Set up a version control system (GitHub).
-Set up the other tools. 
-* **Week 2** Plan before 06/10/2020
-Make a research about similar software.
-Create a react app ready to be developed.
+* **Week 1** (Plan before 29/09/2020)
+  * Read project guidance and create a summary.
+  * Set up a version control system (GitHub).
+  * Set up the other tools. 
+* **Week 2** (Plan before 06/10/2020)
+  * Make a research about similar software.
+  * Create a react app ready to be developed.
 * **Week 3**
 * **Week 4**
 * **Week 5**
