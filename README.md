@@ -14,7 +14,7 @@ _This project is proposed by [Dr. Sofiat Olaosebikan](http://www.dcs.gla.ac.uk/~
 * [Meeting Notes](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/minutes.md)
 * [Status Reports](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/status-reports.md)
 * [Questions and Ideas](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/questions.md)
-* [React Documentation](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/react-documentation.md)
+* [React Documentation](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/react_documentation.md)
 
 
 ## Project Description 
