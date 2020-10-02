@@ -14,6 +14,7 @@ _This project is proposed by [Dr. Sofiat Olaosebikan](http://www.dcs.gla.ac.uk/~
 * [Meeting Notes](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/minutes.md)
 * [Status Reports](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/status-reports.md)
 * [Questions and Ideas](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/questions.md)
+* [React Documentation](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/react-documentation.md)
 
 
 ## Project Description 
@@ -58,3 +59,4 @@ A web platform for handling the remote mentoring/supervision, where academics pr
 ## Entity-Relationship Diagram for the MVP
 
 ![ER](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/images/remote-mentoring-ER.png)
+
