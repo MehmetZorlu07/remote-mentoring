@@ -29,3 +29,4 @@ A web platform for handling the remote mentoring/supervision, where academics pr
 ## Mind Map for the MVP 
 
 ![Mind Map](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/images/mind-map.png)
+
