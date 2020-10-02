@@ -5,7 +5,9 @@
 * STUDENT_ID: 2328759z
 * SUPERVISOR NAME: Dr. Sofiat Olaosebikan 
 
-* [Home](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/readme.md)
+Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/README.md)
+
+## Weeks
 * [Week 1](#week_1)
 * [Week 2](#week_2)
 
