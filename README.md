@@ -27,6 +27,29 @@ This project extends the goals of the PWSAfrica initiative -- an international o
 
 A web platform for handling the remote mentoring/supervision, where academics propose projects and researchers (students) apply for them.
 
+## Features of the MVP
+
+### Users
+* Create an account by e-mail, username and password
+* Login and logout
+* Reset password 
+...Prove ID to initiate a password reset request
+...Submit a new password after clicking the link in the e-mail
+* Account management 
+...Edit login credentials
+...Edit profile information
+...(Academic) View and edit their project proposals
+...(Student) View their applied/accepted projects
+* (Academic) Propose a project
+* (Student) Apply for a project
+
+### Projects
+* Created by academics
+* Edited by academics
+...details can be changed
+...get deleted
+* Applied by students
+
 ## Mind Map for the MVP 
 
 ![Mind Map](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/images/mind-map.png)
