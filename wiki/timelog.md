@@ -66,4 +66,5 @@
 
 ### 02 Oct 2020
 
-* *2 hours* Planning the project continued; details of the features is determined and a mind map is created.
+* *2 hours* Planning the project (continued); details of the features is determined and a mind map is created.
+* *1 hour* Planning the project (continued); data modelling is finished and an ER diagram is created.
