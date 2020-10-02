@@ -62,4 +62,8 @@
 ### 01 Oct 2020
 
 * *0.5 hour* Created the React app ready to be developed.
-* *3 hours* Planning the project (not finished).
+* *3 hours* Planning the project (not finished); features of the application is determined. 
+
+### 02 Oct 2020
+
+* *2 hours* Planning the project continued; details of the features is determined and a mind map is created.
