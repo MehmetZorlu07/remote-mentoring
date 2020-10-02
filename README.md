@@ -5,6 +5,8 @@ _This project is proposed by [Dr. Sofiat Olaosebikan](http://www.dcs.gla.ac.uk/~
 # Contents
 
 * [Project Description](#project-description)
+* [Minimum Viable Product](#minimum-viable-product)
+* [Mind Map for the MVP](#mind-map-for-the-mvp)
 * [Timelog](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/timelog.md)
 * [Weekly Plan](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/plan.md)
 * [Meeting Notes](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/minutes.md)
@@ -24,4 +26,6 @@ This project extends the goals of the PWSAfrica initiative -- an international o
 
 A web platform for handling the remote mentoring/supervision, where academics propose projects and researchers (students) apply for them.
 
+## Mind Map for the MVP 
 
+![Mind Map](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/images/mind-map.png)
