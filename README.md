@@ -1,5 +1,7 @@
 # A web platform for handling remote mentoring/supervision
 
+_This project is proposed by [Dr. Sofiat Olaosebikan](http://www.dcs.gla.ac.uk/~sofiat/)_
+
 # Contents
 
 * [Project Description](#project-description)
