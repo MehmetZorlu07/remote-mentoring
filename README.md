@@ -22,7 +22,7 @@ In this project, you will develop a web platform for handling the remote mentori
 
 This project extends the goals of the PWSAfrica initiative -- an international outreach supported by the School of Computing Science, University of Glasgow. For more information, see https://www.pwsafrica.org/ and https://www.gla.ac.uk/schools/computing/international/internationaloutreach/.
 
-## Minimum Viable Product (MVP)
+## Minimum Viable Product 
 
 A web platform for handling the remote mentoring/supervision, where academics propose projects and researchers (students) apply for them.
 
