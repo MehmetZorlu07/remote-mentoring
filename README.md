@@ -7,6 +7,7 @@ _This project is proposed by [Dr. Sofiat Olaosebikan](http://www.dcs.gla.ac.uk/~
 * [Project Description](#project-description)
 * [Minimum Viable Product](#minimum-viable-product)
 * [Mind Map for the MVP](#mind-map-for-the-mvp)
+* [Entity-Relationship Diagram for the MVP](#entity-relationship-diagram-for-the-mvp)
 * [Timelog](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/timelog.md)
 * [Weekly Plan](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/plan.md)
 * [Meeting Notes](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/minutes.md)
@@ -30,3 +31,6 @@ A web platform for handling the remote mentoring/supervision, where academics pr
 
 ![Mind Map](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/images/mind-map.png)
 
+## Entity-Relationship Diagram for the MVP
+
+![ER](https://github.com/MehmetZorlu07/remote-mentoring/blob/master/wiki/images/remote-mentoring-ER.png)
