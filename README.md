@@ -34,21 +34,21 @@ A web platform for handling the remote mentoring/supervision, where academics pr
 * Create an account by e-mail, username and password
 * Login and logout
 * Reset password 
-⋅⋅⋅Prove ID to initiate a password reset request⋅⋅
-⋅⋅⋅Submit a new password after clicking the link in the e-mail⋅⋅
+1. Prove ID to initiate a password reset request
+2. Submit a new password after clicking the link in the e-mail
 * Account management 
-⋅⋅⋅Edit login credentials⋅⋅
-⋅⋅⋅Edit profile information⋅⋅
-⋅⋅⋅(Academic) View and edit their project proposals⋅⋅
-⋅⋅⋅(Student) View their applied/accepted projects⋅⋅
+1. Edit login credentials
+2. Edit profile information
+3. (Academic) View and edit their project proposals
+4. (Student) View their applied/accepted projects
 * (Academic) Propose a project
 * (Student) Apply for a project
 
 ### Projects
 * Created by academics
 * Edited by academics
-⋅⋅⋅details can be changed⋅⋅
-⋅⋅⋅get deleted..
+1. details can be changed
+2. get deleted
 * Applied by students
 
 ## Mind Map for the MVP 
