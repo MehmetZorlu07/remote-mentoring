@@ -74,3 +74,10 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 * *2 hours* Researching and analysing similar software products (websites).
 * *1 hour* Created a site map of the MVP using analysis results and previous documents created.
+
+
+## Week 3
+
+### 05 Oct 2020
+
+* *0.5 hour* Written a status report for the week and updated wiki.
