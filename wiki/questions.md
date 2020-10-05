@@ -2,8 +2,10 @@
 
 * PROJECT NAME: A web platform for handling remote mentoring/supervision
 * STUDENT NAME: Mehmet Zorlu
-* STUDENT_ID: 2328759
-* SUPERVISOR NAME: Dr Sofiat Olaosebikan 
+* STUDENT_ID: 2328759z
+* SUPERVISOR NAME: Dr. Sofiat Olaosebikan 
+
+Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 **These are the questions and ideas asked to the supervisor with the reply followed after.**
 
