@@ -1,3 +1,5 @@
+Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
