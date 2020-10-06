@@ -23,3 +23,11 @@ _-The meetings will be on Tuesday at 15:30 UK time._
 * Name for the project? _-It's not decided yet. Notify me if anything pops up in your mind._
 
 
+## Week 2
+
+* Should the researchers have the option of withdrawing their application to a project?
+* What happens after a researcher applies for a project? 
+  * Idea: E-mail notification both to the researcher ("you have applied...") and the academic ("Click to go to the application"). Additionally a notification to the academic within the web platform which will be in a pending state until there is a reply. (incremental notification above an icon)
+* Is the relationship of student and the project many to 1 or many to many? (can a student apply to more than one project before it's finished?)
+* Would you like an admin interface in website which will show you the statistics like project number?
+* Should the academics have tags too to show their area of profesionalism? (Researcher may search for an academic first to look at their proposed projects.)
