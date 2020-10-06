@@ -31,3 +31,4 @@ _-The meetings will be on Tuesday at 15:30 UK time._
 * Is the relationship of student and the project many to 1 or many to many? (can a student apply to more than one project before it's finished?)
 * Would you like an admin interface in website which will show you the statistics like project number?
 * Should the academics have tags too to show their area of profesionalism? (Researcher may search for an academic first to look at their proposed projects.)
+* Name idea: RMRAfrica or RSRAfrica. Inspired from PWSAfrica. May be a good idea if you want to connect/refer the sites in the future?
