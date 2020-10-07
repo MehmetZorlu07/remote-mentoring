@@ -25,10 +25,10 @@ _-The meetings will be on Tuesday at 15:30 UK time._
 
 ## Week 2
 
-* Should the researchers have the option of withdrawing their application to a project?
+* Should the researchers have the option of withdrawing their application to a project? _-Yes but for a certain period of time after they apply for a project._
 * What happens after a researcher applies for a project? 
-  * Idea: E-mail notification both to the researcher ("you have applied...") and the academic ("Click to go to the application"). Additionally a notification to the academic within the web platform which will be in a pending state until there is a reply. (incremental notification above an icon)
-* Is the relationship of student and the project many to 1 or many to many? (can a student apply to more than one project before it's finished?)
-* Would you like an admin interface in website which will show you the statistics like project number?
-* Should the academics have tags too to show their area of profesionalism? (Researcher may search for an academic first to look at their proposed projects.)
-* Name idea: RMRAfrica or RSRAfrica. Inspired from PWSAfrica. May be a good idea if you want to connect/refer the sites in the future?
+  * Idea: E-mail notification both to the researcher ("you have applied...") and the academic ("Click to go to the application"). Additionally a notification to the academic within the web platform which will be in a pending state until there is a reply. (incremental notification above an icon) _-E-mail notification to the researcher is fine but academics should not recieve e-mail notifications as there will be too many to deal with. Incremental notification above an icon is a good idea._
+* Is the relationship of student and the project many to 1 or many to many? (can a student apply to more than one project before it's finished?) _A project can be applied by more than one researchers. However, the number of researchers will be determined by the academic per project. It can be one or more than one which depends on the academic's decision. Additionally, a researcher can apply to more than one projects but only work on one._
+* Would you like an admin interface in website which will show you the statistics like project number? _Yes an admin interface will be a nice feature to have control over the platform._
+* Should the academics have tags too to show their area of profesionalism? (Researcher may search for an academic first to look at their proposed projects.) _Yes it will be better if the academics also have tags so that researchers can search for them too._
+* Name idea: RMRAfrica or RSRAfrica. Inspired from PWSAfrica. May be a good idea if you want to connect/refer the sites in the future?_I have other options for the name idea but there is still time to find one so do not worry about it._
