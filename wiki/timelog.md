@@ -81,3 +81,9 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ### 05 Oct 2020
 
 * *0.5 hour* Written a status report for the week and updated wiki.
+
+### 06 Oct 2020
+
+* *1 hour* Made a research to get various design ideas. 
+* *0.5 hour* Updated wiki.
+* *1.5 hours* Meeting with the supervisor.
