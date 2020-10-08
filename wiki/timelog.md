@@ -10,7 +10,7 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ## Weeks
 * [Week 1](#week-1)
 * [Week 2](#week-2)
-
+* [Week 3](#week-3)
 
 ## Week 1
 
@@ -87,3 +87,12 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *1 hour* Made a research to get various design ideas. 
 * *0.5 hour* Updated wiki.
 * *1.5 hours* Meeting with the supervisor.
+
+### 07 Oct 2020
+
+* *1 hour* Updated wiki.
+
+### 08 Oct 2020
+
+* *2 hours* The plan for whole year is done and divided into milestones.
+* *1 hour* Updated wiki according to the last meeting.
