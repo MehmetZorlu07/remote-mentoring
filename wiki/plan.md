@@ -18,7 +18,9 @@ Week-by-week plan for the whole project. Update this as you go along.
 * **Week 2** (Plan before 06/10/2020)
   * Make a research about similar software.
   * Create a react app ready to be developed.
-* **Week 3**
+* **Week 3** (Plan before 13/10/2020)
+  * Create the landing page.
+  * Research for academic papers about attractive landing page designs.
 * **Week 4**
 * **Week 5**
 * **Week 6**
