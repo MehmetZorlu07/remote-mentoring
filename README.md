@@ -28,7 +28,7 @@ This project extends the goals of the PWSAfrica initiative -- an international o
 
 ## Minimum Viable Product 
 
-A web platform for handling the remote mentoring/supervision, where academics propose projects and researchers (students) apply for them.
+A web platform for handling the remote mentoring/supervision, where academics propose projects and researchers apply for them.
 
 ## Features of the MVP
 
@@ -42,16 +42,16 @@ A web platform for handling the remote mentoring/supervision, where academics pr
   * Edit login credentials
   * Edit profile information
   * (Academic) View and edit their project proposals
-  * (Student) View their applied/accepted projects
+  * (Researcher) View their applied/accepted projects
 * (Academic) Propose a project
-* (Student) Apply for a project
+* (Researcher) Apply for a project
 
 ### Projects
 * Created by academics
 * Edited by academics
   * details can be changed
   * get deleted
-* Applied by students
+* Applied by researchers
 
 ## Mind Map for the MVP 
 
