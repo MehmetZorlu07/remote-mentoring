@@ -1,14 +1,46 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 import Navigation from "./components/Navigation/Navigation";
+import Hero from "./components/Hero/Hero";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "Remote Mentoring",
+      headerLinks: [
+        { title: "Home", path: "/" },
+        { title: "Projects", path: "/projects" },
+        { title: "About Us", path: "/about" },
+        { title: "My Account", path: "/account" },
+      ],
+      home: {
+        title: "Welcome",
+        subTitle: "We help researchers",
+        text: "Checkout the projects below",
+      },
+      projects: {
+        title: "Projects",
+      },
+      about: {
+        title: "About Us",
+      },
+      account: {
+        title: "My Account",
+      },
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <Navigation />
-      </div>
+      <Router>
+        <Container className="p-0" fluid={true}>
+          <Navigation />
+        </Container>
+      </Router>
     );
   }
 }

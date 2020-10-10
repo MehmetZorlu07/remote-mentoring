@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
@@ -8,14 +9,23 @@ import Button from "react-bootstrap/Button";
 function Navigation() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar collapseOnSelect expand="lg" bg="transparent">
+        <Navbar.Brand className="mr-auto" href="#home">
+          Remote Mentoring
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav className="ml-auto">
+            {/* <Nav.Link href="#home">Home</Nav.Link> */}
+            <Link className="nav-link" to="/">
+              Projects
+            </Link>
+            <Link className="nav-link" to="/about">
+              About Us
+            </Link>
+            <Link className="nav-link" to="/account">
+              My Account
+            </Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
