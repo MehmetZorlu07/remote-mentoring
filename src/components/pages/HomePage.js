@@ -1,7 +1,8 @@
 import React from "react";
+import Hero from "../Hero/Hero";
 
 function HomePage(props) {
-  return <p>HomePage works!</p>;
+  return <Hero />;
 }
 
 export default HomePage;

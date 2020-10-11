@@ -7,7 +7,7 @@ import AboutPage from "./components/pages/AboutPage";
 import AccountPage from "./components/pages/AccountPage";
 import ProjectsPage from "./components/pages/ProjectsPage";
 import Footer from "./components/Footer/Footer";
-import Hero from "./components/Hero/Hero";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 

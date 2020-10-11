@@ -1,25 +1,14 @@
 import React from "react";
+import LazyHero from "react-lazy-hero";
 
-const Hero = (props) => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
-  const style = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    "min-width": "100%",
-    "min-height": "100%",
-  };
-
+function Hero() {
   return (
-    <div style={style}>
-      <img
-        src={`https://unsplash.it/${width}/${height}?image=${props.number}`}
-        style={style}
-      />
+    <div>
+      <LazyHero imageSrc="https://cdn.suwalls.com/wallpapers/music/octavarium-dream-theater-31377-1920x1200.jpg">
+        <h1>Welcome</h1>
+      </LazyHero>
     </div>
   );
-};
+}
 
 export default Hero;
