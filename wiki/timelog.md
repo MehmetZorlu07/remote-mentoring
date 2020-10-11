@@ -96,3 +96,16 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 * *2 hours* The plan for whole year is done and divided into milestones.
 * *1 hour* Updated wiki according to the last meeting.
+
+### 09 Oct 2020
+
+* *2 hours* Started working on the development of the landing page.
+
+### 10 Oct 2020
+
+* *2 hours* Made a detailed research on React.js technology.
+* *1 hour* Continued working on the landing page.
+
+### 11 Oct 2020 
+
+* *3 hours* Continued working on the landing page. 
