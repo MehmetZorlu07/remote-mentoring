@@ -10,14 +10,14 @@ function Navigation() {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="transparent">
-        <Navbar.Brand className="mr-auto" href="#home">
+        <Navbar.Brand className="mr-auto" href="/">
           Remote Mentoring
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             {/* <Nav.Link href="#home">Home</Nav.Link> */}
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/projects">
               Projects
             </Link>
             <Link className="nav-link" to="/about">
