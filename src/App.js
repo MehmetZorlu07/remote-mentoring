@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -39,6 +40,7 @@ class App extends Component {
       <Router>
         <Container className="p-0" fluid={true}>
           <Navigation />
+          <Footer />
         </Container>
       </Router>
     );
