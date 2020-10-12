@@ -24,8 +24,6 @@ class App extends Component {
       ],
       home: {
         title: "Welcome",
-        subTitle: "We help researchers",
-        text: "Checkout the projects below",
       },
       projects: {
         title: "Projects",
@@ -47,13 +45,7 @@ class App extends Component {
           <Route
             path="/"
             exact
-            render={() => (
-              <HomePage
-                title={this.state.home.title}
-                subTitle={this.state.home.subTitle}
-                text={this.state.home.text}
-              />
-            )}
+            render={() => <HomePage title={this.state.home.title} />}
           />
           <Route
             path="/about"

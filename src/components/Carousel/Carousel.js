@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import Card from "../Card/Card";
 
-import devgrub from "../../assets/images/devgrub.png";
-import youtube from "../../assets/images/youtube.png";
-import evverest from "../../assets/images/evverest.png";
+import chemistry from "../../assets/images/chemistry.jpg";
+import machineLearning from "../../assets/images/machine-learning.jpg";
+import Sports from "../../assets/images/sports.jpg";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
@@ -15,33 +15,30 @@ class Carousel extends Component {
       items: [
         {
           id: 0,
-          title: "Dev Grub",
-          subTitle: "The cookbook for developers",
-          imgSrc: devgrub,
-          link: "https://devgrub.com",
+          title: "Chemistry",
+          imgSrc: chemistry,
+          link: "https://en.wikipedia.org/wiki/Chemistry",
           selected: false,
         },
         {
           id: 1,
-          title: "Garrett Love",
-          subTitle: "YouTube channel",
-          imgSrc: youtube,
-          link: "https://www.youtube.com/channel/UCxSITxL2JbF229OGCqieVZw",
+          title: "Machine Learning",
+          imgSrc: machineLearning,
+          link: "https://en.wikipedia.org/wiki/Machine_learning",
           selected: false,
         },
         {
           id: 2,
-          title: "Evverest",
-          subTitle: "A social network for developers",
-          imgSrc: evverest,
-          link: "https://github.com/garrettlove8/evverest",
+          title: "Sport",
+          imgSrc: Sports,
+          link: "https://en.wikipedia.org/wiki/Sport",
           selected: false,
         },
       ],
     };
   }
 
-  handleCardClick = (id, card) => {
+  handleCardClick = (id) => {
     let items = [...this.state.items];
 
     items[id].selected = items[id].selected ? false : true;
