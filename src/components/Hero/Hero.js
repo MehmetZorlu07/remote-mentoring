@@ -5,8 +5,8 @@ import HeroImage from "../../assets/hero.jpg";
 function Hero() {
   return (
     <div>
-      <LazyHero imageSrc={HeroImage}>
-        <h1>Welcome</h1>
+      <LazyHero imageSrc={HeroImage} minHeight="75vh" parallaxOffset="100" opacity="0">
+        <h1 style={{ color: 'white' }}>Welcome</h1>
       </LazyHero>
     </div>
   );
