@@ -109,3 +109,11 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ### 11 Oct 2020 
 
 * *3 hours* Continued working on the landing page. 
+
+### 12 Oct 2020
+
+* *2 hours* Continued working on the landing page.
+
+### 13 Oct 2020
+
+* *3 hours* Continued working on the landing page.
