@@ -10,9 +10,11 @@ function Navigation() {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light">
-        <Navbar.Brand className="mr-auto" href="/">
+      <Link className="nav-link" to="/">
+        <Navbar.Brand className="mr-auto" >
           Remote Mentoring
         </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
