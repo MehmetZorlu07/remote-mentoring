@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 function Navigation() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="light">
+      <Navbar collapseOnSelect expand="lg" bg="dark" fixed="top" variant="dark">
       <Link className="nav-link" to="/">
         <Navbar.Brand className="mr-auto" >
           Remote Mentoring
