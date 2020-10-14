@@ -32,3 +32,7 @@ _-The meetings will be on Tuesday at 15:30 UK time._
 * Would you like an admin interface in website which will show you the statistics like project number? _-Yes an admin interface will be a nice feature to have control over the platform._
 * Should the academics have tags too to show their area of profesionalism? (Researcher may search for an academic first to look at their proposed projects.) _-Yes it will be better if the academics also have tags so that researchers can search for them too._
 * Name idea: RMRAfrica or RSRAfrica. Inspired from PWSAfrica. May be a good idea if you want to connect/refer the sites in the future?_-I have other options for the name idea but there is still time to find one so do not worry about it._
+
+
+## Week 3
+* Should I deploy the project to GitHub Pages so that it's easier to follow the latest product? (note that repo is going to be public) _-Think about the privacy issues before doing that as the repo is going to be public there may be ideas stolen from our project._
