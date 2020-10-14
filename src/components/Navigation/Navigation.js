@@ -28,6 +28,9 @@ function Navigation() {
             <Link className="nav-link" to="/account">
               My Account
             </Link>
+            <Link className="nav-link" to="/sign-in">
+              Sign In
+            </Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

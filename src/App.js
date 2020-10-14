@@ -6,6 +6,7 @@ import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import AccountPage from "./components/pages/AccountPage";
 import ProjectsPage from "./components/pages/ProjectsPage";
+import SignInPage from "./components/pages/SignInPage"
 import Footer from "./components/Footer/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +22,7 @@ class App extends Component {
         { title: "Projects", path: "/projects" },
         { title: "About Us", path: "/about" },
         { title: "My Account", path: "/account" },
+        { title: "Sign In" , path: "/sign-in" },
       ],
       home: {
         title: "Welcome",
@@ -34,6 +36,9 @@ class App extends Component {
       account: {
         title: "My Account",
       },
+      signIn: {
+        title: "Sign In",
+      }
     };
   }
 
@@ -61,6 +66,11 @@ class App extends Component {
             path="/projects"
             exact
             render={() => <ProjectsPage title={this.state.projects.title} />}
+          />
+          <Route
+            path="/sign-in"
+            exact
+            render={() => <SignInPage title={this.state.signIn.title} />}
           />
           <Footer />
         </Container>
