@@ -117,3 +117,8 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ### 13 Oct 2020
 
 * *3 hours* Continued working on the landing page.
+* *0.5 hours* Meeting with the supervisor.
+
+### 14 Oct 2020
+
+* *2 hours* Created the sign in and started working on the server.
