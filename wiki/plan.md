@@ -21,7 +21,10 @@ Week-by-week plan for the whole project. Update this as you go along.
 * **Week 3** (Plan before 13/10/2020)
   * Create the landing page.
   * Research for academic papers about attractive landing page designs.
-* **Week 4**
+* **Week 4** (Plan before 20/10/2020)
+  * Create the about us page.
+  * Start working on the back-end.
+  * Develop a sign-in and registration system.
 * **Week 5**
 * **Week 6**
 * **Week 7**
