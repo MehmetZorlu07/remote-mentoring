@@ -3,27 +3,41 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-class Signin extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: "",
-      signInPassword: "",
+      email: "",
+      password: "",
+      name: "",
     };
   }
 
+  onNameChange = (event) => {
+    this.setState({ name: event.target.value });
+  };
+
   onEmailChange = (event) => {
-    this.setState({ signInEmail: event.target.value });
+    this.setState({ email: event.target.value });
   };
 
   onPasswordChange = (event) => {
-    this.setState({ signInPassword: event.target.value });
+    this.setState({ password: event.target.value });
   };
 
   render() {
     return (
       <Card style={{ width: "40rem" }}>
         <Form>
+          <Form.Group controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="name"
+              id="name"
+              placeholder="Name"
+              onChange={this.onNameChange}
+            />
+          </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -43,6 +57,7 @@ class Signin extends Component {
               onChange={this.onPasswordChange}
             />
           </Form.Group>
+
           <Button variant="primary" type="submit">
             Submit
           </Button>
@@ -52,4 +67,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+export default Register;

@@ -35,6 +35,9 @@ function Navigation() {
             <Link className="nav-link" to="/sign-in">
               Sign In
             </Link>
+            <Link className="nav-link" to="/register">
+              Register
+            </Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

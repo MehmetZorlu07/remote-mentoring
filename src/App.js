@@ -6,7 +6,8 @@ import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import AccountPage from "./components/pages/AccountPage";
 import ProjectsPage from "./components/pages/ProjectsPage";
-import SignInPage from "./components/pages/SignInPage"
+import SignInPage from "./components/pages/SignInPage";
+import RegisterPage from "./components/pages/RegisterPage";
 import Footer from "./components/Footer/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,7 +23,8 @@ class App extends Component {
         { title: "Projects", path: "/projects" },
         { title: "About Us", path: "/about" },
         { title: "My Account", path: "/account" },
-        { title: "Sign In" , path: "/sign-in" },
+        { title: "Sign In", path: "/sign-in" },
+        { title: "Register", path: "/register" },
       ],
       home: {
         title: "Welcome",
@@ -38,7 +40,10 @@ class App extends Component {
       },
       signIn: {
         title: "Sign In",
-      }
+      },
+      register: {
+        title: "Register",
+      },
     };
   }
 
@@ -71,6 +76,11 @@ class App extends Component {
             path="/sign-in"
             exact
             render={() => <SignInPage title={this.state.signIn.title} />}
+          />
+          <Route
+            path="/register"
+            exact
+            render={() => <RegisterPage title={this.state.register.title} />}
           />
           <Footer />
         </Container>
