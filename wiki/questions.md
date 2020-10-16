@@ -36,3 +36,6 @@ _-The meetings will be on Tuesday at 15:30 UK time._
 
 ## Week 3
 * Should I deploy the project to GitHub Pages so that it's easier to follow the latest product? (note that repo is going to be public) _-Think about the privacy issues before doing that as the repo is going to be public there may be ideas stolen from our project._
+
+## Week 4 
+* Using Unsplash Image API to get the images automatically.
