@@ -9,11 +9,15 @@ import Button from "react-bootstrap/Button";
 function Navigation() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" fixed="top" variant="dark">
-      <Link className="nav-link" to="/">
-        <Navbar.Brand className="mr-auto" >
-          Remote Mentoring
-        </Navbar.Brand>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        sticky="top"
+        variant="dark"
+      >
+        <Link className="nav-link" to="/">
+          <Navbar.Brand className="mr-auto">Remote Mentoring</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
