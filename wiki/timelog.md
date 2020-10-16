@@ -127,3 +127,8 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ### 14 Oct 2020
 
 * *2 hours* Created the sign in and started working on the server.
+
+### 16 Oct 2020 
+
+* *0.5 hour* Created registration page (including routers and events)
+* *3 hours* Started working on the server (in a different repo.)
