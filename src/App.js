@@ -17,33 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Remote Mentoring",
-      headerLinks: [
-        { title: "Home", path: "/" },
-        { title: "Projects", path: "/projects" },
-        { title: "About Us", path: "/about" },
-        { title: "My Account", path: "/account" },
-        { title: "Sign In", path: "/sign-in" },
-        { title: "Register", path: "/register" },
-      ],
-      home: {
-        title: "Welcome",
-      },
-      projects: {
-        title: "Projects",
-      },
-      about: {
-        title: "About Us",
-      },
-      account: {
-        title: "My Account",
-      },
-      signIn: {
-        title: "Sign In",
-      },
-      register: {
-        title: "Register",
-      },
+      route: "/",
     };
   }
 
@@ -52,36 +26,12 @@ class App extends Component {
       <Router>
         <Container className="p-0" fluid={true}>
           <Navigation />
-          <Route
-            path="/"
-            exact
-            render={() => <HomePage title={this.state.home.title} />}
-          />
-          <Route
-            path="/about"
-            exact
-            render={() => <AboutPage title={this.state.about.title} />}
-          />
-          <Route
-            path="/account"
-            exact
-            render={() => <AccountPage title={this.state.account.title} />}
-          />
-          <Route
-            path="/projects"
-            exact
-            render={() => <ProjectsPage title={this.state.projects.title} />}
-          />
-          <Route
-            path="/sign-in"
-            exact
-            render={() => <SignInPage title={this.state.signIn.title} />}
-          />
-          <Route
-            path="/register"
-            exact
-            render={() => <RegisterPage title={this.state.register.title} />}
-          />
+          <Route path={this.state.route} exact render={() => <HomePage />} />
+          <Route path="/about" exact render={() => <AboutPage />} />
+          <Route path="/account" exact render={() => <AccountPage />} />
+          <Route path="/projects" exact render={() => <ProjectsPage />} />
+          <Route path="/sign-in" exact render={() => <SignInPage />} />
+          <Route path="/register" exact render={() => <RegisterPage />} />
           <Footer />
         </Container>
       </Router>

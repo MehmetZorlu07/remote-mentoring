@@ -22,7 +22,6 @@ function Navigation() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            {/* <Nav.Link href="#home">Home</Nav.Link> */}
             <Link className="nav-link" to="/projects">
               Projects
             </Link>

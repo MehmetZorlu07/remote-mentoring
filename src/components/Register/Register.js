@@ -33,7 +33,6 @@ class Register extends Component {
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="name"
-              id="name"
               placeholder="Name"
               onChange={this.onNameChange}
             />
@@ -42,7 +41,6 @@ class Register extends Component {
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
-              id="email"
               placeholder="Enter email"
               onChange={this.onEmailChange}
             />
@@ -52,7 +50,6 @@ class Register extends Component {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              id="password"
               placeholder="Password"
               onChange={this.onPasswordChange}
             />

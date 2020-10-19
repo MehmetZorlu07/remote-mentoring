@@ -20,6 +20,23 @@ class Signin extends Component {
     this.setState({ signInPassword: event.target.value });
   };
 
+  onSubmitSignIn = () => {
+    fetch("http://localhost:3000/signin", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: this.state.signInEmail,
+        password: this.state.signInPassword,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data === "success") {
+          console.log("route change here");
+        }
+      });
+  };
+
   render() {
     return (
       <Card style={{ width: "40rem" }}>
@@ -28,7 +45,6 @@ class Signin extends Component {
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
-              id="email"
               placeholder="Enter email"
               onChange={this.onEmailChange}
             />
@@ -38,12 +54,12 @@ class Signin extends Component {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              id="password"
               placeholder="Password"
               onChange={this.onPasswordChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+
+          <Button variant="primary" onClick={this.onSubmitSignIn}>
             Submit
           </Button>
         </Form>
