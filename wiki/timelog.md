@@ -12,6 +12,7 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * [Week 2](#week-2)
 * [Week 3](#week-3)
 * [Week 4](#week-4)
+* [Week 5](#week-5)
 
 
 ## Week 1
@@ -132,3 +133,11 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 * *0.5 hour* Created registration page (including routers and events)
 * *3 hours* Started working on the server (in a different repo.)
+
+## Week 5 
+
+### 19 Oct 2020
+
+* *3 hours* Fixing a bug with the sign-in page.
+* *1 hour* Researching about the routing of the app.
+* *0.5 hour* Fixing the routing of the app.
