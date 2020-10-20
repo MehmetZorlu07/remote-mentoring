@@ -45,7 +45,11 @@ class App extends Component {
       <Router>
         <Container className="p-0" fluid={true}>
           <Navigation />
-          <Route path={this.state.route} exact render={() => <HomePage />} />
+          <Route
+            path={this.state.route}
+            exact
+            render={() => <HomePage name={this.state.user.name} />}
+          />
           <Route path="/about" exact render={() => <AboutPage />} />
           <Route path="/account" exact render={() => <AccountPage />} />
           <Route path="/projects" exact render={() => <ProjectsPage />} />
