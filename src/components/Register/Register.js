@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 
 class Register extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       email: "",
       password: "",
@@ -23,6 +23,25 @@ class Register extends Component {
 
   onPasswordChange = (event) => {
     this.setState({ password: event.target.value });
+  };
+
+  onSubmitRegister = () => {
+    fetch("http://localhost:3000/register", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+        name: this.state.name,
+      }),
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        if (user) {
+          this.props.loadUser(user);
+          console.log("route change here");
+        }
+      });
   };
 
   render() {
@@ -55,7 +74,7 @@ class Register extends Component {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" onClick={this.onSubmitRegister}>
             Submit
           </Button>
         </Form>

@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 
 class Signin extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       signInEmail: "",
       signInPassword: "",
@@ -30,8 +30,9 @@ class Signin extends Component {
       }),
     })
       .then((response) => response.json())
-      .then((data) => {
-        if (data === "success") {
+      .then((user) => {
+        if (user.id) {
+          this.props.loadUser(user);
           console.log("route change here");
         }
       });
