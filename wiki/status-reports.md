@@ -12,3 +12,6 @@ As discussed in the last meeting and planned for the week, I have made a researc
 
 ## Status Report of Week 3
 I have started working on the development phase of the application and basic landing page components have been created including: a navigation bar, a hero part, a small carousel for categories and a footer bar. 
+
+## Status Report of Week 4
+I couldn't achieve all of my goals this week. However, I have managed to create a server and connect it to the front-end which allows a user to login. An initial about us page is also created just to fill in the blanks. My aim is to create a database and connect it to the server before the meeting. 
