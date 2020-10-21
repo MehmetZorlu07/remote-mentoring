@@ -148,3 +148,7 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *2 hours* Created a database for the app using PSQL.
 * *1 hour* Connected the end points of the app to the database such as sign in and register.
 * *0.5 hour* Meeting with the supervisor.
+
+### 21 Oct 2020
+
+* *0.5 hour* Updated wiki.
