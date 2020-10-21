@@ -141,3 +141,10 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *3 hours* Fixing a bug with the sign-in page.
 * *1 hour* Researching about the routing of the app.
 * *0.5 hour* Fixing the routing of the app.
+
+### 20 Oct 2020
+
+* *1 hour* Fixed all the problems with registration.
+* *2 hours* Created a database for the app using PSQL.
+* *1 hour* Connected the end points of the app to the database such as sign in and register.
+* *0.5 hour* Meeting with the supervisor.
