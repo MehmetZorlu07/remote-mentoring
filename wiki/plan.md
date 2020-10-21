@@ -26,6 +26,8 @@ Week-by-week plan for the whole project. Update this as you go along.
   * Start working on the back-end.
   * Develop a sign-in and registration system.
 * **Week 5**
+  * Start working on the projects part of the app.
+  * Improve the priority sorting by using principles. 
 * **Week 6**
 * **Week 7**
 * **Week 8**
