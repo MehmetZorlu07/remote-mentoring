@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -6,46 +6,56 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
-function Navigation() {
-  return (
-    <div>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        bg="dark"
-        sticky="top"
-        variant="dark"
-      >
-        <Link className="nav-link" to="/">
-          <Navbar.Brand className="mr-auto">Remote Mentoring</Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto">
-            <Link className="nav-link" to="/projects">
-              Projects
-            </Link>
-            <Link className="nav-link" to="/about">
-              About Us
-            </Link>
-            <Link className="nav-link" to="/account">
-              My Account
-            </Link>
-            <Link className="nav-link" to="/sign-in">
-              Sign In
-            </Link>
-            <Link className="nav-link" to="/register">
-              Register
-            </Link>
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
-  );
+class Navigation extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          bg="dark"
+          sticky="top"
+          variant="dark"
+        >
+          <Link className="nav-link" to="/">
+            <Navbar.Brand className="mr-auto">Remote Mentoring</Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ml-auto">
+              <Link className="nav-link" to="/projects">
+                Projects
+              </Link>
+              <Link className="nav-link" to="/about">
+                About Us
+              </Link>
+              <Link className="nav-link" to="/account">
+                My Account
+              </Link>
+              {this.props.isSignedIn === false && (
+                <Link className="nav-link" to="/sign-in">
+                  Sign In
+                </Link>
+              )}
+              {this.props.isSignedIn === false && (
+                <Link className="nav-link" to="/register">
+                  Register
+                </Link>
+              )}
+            </Nav>
+            <Form inline>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+              />
+              <Button variant="outline-info">Search</Button>
+            </Form>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 }
 
 export default Navigation;

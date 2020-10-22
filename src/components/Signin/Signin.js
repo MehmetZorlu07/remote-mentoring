@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import history from "../../history";
 
 class Signin extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       signInEmail: "",
@@ -33,7 +34,8 @@ class Signin extends Component {
       .then((user) => {
         if (user.id) {
           this.props.loadUser(user);
-          console.log("route change here");
+          this.props.setLoginState(true);
+          history.push("/");
         }
       });
   };

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
+import history from "./history";
 import Container from "react-bootstrap/Container";
 import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./components/pages/HomePage";
@@ -9,15 +10,17 @@ import ProjectsPage from "./components/pages/ProjectsPage";
 import Register from "./components/Register/Register";
 import SignIn from "./components/Signin/Signin";
 import Footer from "./components/Footer/Footer";
+import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       route: "/",
+      isSignedIn: false,
       user: {
         id: "",
         name: "",
@@ -40,32 +43,45 @@ class App extends Component {
     });
   };
 
+  setLoginState = (data) => {
+    this.setState({
+      isSignedIn: { data },
+    });
+  };
+
   render() {
     return (
-      <Router>
-        <Container className="p-0" fluid={true}>
-          <Navigation />
-          <Route
-            path={this.state.route}
-            exact
-            render={() => <HomePage name={this.state.user.name} />}
-          />
-          <Route path="/about" exact render={() => <AboutPage />} />
-          <Route path="/account" exact render={() => <AccountPage />} />
-          <Route path="/projects" exact render={() => <ProjectsPage />} />
-          <Route
-            path="/sign-in"
-            exact
-            render={() => <SignIn loadUser={this.loadUser} />}
-          />
-          <Route
-            path="/register"
-            exact
-            render={() => <Register loadUser={this.loadUser} />}
-          />
-          <Footer />
-        </Container>
-      </Router>
+      <div className="App">
+        <Router history={history}>
+          <Container className="p-0" fluid={true}>
+            <Navigation isSignedIn={this.state.isSignedIn} />
+            <Route
+              path={this.state.route}
+              exact
+              render={() => <HomePage name={this.state.user.name} />}
+            />
+            <Route path="/about" exact render={() => <AboutPage />} />
+            <Route path="/account" exact render={() => <AccountPage />} />
+            <Route path="/projects" exact render={() => <ProjectsPage />} />
+            <Route
+              path="/sign-in"
+              exact
+              render={() => (
+                <SignIn
+                  loadUser={this.loadUser}
+                  setLoginState={this.setLoginState}
+                />
+              )}
+            />
+            <Route
+              path="/register"
+              exact
+              render={() => <Register loadUser={this.loadUser} />}
+            />
+            <Footer />
+          </Container>
+        </Router>
+      </div>
     );
   }
 }
