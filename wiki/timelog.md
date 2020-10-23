@@ -152,3 +152,11 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ### 21 Oct 2020
 
 * *0.5 hour* Updated wiki.
+
+### 22 Oct 2020
+
+* *2 hours* Fixed the bug with signin page routing to landing page. 
+
+### 23 Oct 2020
+
+* *2.5 hours* Adding the sign-out feature. 
