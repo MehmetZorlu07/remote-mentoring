@@ -15,20 +15,22 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+const initialState = {
+  isSignedIn: false,
+  user: {
+    id: "",
+    name: "",
+    email: "",
+    information: "",
+    joined: "",
+  },
+};
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      route: "/",
-      isSignedIn: false,
-      user: {
-        id: "",
-        name: "",
-        email: "",
-        information: "",
-        joined: "",
-      },
-    };
+    this.handleLoginChange = this.handleLoginChange.bind(this);
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -43,10 +45,14 @@ class App extends Component {
     });
   };
 
-  setLoginState = (data) => {
-    this.setState({
-      isSignedIn: { data },
-    });
+  handleLoginChange = (data) => {
+    if (data) {
+      this.setState({
+        isSignedIn: data,
+      });
+    } else {
+      this.setState(initialState);
+    }
   };
 
   render() {
@@ -54,9 +60,12 @@ class App extends Component {
       <div className="App">
         <Router history={history}>
           <Container className="p-0" fluid={true}>
-            <Navigation isSignedIn={this.state.isSignedIn} />
+            <Navigation
+              isSignedIn={this.state.isSignedIn}
+              setLoginState={this.handleLoginChange}
+            />
             <Route
-              path={this.state.route}
+              path={"/"}
               exact
               render={() => <HomePage name={this.state.user.name} />}
             />
@@ -69,7 +78,7 @@ class App extends Component {
               render={() => (
                 <SignIn
                   loadUser={this.loadUser}
-                  setLoginState={this.setLoginState}
+                  setLoginState={this.handleLoginChange}
                 />
               )}
             />

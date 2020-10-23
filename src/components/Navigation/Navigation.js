@@ -7,6 +7,14 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
 class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange() {
+    this.props.setLoginState(false);
+  }
+
   render() {
     return (
       <div>
@@ -29,17 +37,24 @@ class Navigation extends Component {
               <Link className="nav-link" to="/about">
                 About Us
               </Link>
-              <Link className="nav-link" to="/account">
-                My Account
-              </Link>
-              {this.props.isSignedIn === false && (
+              {this.props.isSignedIn && (
+                <Link className="nav-link" to="/account">
+                  My Account
+                </Link>
+              )}
+              {!this.props.isSignedIn && (
                 <Link className="nav-link" to="/sign-in">
                   Sign In
                 </Link>
               )}
-              {this.props.isSignedIn === false && (
+              {!this.props.isSignedIn && (
                 <Link className="nav-link" to="/register">
                   Register
+                </Link>
+              )}
+              {this.props.isSignedIn && (
+                <Link onClick={this.handleChange} className="nav-link" to="/">
+                  Sign Out
                 </Link>
               )}
             </Nav>
