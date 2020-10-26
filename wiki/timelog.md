@@ -13,6 +13,7 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * [Week 3](#week-3)
 * [Week 4](#week-4)
 * [Week 5](#week-5)
+* [Week 6](#week-6)
 
 
 ## Week 1
@@ -160,3 +161,10 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 ### 23 Oct 2020
 
 * *2.5 hours* Adding the sign-out feature. 
+
+## Week 6
+
+### 26 Oct 2020
+
+* *2 hours* Created "Project" component's frontend. 
+* *1.5 hours* Started working on "project" backend including the server and database. 
