@@ -15,3 +15,6 @@ I have started working on the development phase of the application and basic lan
 
 ## Status Report of Week 4
 I couldn't achieve all of my goals this week. However, I have managed to create a server and connect it to the front-end which allows a user to login. An initial about us page is also created just to fill in the blanks. My aim is to create a database and connect it to the server before the meeting. 
+
+## Status Report of Week 5
+The automatic navigation problem when the sign-in and register buttons were clicked is fixed. Sign-out feature is now added to the application. I have started working on the "projects" part of the application which is a bit challenging. A database table for the project is created, the initial frontend components are also made but server needs to connect to the frontend which I aim to do it tomorrow before the meeting. 
