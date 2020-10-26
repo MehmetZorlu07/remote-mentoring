@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import history from "../../history";
 
 class Register extends Component {
   constructor(props) {
@@ -39,7 +40,8 @@ class Register extends Component {
       .then((user) => {
         if (user) {
           this.props.loadUser(user);
-          console.log("route change here");
+          this.props.setLoginState(true);
+          history.push("/");
         }
       });
   };

@@ -85,7 +85,12 @@ class App extends Component {
             <Route
               path="/register"
               exact
-              render={() => <Register loadUser={this.loadUser} />}
+              render={() => (
+                <Register
+                  loadUser={this.loadUser}
+                  setLoginState={this.handleLoginChange}
+                />
+              )}
             />
             <Footer />
           </Container>
