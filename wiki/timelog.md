@@ -168,3 +168,9 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 * *2 hours* Created "Project" component's frontend. 
 * *1.5 hours* Started working on "project" backend including the server and database. 
+
+### 27 Oct 2020
+
+* *1 hour* Added create project functionality to the backend.
+* *2 hours* Added retrieving projects from db and displaying them on the frontend functionality.
+* *0.5 hour* Meeting with the supervisor.
