@@ -174,3 +174,14 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *1 hour* Added create project functionality to the backend.
 * *2 hours* Added retrieving projects from db and displaying them on the frontend functionality.
 * *0.5 hour* Meeting with the supervisor.
+
+### 29 Oct 2020
+
+* *0.5 hour* Updated wiki.
+* *1 hour* Planning projects backend.
+
+### 01 Nov 2020
+
+* *2 hours* Research and revision on database systems.
+* *1 hour* Re-planning some of the database infrastructure.
+* *1 hour* Database reconstruction.
