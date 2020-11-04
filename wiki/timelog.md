@@ -14,6 +14,7 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * [Week 4](#week-4)
 * [Week 5](#week-5)
 * [Week 6](#week-6)
+* [Week 7](#week-7)
 
 
 ## Week 1
@@ -185,3 +186,22 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *2 hours* Research and revision on database systems.
 * *1 hour* Re-planning some of the database infrastructure.
 * *1 hour* Database reconstruction.
+
+## Week 7
+
+### 02 Nov 2020
+
+* *0.5 hour* Updated wiki.
+* *1 hour* Applied the re-construction to the database.
+* *1.5 hours* Updated the server according to the new database structure.
+
+### 03 Nov 2020
+
+* *2 hours* Updated the frontend according to the backend changes.
+* *1 hour* Worked on a bug in displaying a single project page. 
+
+### 04 Nov 2020
+
+* *1.5 hours* Fixed the bug in displaying a single project page.
+* *0.5 hour* Added the apply functionality to the frontend.
+* *1 hour* Fixed the issues with the forms used in the app.
