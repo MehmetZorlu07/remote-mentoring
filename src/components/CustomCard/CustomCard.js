@@ -2,7 +2,7 @@ import React from "react";
 
 import CardInfo from "../Cardinfo/Cardinfo";
 
-function Card(props) {
+function customCard(props) {
   return (
     <div
       className="d-inline-block g-card"
@@ -20,4 +20,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default customCard;

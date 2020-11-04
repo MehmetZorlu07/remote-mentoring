@@ -28,7 +28,8 @@ class ProjectsPage extends React.Component {
     for (const project of this.state.projects) {
       projectsList.push(
         <Project
-          key={project.id}
+          key={project.projectid}
+          projectid={project.projectid}
           name={project.name}
           description={project.description}
           academicID={project.academicID}

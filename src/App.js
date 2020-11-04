@@ -9,6 +9,7 @@ import AccountPage from "./components/pages/AccountPage";
 import ProjectsPage from "./components/pages/ProjectsPage";
 import Register from "./components/Register/Register";
 import SignIn from "./components/Signin/Signin";
+import SingleProjectPage from "./components/pages/SingleProjectPage";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -91,6 +92,11 @@ class App extends Component {
                   setLoginState={this.handleLoginChange}
                 />
               )}
+            />
+            <Route
+              exact
+              path="/project/:projectid"
+              component={SingleProjectPage}
             />
             <Footer />
           </Container>

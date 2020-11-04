@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Card from "../Card/Card";
+import CustomCard from "../CustomCard/CustomCard";
 
 import chemistry from "../../assets/images/chemistry.jpg";
 import machineLearning from "../../assets/images/machine-learning.jpg";
@@ -57,7 +57,7 @@ class Carousel extends Component {
   makeItems = (items) => {
     return items.map((item) => {
       return (
-        <Card
+        <CustomCard
           item={item}
           click={(e) => this.handleCardClick(item.id, e)}
           key={item.id}
