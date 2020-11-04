@@ -24,6 +24,7 @@ const initialState = {
     email: "",
     information: "",
     joined: "",
+    type: "",
   },
 };
 
@@ -42,6 +43,7 @@ class App extends Component {
         email: data.email,
         information: data.information,
         joined: data.joined,
+        type: data.type,
       },
     });
   };

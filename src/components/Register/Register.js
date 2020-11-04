@@ -11,6 +11,8 @@ class Register extends Component {
       email: "",
       password: "",
       name: "",
+      information: "",
+      type: "",
     };
   }
 
@@ -26,6 +28,14 @@ class Register extends Component {
     this.setState({ password: event.target.value });
   };
 
+  onInformationChange = (event) => {
+    this.setState({ information: event.target.value });
+  };
+
+  onTypeChange = (event) => {
+    this.setState({ type: event.target.value });
+  };
+
   onSubmitRegister = () => {
     fetch("http://localhost:3000/register", {
       method: "post",
@@ -34,6 +44,8 @@ class Register extends Component {
         email: this.state.email,
         password: this.state.password,
         name: this.state.name,
+        information: this.state.information,
+        type: this.state.type,
       }),
     })
       .then((response) => response.json())
@@ -76,6 +88,23 @@ class Register extends Component {
             />
           </Form.Group>
 
+          <Form.Group controlId="formBasicInformation">
+            <Form.Label>Information</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Information"
+              onChange={this.onInformationChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicType">
+            <Form.Label>Type</Form.Label>
+            <Form.Control as="select" onChange={this.onTypeChange}>
+              <option>researcher</option>
+              <option>academic</option>
+            </Form.Control>
+          </Form.Group>
           <Button variant="primary" onClick={this.onSubmitRegister}>
             Submit
           </Button>
