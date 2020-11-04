@@ -96,7 +96,13 @@ class App extends Component {
             <Route
               exact
               path="/project/:projectid"
-              component={SingleProjectPage}
+              render={(props) => (
+                <SingleProjectPage
+                  {...props}
+                  userid={this.state.user.id}
+                  isSignedIn={this.state.isSignedIn}
+                />
+              )}
             />
             <Footer />
           </Container>

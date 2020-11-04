@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 
 class SingleProjectPage extends React.Component {
   constructor(props) {
@@ -22,6 +23,23 @@ class SingleProjectPage extends React.Component {
       });
   };
 
+  applyProject = () => {
+    fetch("http://localhost:3000/applyProject", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researcherid: this.props.userid,
+        projectid: this.state.project.projectid,
+      }),
+    })
+      .then((response) => response.json())
+      .then((researcherProject) => {
+        if (researcherProject) {
+          console.log("success");
+        }
+      });
+  };
+
   render() {
     return (
       <div>
@@ -29,6 +47,11 @@ class SingleProjectPage extends React.Component {
         <p>
           {this.state.project.description} {this.state.project.academicID}
         </p>
+        {this.props.isSignedIn && (
+          <Button onClick={this.applyProject} variant="primary">
+            Apply
+          </Button>
+        )}
       </div>
     );
   }
