@@ -6,6 +6,7 @@ class SingleProjectPage extends React.Component {
     super(props);
     this.state = {
       project: {},
+      projectState: "",
     };
     this.getProject = this.getProject.bind(this);
   }
@@ -20,6 +21,24 @@ class SingleProjectPage extends React.Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({ project: data });
+        if (this.props.isSignedIn) {
+          this.getState();
+        }
+      });
+  };
+
+  getState = () => {
+    fetch("http://localhost:3000/researcherProjects", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researcherid: this.props.userid,
+        projectid: this.state.project.projectid,
+      }),
+    })
+      .then((response) => response.json())
+      .then((researcherProject) => {
+        return researcherProject.state;
       });
   };
 
@@ -47,7 +66,7 @@ class SingleProjectPage extends React.Component {
         <p>
           {this.state.project.description} {this.state.project.academicID}
         </p>
-        {this.props.isSignedIn && (
+        {this.props.usertype === "researcher" && this.getState !== "applied" && (
           <Button onClick={this.applyProject} variant="primary">
             Apply
           </Button>

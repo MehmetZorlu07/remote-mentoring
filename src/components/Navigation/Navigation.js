@@ -34,6 +34,11 @@ class Navigation extends Component {
               <Link className="nav-link" to="/projects">
                 Projects
               </Link>
+              {this.props.userType === "academic" && (
+                <Link className="nav-link" to="/create-project">
+                  Create Project
+                </Link>
+              )}
               <Link className="nav-link" to="/about">
                 About Us
               </Link>

@@ -10,6 +10,7 @@ import ProjectsPage from "./components/pages/ProjectsPage";
 import Register from "./components/Register/Register";
 import SignIn from "./components/Signin/Signin";
 import SingleProjectPage from "./components/pages/SingleProjectPage";
+import CreateProject from "./components/CreateProject/CreateProject";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -66,6 +67,7 @@ class App extends Component {
             <Navigation
               isSignedIn={this.state.isSignedIn}
               setLoginState={this.handleLoginChange}
+              userType={this.state.user.type}
             />
             <Route
               path={"/"}
@@ -75,6 +77,11 @@ class App extends Component {
             <Route path="/about" exact render={() => <AboutPage />} />
             <Route path="/account" exact render={() => <AccountPage />} />
             <Route path="/projects" exact render={() => <ProjectsPage />} />
+            <Route
+              path="/create-project"
+              exact
+              render={() => <CreateProject academicid={this.state.user.id} />}
+            />
             <Route
               path="/sign-in"
               exact
@@ -103,6 +110,7 @@ class App extends Component {
                   {...props}
                   userid={this.state.user.id}
                   isSignedIn={this.state.isSignedIn}
+                  usertype={this.state.user.type}
                 />
               )}
             />
