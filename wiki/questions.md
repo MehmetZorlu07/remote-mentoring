@@ -39,3 +39,6 @@ _-The meetings will be on Tuesday at 15:30 UK time._
 
 ## Week 4 
 * Using Unsplash Image API to get the images automatically.
+
+## Week 7 
+* Should the academics be able to upload pdf files for their projects?
