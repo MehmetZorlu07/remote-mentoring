@@ -32,6 +32,8 @@ Week-by-week plan for the whole project. Update this as you go along.
   * Finish the projects part of the app.
   * Start working on the my account page. 
 * **Week 7**
+  * Finish what's remaining from the projects part.
+  * Finish the my account page.
 * **Week 8**
 * **Week 9**
 * **Week 10**
