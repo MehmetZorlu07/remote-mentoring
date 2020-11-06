@@ -18,3 +18,5 @@ I couldn't achieve all of my goals this week. However, I have managed to create 
 
 ## Status Report of Week 5
 The automatic navigation problem when the sign-in and register buttons were clicked is fixed. Sign-out feature is now added to the application. I have started working on the "projects" part of the application which is a bit challenging. A database table for the project is created, the initial frontend components are also made but server needs to connect to the frontend which I aim to do it tomorrow before the meeting. 
+
+## Status Reports of Week 6 and 7
