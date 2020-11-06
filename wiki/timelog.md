@@ -205,3 +205,12 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *1.5 hours* Fixed the bug in displaying a single project page.
 * *0.5 hour* Added the apply functionality to the frontend.
 * *1 hour* Fixed the issues with the forms used in the app.
+
+### 05 Nov 2020 
+
+* *1.5 hours* Finished the apply functionality of the app.
+
+### 06 Nov 2020
+
+* *1 hour* Finished create project functionality of the app.
+* *0.5 hour* Updated wiki.
