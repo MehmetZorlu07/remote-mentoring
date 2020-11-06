@@ -21,3 +21,6 @@ I have showed the achievements made on the back end of the application. This inc
 
 ## Week 6 - 27/10/2020 (Duration: 0.5 hour)
 I have described the improvements made on the app to Dr. Olaosebikan and provided a short demonstration. This demo included the upgrades made to the menu bar such as hiding and showing the necessary navigation links according to the sign-in state and fixes made to the automatic navigation when a user registers/signs in. Additionally, I have showed what happens when a new project is created, which is dynamically presented on the projects page. Even though some of the functionalities is missing, Dr. Olaosebikan approved the rest and also the rate of the progress. 
+
+## Week 7 - 03/11/2020 (Duration: 0)
+Meeting postponed. 
