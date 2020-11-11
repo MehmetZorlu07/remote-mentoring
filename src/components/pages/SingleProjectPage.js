@@ -22,12 +22,12 @@ class SingleProjectPage extends React.Component {
       .then((data) => {
         this.setState({ project: data });
         if (this.props.isSignedIn) {
-          this.getState();
+          this.getProjectState();
         }
       });
   };
 
-  getState = () => {
+  getProjectState = () => {
     fetch("http://localhost:3000/researcherProjects", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ class SingleProjectPage extends React.Component {
     })
       .then((response) => response.json())
       .then((researcherProject) => {
-        return researcherProject.state;
+        this.setState({ projectState: researcherProject.state });
       });
   };
 
@@ -54,7 +54,7 @@ class SingleProjectPage extends React.Component {
       .then((response) => response.json())
       .then((researcherProject) => {
         if (researcherProject) {
-          console.log("success");
+          this.setState({ projectState: "applied" });
         }
       });
   };
@@ -66,11 +66,24 @@ class SingleProjectPage extends React.Component {
         <p>
           {this.state.project.description} {this.state.project.academicID}
         </p>
-        {this.props.usertype === "researcher" && this.getState !== "applied" && (
-          <Button onClick={this.applyProject} variant="primary">
-            Apply
-          </Button>
-        )}
+        {this.props.usertype === "researcher" &&
+          this.state.projectState === undefined && (
+            <Button onClick={this.applyProject} variant="primary">
+              Apply
+            </Button>
+          )}
+        {this.props.usertype === "researcher" &&
+          this.state.projectState === "applied" && (
+            <h4>You have already applied.</h4>
+          )}
+        {this.props.usertype === "researcher" &&
+          this.state.projectState === "approved" && (
+            <h4>You have already been approved.</h4>
+          )}
+        {this.props.usertype === "researcher" &&
+          this.state.projectState === "rejected" && (
+            <h4>You have already been rejected.</h4>
+          )}
       </div>
     );
   }
