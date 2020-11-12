@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 class SingleProjectPage extends React.Component {
   constructor(props) {
@@ -84,6 +85,16 @@ class SingleProjectPage extends React.Component {
           this.state.projectState === "rejected" && (
             <h4>You have already been rejected.</h4>
           )}
+        {this.state.project.academicid === this.props.userid && (
+          <Link to={`/edit-project/${this.state.project.projectid}`}>
+            <Button variant="primary">Edit Project</Button>
+          </Link>
+        )}
+        {/*         {this.state.project.academicid === this.props.userid && (
+          <Button onClick={this.applyProject} variant="danger">
+            Delete Project
+          </Button>
+        )} */}
       </div>
     );
   }

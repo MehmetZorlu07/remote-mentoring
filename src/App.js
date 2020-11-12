@@ -11,6 +11,7 @@ import Register from "./components/Register/Register";
 import SignIn from "./components/Signin/Signin";
 import SingleProjectPage from "./components/pages/SingleProjectPage";
 import CreateProject from "./components/CreateProject/CreateProject";
+import EditProject from "./components/EditProject/EditProject";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -81,6 +82,11 @@ class App extends Component {
               path="/create-project"
               exact
               render={() => <CreateProject academicid={this.state.user.id} />}
+            />
+            <Route
+              exact
+              path="/edit-project/:projectid"
+              render={(props) => <EditProject {...props} />}
             />
             <Route
               path="/sign-in"

@@ -7,9 +7,17 @@ class EditProject extends React.Component {
   constructor(props) {
     super();
     this.state = {
+      project: {},
       title: "",
       description: "",
     };
+
+    this.getProject = this.getProject.bind(this);
+  }
+
+  componentDidMount() {
+    let projectid = this.props.match.params.projectid;
+    this.getProject(projectid.toString());
   }
 
   onTitleChange = (event) => {
@@ -20,14 +28,14 @@ class EditProject extends React.Component {
     this.setState({ description: event.target.value });
   };
 
-  onCreateProject = () => {
-    fetch("http://localhost:3000/createProject", {
-      method: "post",
+  onApplyChanges = () => {
+    fetch("http://localhost:3000/applyChanges", {
+      method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        id: this.state.project.projectid,
         name: this.state.title,
         description: this.state.description,
-        academicid: this.props.academicid,
       }),
     })
       .then((response) => response.json())
@@ -38,6 +46,16 @@ class EditProject extends React.Component {
       });
   };
 
+  getProject = (projectid) => {
+    fetch("http://localhost:3000/edit-project/" + projectid)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ project: data });
+        this.setState({ title: data.name });
+        this.setState({ description: data.description });
+      });
+  };
+
   render() {
     return (
       <div>
@@ -45,7 +63,7 @@ class EditProject extends React.Component {
           <Form.Group controlId="formBasicTitle">
             <Form.Label>Project Title</Form.Label>
             <Form.Control
-              placeholder="Enter a title"
+              defaultValue={this.state.project.name}
               onChange={this.onTitleChange}
             />
           </Form.Group>
@@ -54,13 +72,13 @@ class EditProject extends React.Component {
             <Form.Control
               as="textarea"
               rows={5}
-              placeholder="Enter a description"
+              defaultValue={this.state.project.description}
               onChange={this.onDescriptionChange}
             />
           </Form.Group>
 
-          <Button variant="primary" onClick={this.onCreateProject}>
-            Create Project
+          <Button variant="primary" onClick={this.onApplyChanges}>
+            Apply Changes
           </Button>
         </Form>
       </div>
