@@ -60,6 +60,22 @@ class SingleProjectPage extends React.Component {
       });
   };
 
+  deleteProject = () => {
+    fetch("http://localhost:3000/deleteProject", {
+      method: "delete",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        projectid: this.state.project.projectid,
+      }),
+    })
+      .then((response) => response.json())
+      .then((amount) => {
+        this.setState({project: {}});
+        console.log(this.state.project);
+      });
+      
+  };
+
   render() {
     return (
       <div>
@@ -75,26 +91,27 @@ class SingleProjectPage extends React.Component {
           )}
         {this.props.usertype === "researcher" &&
           this.state.projectState === "applied" && (
-            <h4>You have already applied.</h4>
+            <h4>You have applied to this project.</h4>
           )}
         {this.props.usertype === "researcher" &&
           this.state.projectState === "approved" && (
-            <h4>You have already been approved.</h4>
+            <h4>You have been approved to this project.</h4>
           )}
         {this.props.usertype === "researcher" &&
           this.state.projectState === "rejected" && (
-            <h4>You have already been rejected.</h4>
+            <h4>You have been rejected from this project.</h4>
           )}
         {this.state.project.academicid === this.props.userid && (
           <Link to={`/edit-project/${this.state.project.projectid}`}>
             <Button variant="primary">Edit Project</Button>
           </Link>
         )}
-        {/*         {this.state.project.academicid === this.props.userid && (
-          <Button onClick={this.applyProject} variant="danger">
+        {this.state.project.academicid === this.props.userid && (
+          <Button onClick={this.deleteProject} variant="danger">
             Delete Project
           </Button>
-        )} */}
+        )}
+        {Object.keys(this.state.project).length === 0 && (<h1>This project does not exist.</h1>)}
       </div>
     );
   }
