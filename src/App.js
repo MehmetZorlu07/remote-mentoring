@@ -12,11 +12,13 @@ import SignIn from "./components/Signin/Signin";
 import SingleProjectPage from "./components/pages/SingleProjectPage";
 import CreateProject from "./components/CreateProject/CreateProject";
 import EditProject from "./components/EditProject/EditProject";
+import EditProfile from "./components/EditProfile/EditProfile";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
 
 const initialState = {
   isSignedIn: false,
@@ -76,7 +78,7 @@ class App extends Component {
               render={() => <HomePage name={this.state.user.name} />}
             />
             <Route path="/about" exact render={() => <AboutPage />} />
-            <Route path="/account" exact render={() => <AccountPage />} />
+            <Route path="/account" exact render={() => <AccountPage user={this.state.user}/>} />
             <Route path="/projects" exact render={() => <ProjectsPage />} />
             <Route
               path="/create-project"
@@ -87,6 +89,11 @@ class App extends Component {
               exact
               path="/edit-project/:projectid"
               render={(props) => <EditProject {...props} />}
+            />
+            <Route
+              path="/edit-profile"
+              exact
+              render={() => <EditProfile user={this.state.user} loadUser={this.loadUser}/>}
             />
             <Route
               path="/sign-in"
