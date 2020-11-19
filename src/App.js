@@ -7,6 +7,7 @@ import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import AccountPage from "./components/pages/AccountPage";
 import ProjectsPage from "./components/pages/ProjectsPage";
+import MyProjects from "./components/MyProjects/MyProjects";
 import Register from "./components/Register/Register";
 import SignIn from "./components/Signin/Signin";
 import SingleProjectPage from "./components/pages/SingleProjectPage";
@@ -18,6 +19,7 @@ import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
 
 
 const initialState = {
@@ -80,6 +82,7 @@ class App extends Component {
             <Route path="/about" exact render={() => <AboutPage />} />
             <Route path="/account" exact render={() => <AccountPage user={this.state.user}/>} />
             <Route path="/projects" exact render={() => <ProjectsPage />} />
+            <Route path="/my-projects" exact render={() => <MyProjects user={this.state.user} />} />
             <Route
               path="/create-project"
               exact

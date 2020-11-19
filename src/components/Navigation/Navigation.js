@@ -47,6 +47,11 @@ class Navigation extends Component {
                   My Account
                 </Link>
               )}
+              {this.props.isSignedIn && (
+                <Link className="nav-link" to="/my-projects">
+                  My Projects
+                </Link>
+              )}
               {!this.props.isSignedIn && (
                 <Link className="nav-link" to="/sign-in">
                   Sign In
