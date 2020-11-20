@@ -15,6 +15,8 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * [Week 5](#week-5)
 * [Week 6](#week-6)
 * [Week 7](#week-7)
+* [Week 8](#week-8)
+* [Week 9](#week-9)
 
 
 ## Week 1
@@ -214,3 +216,49 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 * *1 hour* Finished create project functionality of the app.
 * *0.5 hour* Updated wiki.
+
+### 07 Nov 2020
+
+* *3 hours* Researched about Continous Integration in React stack.
+
+## Week 8
+
+### 09 Nov 2020 
+
+* *1 hour* Creating dummy data for projects.
+* *2 hours* Worked on fixing edit-projects bug. 
+
+### 10 Nov 2020 
+
+* *3 hours* Researched about testing the application. 
+
+### 11 Nov 2020 
+
+* *2 hours* Continued working on edit projects page.
+* *2 hours* Apply button is created.
+
+### 12 Nov 2020 
+
+* *2 hours* Edit project functionality is complete.
+* *1.5 hours* Researched deleting a project. 
+
+### 13 Nov 2020 
+
+* *5 hours* Tried fixing crashed database. (Problem was with pc. Needed repairing.)
+
+## Week 9 
+
+### 17 Nov 2020
+
+* *2 hours* Started re-creating working environment. (All the applications and packages are gone due to resetting pc.)
+
+### 18 Nov 2020 
+
+* *6 hours* Finished re-creating working environment and the project set up. 
+
+### 19 Nov 2020 
+
+* *1 hour* Meeting with the supervisor.
+* *3 hours* Added deleting project functionality. 
+* *2 hours* Created My Projects page.
+* *2 hours* Created My Account page.
