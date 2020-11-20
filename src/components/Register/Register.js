@@ -100,7 +100,7 @@ class Register extends Component {
 
           <Form.Group controlId="formBasicType">
             <Form.Label>Type</Form.Label>
-            <Form.Control as="select" onChange={this.onTypeChange}>
+            <Form.Control as="select" onChange={this.onTypeChange} defaultValue="researcher">
               <option>researcher</option>
               <option>academic</option>
             </Form.Control>
