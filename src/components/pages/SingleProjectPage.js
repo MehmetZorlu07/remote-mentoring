@@ -80,6 +80,21 @@ class SingleProjectPage extends React.Component {
       });
   };
 
+  withdrawApplication = () => {
+    fetch("http://localhost:3000/withdrawApplication", {
+      method: "delete",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researcherid: this.props.userid,
+        projectid: this.state.project.projectid,
+      }),
+    })
+      .then((response) => response.json())
+      .then((amount) => {
+        this.getProjectState();
+      });
+  };
+
   setDisplayState = () => {
     this.setState({ display: !this.state.display });
   };
@@ -194,7 +209,12 @@ class SingleProjectPage extends React.Component {
           )}
         {this.props.usertype === "researcher" &&
           this.state.projectState === "applied" && (
-            <h4>You have applied to this project.</h4>
+            <div>
+              <h4>You have applied to this project.</h4>
+              <Button onClick={this.withdrawApplication} variant="primary">
+                Withdraw application
+              </Button>
+            </div>
           )}
         {this.props.usertype === "researcher" &&
           this.state.projectState === "approved" && (
