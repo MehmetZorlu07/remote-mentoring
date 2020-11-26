@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Table from "react-bootstrap/Table";
+import Modal from "react-bootstrap/Modal";
 
 class SingleProjectPage extends React.Component {
   constructor(props) {
@@ -8,6 +10,10 @@ class SingleProjectPage extends React.Component {
     this.state = {
       project: {},
       projectState: "",
+      display: false,
+      researchers: [],
+      show: false,
+      researcherIndex: 0,
     };
     this.getProject = this.getProject.bind(this);
   }
@@ -70,10 +76,107 @@ class SingleProjectPage extends React.Component {
     })
       .then((response) => response.json())
       .then((amount) => {
-        this.setState({project: {}});
-        console.log(this.state.project);
+        this.setState({ project: {} });
       });
-      
+  };
+
+  setDisplayState = () => {
+    this.setState({ display: !this.state.display });
+  };
+
+  getAllApplications = () => {
+    fetch("http://localhost:3000/allApplications", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        projectid: this.state.project.projectid,
+      }),
+    })
+      .then((response) => response.json())
+      .then((researchersList) => {
+        this.setState({ researchers: researchersList });
+        this.setDisplayState();
+      });
+  };
+
+  handleClose = () => this.setState({ show: false });
+
+  changeApplicationState = (decision) => {
+    fetch("http://localhost:3000/changeApplicationState", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researcherid: this.state.researchers[this.state.researcherIndex].id,
+        projectid: this.state.project.projectid,
+        state: decision,
+      }),
+    })
+      .then((response) => response.json())
+      .then((researcherproject) => {
+        if (researcherproject) {
+          this.handleClose();
+          this.getAllApplications();
+          this.setDisplayState();
+        }
+      });
+  };
+
+  renderResearcher = (researcher, index) => {
+    const handleShow = (e) => {
+      this.setState({ researcherIndex: e.target.getAttribute("keyprop") });
+      this.setState({ show: true });
+    };
+    return (
+      <tr key={index}>
+        <td>{researcher.email}</td>
+        <td>{researcher.information}</td>
+        <td>{researcher.state}</td>
+        <td>
+          <>
+            <Button variant="primary" keyprop={index} onClick={handleShow}>
+              Display
+            </Button>
+
+            <Modal show={this.state.show} onHide={this.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>
+                  {this.state.researchers[this.state.researcherIndex].email}
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {this.state.researchers[this.state.researcherIndex].information}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={this.handleClose}>
+                  Close
+                </Button>
+                {this.state.researchers[this.state.researcherIndex].state ===
+                  "applied" && (
+                  <div>
+                    <Button
+                      variant="danger"
+                      onClick={() => this.changeApplicationState("declined")}
+                    >
+                      Decline
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => this.changeApplicationState("approved")}
+                    >
+                      Approve
+                    </Button>
+                  </div>
+                )}
+                {this.state.researchers[this.state.researcherIndex].state ===
+                  "approved" && <p>approved</p>}
+                {this.state.researchers[this.state.researcherIndex].state ===
+                  "declined" && <p>declined</p>}
+              </Modal.Footer>
+            </Modal>
+          </>
+        </td>
+      </tr>
+    );
   };
 
   render() {
@@ -111,7 +214,27 @@ class SingleProjectPage extends React.Component {
             Delete Project
           </Button>
         )}
-        {Object.keys(this.state.project).length === 0 && (<h1>This project does not exist.</h1>)}
+        {this.state.project.academicid === this.props.userid && (
+          <Button onClick={this.getAllApplications} variant="warning">
+            Show Researchers
+          </Button>
+        )}
+        {this.state.display && (
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Information</th>
+                <th>State</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>{this.state.researchers.map(this.renderResearcher)}</tbody>
+          </Table>
+        )}
+        {Object.keys(this.state.project).length === 0 && (
+          <h1>This project does not exist.</h1>
+        )}
       </div>
     );
   }
