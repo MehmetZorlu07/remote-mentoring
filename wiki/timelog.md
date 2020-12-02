@@ -5,19 +5,6 @@
 * STUDENT_ID: 2328759z
 * SUPERVISOR NAME: Dr. Sofiat Olaosebikan 
 
-Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
-
-## Weeks
-* [Week 1](#week-1)
-* [Week 2](#week-2)
-* [Week 3](#week-3)
-* [Week 4](#week-4)
-* [Week 5](#week-5)
-* [Week 6](#week-6)
-* [Week 7](#week-7)
-* [Week 8](#week-8)
-* [Week 9](#week-9)
-
 
 ## Week 1
 
@@ -262,3 +249,23 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 * *3 hours* Added deleting project functionality. 
 * *2 hours* Created My Projects page.
 * *2 hours* Created My Account page.
+
+## Week 10 
+
+### 21 Nov 2020
+
+* *2 hours* Implemented displaying the researchers related to a project (academic's perspective).
+* *3 hours* Started working on the Approve/Decline functionality and got stuck with a bug.
+
+### 22 Nov 2020 
+
+* *4 hours* Found the bug in Approve/Decline and completed the functionality. 
+
+### 23 Nov 2020 
+
+* *3 hours* Started working on project application withdrawal functionality.
+
+### 24 Nov 2020 
+
+* *3 hours* Completed withdrawal functionality. 
+* *0.5 hour* Meeting with the supervisor.
