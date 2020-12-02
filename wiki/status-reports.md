@@ -21,3 +21,12 @@ The automatic navigation problem when the sign-in and register buttons were clic
 
 ## Status Reports of Week 6 and 7
 The database system has been updated on a large scale. Some of the tables have been re-constructed. The registration form has been updated so that all entries for fields are captured now. A single page can be displayed now which has the details of a specific project. The researchers can apply to the projects if they are eligible (not applied before). Academics have an interface for creating a project which captures the projects details via a form. Currently, I am working on the functionality of editing and deleting a project as an academic. 
+
+## Status Report of Week 8
+Dummy data is created for projects so that it's easier to repopulate the database. A research is conducted on how to test and evaluate the application. The functionality for editing the projects is fully working now. Additionally, an apply button is created for researchers to be able to apply to the projects under right conditions. I made a research about how to "delete" a project. Unfortunately my pc crashed so, I gave it to the repairing. 
+
+## Status Report of Week 9
+I got my pc back and re-built my development environment. My projects page is created which presents the users all the projects that they are related. If the user is a researcher, applied-approved-declined projects are displayed and if the user is an academic, all the projects they have created are displayed. To add to this, My Account page is created which displays the users their own profile data. Finally, deleting a project functionality is successfully implemented for academics. 
+
+## Status Report of Week 10
+The functionality for displaying all the researchers related to a project is implemented for academics. In this week, it took me a very long time to accomplish the functionality of approving/declining a project by academics due to lots of debugging. My aim was to finish all 5 must have features in Moscow Principles but I could only do 2. Finally, I have implemented the functionality of a researcher withdrawing their application from a project. 
