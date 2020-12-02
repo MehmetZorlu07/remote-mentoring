@@ -41,6 +41,7 @@ Week-by-week plan for the whole project. Update this as you go along.
 * **Week 9**
   * Implement all the features in must have part of Moscow Principle (5 features) 
 * **Week 10**
+  * Implement the remaining features in must have part of Moscow Principles (3 features)
 * **Week 11 [PROJECT WEEK]**
 * **Week 12 [PROJECT WEEK]** Status report submitted.
 
