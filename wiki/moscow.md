@@ -11,9 +11,9 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
   * Private routing
   * Forgot Password
-  * Withdraw applications of projects
+  * Withdraw applications of projects - Done
   * Notifications
-  * View applications (academics) and decide as approved/declined
+  * View applications (academics) and decide as approved/declined - Done
   
 ## Should Have
 
