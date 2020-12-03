@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Modal from "react-bootstrap/Modal";
+import Badge from "react-bootstrap/Badge";
 
 class SingleProjectPage extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class SingleProjectPage extends React.Component {
       researchers: [],
       show: false,
       researcherIndex: 0,
+      counter: 0,
     };
     this.getProject = this.getProject.bind(this);
   }
@@ -109,7 +111,10 @@ class SingleProjectPage extends React.Component {
     })
       .then((response) => response.json())
       .then((researchersList) => {
-        this.setState({ researchers: researchersList });
+        this.setState({
+          researchers: researchersList,
+          counter: researchersList.length,
+        });
         this.setDisplayState();
       });
   };
@@ -256,7 +261,7 @@ class SingleProjectPage extends React.Component {
         )}
         {this.state.project.academicid === this.props.userid && (
           <Button onClick={this.getAllApplications} variant="warning">
-            Show Researchers
+            Show Researchers <Badge variant="light">{this.state.counter}</Badge>
           </Button>
         )}
         {this.state.display && (
