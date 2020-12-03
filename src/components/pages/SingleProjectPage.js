@@ -124,6 +124,8 @@ class SingleProjectPage extends React.Component {
         researcherid: this.state.researchers[this.state.researcherIndex].id,
         projectid: this.state.project.projectid,
         state: decision,
+        researcheremail: this.state.researchers[this.state.researcherIndex]
+          .email,
       }),
     })
       .then((response) => response.json())
@@ -162,6 +164,10 @@ class SingleProjectPage extends React.Component {
                 {this.state.researchers[this.state.researcherIndex].information}
               </Modal.Body>
               <Modal.Footer>
+                <div>
+                  <p>Application State: </p>
+                  {this.state.researchers[this.state.researcherIndex].state}
+                </div>
                 <Button variant="secondary" onClick={this.handleClose}>
                   Close
                 </Button>
@@ -183,9 +189,23 @@ class SingleProjectPage extends React.Component {
                   </div>
                 )}
                 {this.state.researchers[this.state.researcherIndex].state ===
-                  "approved" && <p>approved</p>}
+                  "approved" && (
+                  <Button
+                    variant="danger"
+                    onClick={() => this.changeApplicationState("declined")}
+                  >
+                    Decline
+                  </Button>
+                )}
                 {this.state.researchers[this.state.researcherIndex].state ===
-                  "declined" && <p>declined</p>}
+                  "declined" && (
+                  <Button
+                    variant="primary"
+                    onClick={() => this.changeApplicationState("approved")}
+                  >
+                    Approve
+                  </Button>
+                )}
               </Modal.Footer>
             </Modal>
           </>
