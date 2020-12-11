@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import history from "../../history";
+import "./Signin.css";
 
 class Signin extends Component {
   constructor() {
@@ -40,33 +41,43 @@ class Signin extends Component {
       });
   };
 
+  resetPassword = () => {
+    history.push("/reset");
+  };
+
   render() {
     return (
-      <Card style={{ width: "40rem" }}>
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              onChange={this.onEmailChange}
-            />
-          </Form.Group>
+      <div className="d-flex justify-content-center">
+        <Card style={{ width: "40rem" }}>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                onChange={this.onEmailChange}
+              />
+            </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              onChange={this.onPasswordChange}
-            />
-          </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                onChange={this.onPasswordChange}
+              />
+            </Form.Group>
 
-          <Button variant="primary" onClick={this.onSubmitSignIn}>
-            Submit
-          </Button>
-        </Form>
-      </Card>
+            <Button variant="primary" onClick={this.onSubmitSignIn}>
+              Submit
+            </Button>
+
+            <Button variant="danger" onClick={this.resetPassword}>
+              Forgot Password
+            </Button>
+          </Form>
+        </Card>
+      </div>
     );
   }
 }

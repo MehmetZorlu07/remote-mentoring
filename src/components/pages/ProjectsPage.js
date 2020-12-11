@@ -37,7 +37,7 @@ class ProjectsPage extends React.Component {
       );
     }
 
-    return <div className="container">{projectsList}</div>;
+    return <div className="grid-container">{projectsList}</div>;
   }
 }
 

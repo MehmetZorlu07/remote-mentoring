@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Redirect } from "react-router-dom";
 import history from "./history";
-import Container from "react-bootstrap/Container";
 import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
@@ -14,13 +13,10 @@ import SingleProjectPage from "./components/pages/SingleProjectPage";
 import CreateProject from "./components/CreateProject/CreateProject";
 import EditProject from "./components/EditProject/EditProject";
 import EditProfile from "./components/EditProfile/EditProfile";
+import Reset from "./components/Reset/Reset";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-
-
 
 const initialState = {
   isSignedIn: false,
@@ -66,74 +62,111 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <React.Fragment>
         <Router history={history}>
-          <Container className="p-0" fluid={true}>
-            <Navigation
-              isSignedIn={this.state.isSignedIn}
-              setLoginState={this.handleLoginChange}
-              userType={this.state.user.type}
-            />
-            <Route
-              path={"/"}
-              exact
-              render={() => <HomePage name={this.state.user.name} />}
-            />
-            <Route path="/about" exact render={() => <AboutPage />} />
-            <Route path="/account" exact render={() => <AccountPage user={this.state.user}/>} />
-            <Route path="/projects" exact render={() => <ProjectsPage />} />
-            <Route path="/my-projects" exact render={() => <MyProjects user={this.state.user} />} />
-            <Route
-              path="/create-project"
-              exact
-              render={() => <CreateProject academicid={this.state.user.id} />}
-            />
-            <Route
-              exact
-              path="/edit-project/:projectid"
-              render={(props) => <EditProject {...props} />}
-            />
-            <Route
-              path="/edit-profile"
-              exact
-              render={() => <EditProfile user={this.state.user} loadUser={this.loadUser}/>}
-            />
-            <Route
-              path="/sign-in"
-              exact
-              render={() => (
-                <SignIn
-                  loadUser={this.loadUser}
-                  setLoginState={this.handleLoginChange}
-                />
-              )}
-            />
-            <Route
-              path="/register"
-              exact
-              render={() => (
-                <Register
-                  loadUser={this.loadUser}
-                  setLoginState={this.handleLoginChange}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/project/:projectid"
-              render={(props) => (
-                <SingleProjectPage
-                  {...props}
-                  userid={this.state.user.id}
-                  isSignedIn={this.state.isSignedIn}
-                  usertype={this.state.user.type}
-                />
-              )}
-            />
-            <Footer />
-          </Container>
+          <Navigation
+            isSignedIn={this.state.isSignedIn}
+            setLoginState={this.handleLoginChange}
+            userType={this.state.user.type}
+          />
+          <Route
+            path={"/"}
+            exact
+            render={() => <HomePage name={this.state.user.name} />}
+          />
+          <Route path="/about" exact render={() => <AboutPage />} />
+          <Route
+            path="/account"
+            exact
+            render={() =>
+              this.state.isSignedIn ? (
+                <AccountPage user={this.state.user} />
+              ) : (
+                <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route path="/projects" exact render={() => <ProjectsPage />} />
+          <Route
+            path="/my-projects"
+            exact
+            render={() =>
+              this.state.isSignedIn ? (
+                <MyProjects user={this.state.user} />
+              ) : (
+                <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
+            path="/create-project"
+            exact
+            render={() =>
+              this.state.user.type === "academic" ? (
+                <CreateProject academicid={this.state.user.id} />
+              ) : (
+                <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/edit-project/:projectid"
+            render={(props) =>
+              this.state.user.type === "academic" ? (
+                <EditProject {...props} />
+              ) : (
+                <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
+            path="/edit-profile"
+            exact
+            render={() =>
+              this.state.isSignedIn ? (
+                <EditProfile user={this.state.user} loadUser={this.loadUser} />
+              ) : (
+                <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
+            path="/sign-in"
+            exact
+            render={() => (
+              <SignIn
+                loadUser={this.loadUser}
+                setLoginState={this.handleLoginChange}
+              />
+            )}
+          />
+          <Route path="/reset" exact render={() => <Reset />} />
+          <Route
+            path="/register"
+            exact
+            render={() => (
+              <Register
+                loadUser={this.loadUser}
+                setLoginState={this.handleLoginChange}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/project/:projectid"
+            render={(props) => (
+              <SingleProjectPage
+                {...props}
+                userid={this.state.user.id}
+                isSignedIn={this.state.isSignedIn}
+                usertype={this.state.user.type}
+              />
+            )}
+          />
+          <Footer />
         </Router>
-      </div>
+      </React.Fragment>
     );
   }
 }

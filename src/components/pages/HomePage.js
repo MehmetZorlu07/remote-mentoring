@@ -1,5 +1,4 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
@@ -15,7 +14,6 @@ function HomePage({ name }) {
           <Button variant="primary">Learn more</Button>
         </p>
       </Jumbotron>
-      <Carousel />
     </div>
   );
 }
