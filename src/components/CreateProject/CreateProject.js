@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 import history from "../../history";
 
 class CreateProject extends React.Component {
@@ -40,7 +41,7 @@ class CreateProject extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Form>
           <Form.Group controlId="formBasicTitle">
             <Form.Label>Project Title</Form.Label>
@@ -63,7 +64,7 @@ class CreateProject extends React.Component {
             Create Project
           </Button>
         </Form>
-      </div>
+      </Container>
     );
   }
 }

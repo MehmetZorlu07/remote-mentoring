@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Modal from "react-bootstrap/Modal";
 import Badge from "react-bootstrap/Badge";
+import Container from "react-bootstrap/Container";
 
 class SingleProjectPage extends React.Component {
   constructor(props) {
@@ -221,7 +222,7 @@ class SingleProjectPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <h1>{this.state.project.name}</h1>
         <p>
           {this.state.project.description} {this.state.project.academicID}
@@ -280,7 +281,7 @@ class SingleProjectPage extends React.Component {
         {Object.keys(this.state.project).length === 0 && (
           <h1>This project does not exist.</h1>
         )}
-      </div>
+      </Container>
     );
   }
 }

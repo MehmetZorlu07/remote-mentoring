@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 import history from "../../history";
-import "./Signin.css";
 
 class Signin extends Component {
   constructor() {
@@ -47,8 +47,8 @@ class Signin extends Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-center">
-        <Card style={{ width: "40rem" }}>
+      <Container>
+        <Card>
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -77,7 +77,7 @@ class Signin extends Component {
             </Button>
           </Form>
         </Card>
-      </div>
+      </Container>
     );
   }
 }

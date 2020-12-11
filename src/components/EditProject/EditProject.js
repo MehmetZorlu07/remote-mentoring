@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 import history from "../../history";
 
 class EditProject extends React.Component {
@@ -58,7 +59,7 @@ class EditProject extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Form>
           <Form.Group controlId="formBasicTitle">
             <Form.Label>Project Title</Form.Label>
@@ -81,7 +82,7 @@ class EditProject extends React.Component {
             Apply Changes
           </Button>
         </Form>
-      </div>
+      </Container>
     );
   }
 }
