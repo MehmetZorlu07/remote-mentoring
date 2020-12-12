@@ -47,11 +47,12 @@ class Signin extends Component {
 
   render() {
     return (
-      <Container>
-        <Card>
+      <Container className="page">
+        <Card className="form">
           <Form>
+            <div className="form__title">Signin</div>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email address:</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -60,21 +61,21 @@ class Signin extends Component {
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"
                 onChange={this.onPasswordChange}
               />
             </Form.Group>
-
-            <Button variant="primary" onClick={this.onSubmitSignIn}>
-              Submit
-            </Button>
-
-            <Button variant="danger" onClick={this.resetPassword}>
-              Forgot Password
-            </Button>
+            <div className="form__footer">
+              <Button variant="link" onClick={this.resetPassword}>
+                Forgot Password
+              </Button>
+              <Button variant="primary" onClick={this.onSubmitSignIn}>
+                Submit
+              </Button>
+            </div>
           </Form>
         </Card>
       </Container>

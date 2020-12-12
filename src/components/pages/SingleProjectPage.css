@@ -1,0 +1,25 @@
+.single-project__actions {
+}
+
+.single-project__actions .btn {
+  margin-right: 15px;
+}
+
+.table {
+  margin-top: 30px;
+}
+
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  background-color: #0072ce;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1px 10px;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

@@ -2,12 +2,12 @@ import React from "react";
 import LazyHero from "react-lazy-hero";
 import HeroImage from "../../assets/hero.jpg";
 
-const Hero = ({ name }) => {
+const Hero = ({ name, height = "100vh" }) => {
   return (
     <div>
       <LazyHero
         imageSrc={HeroImage}
-        minHeight="100vh"
+        minHeight={height}
         parallaxOffset={100}
         opacity={0}
       >

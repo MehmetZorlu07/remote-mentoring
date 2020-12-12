@@ -1,0 +1,40 @@
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  background-color: #0072ce;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1px 10px;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.tag__icon {
+  position: relative;
+  top: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.tags-input {
+}
+
+.tags-input__tags {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.tags-input__tags__item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.tags-input__tags__item:nth-child(odd) {
+  background-color: #fafafa;
+}

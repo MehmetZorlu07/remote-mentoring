@@ -61,9 +61,10 @@ class Register extends Component {
 
   render() {
     return (
-      <Container>
-        <Card>
+      <Container className="page">
+        <Card className="form">
           <Form>
+            <div className="form__title">Register</div>
             <Form.Group controlId="formBasicName">
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -111,9 +112,11 @@ class Register extends Component {
                 <option>academic</option>
               </Form.Control>
             </Form.Group>
-            <Button variant="primary" onClick={this.onSubmitRegister}>
-              Submit
-            </Button>
+            <div className="form__footer">
+              <Button variant="primary" onClick={this.onSubmitRegister}>
+                Submit
+              </Button>
+            </div>
           </Form>
         </Card>
       </Container>

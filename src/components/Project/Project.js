@@ -2,13 +2,14 @@ import React from "react";
 import "./Project.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 
 class Project extends React.Component {
   render() {
     return (
-      <div>
-        <Card>
+      <Col lg={4} md={6} xs={12}>
+        <Card className="project-card">
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
@@ -20,7 +21,7 @@ class Project extends React.Component {
             </Link>
           </Card.Body>
         </Card>
-      </div>
+      </Col>
     );
   }
 }

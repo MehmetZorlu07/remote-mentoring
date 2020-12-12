@@ -5,6 +5,7 @@ import Table from "react-bootstrap/Table";
 import Modal from "react-bootstrap/Modal";
 import Badge from "react-bootstrap/Badge";
 import Container from "react-bootstrap/Container";
+import "./SingleProjectPage.css";
 
 class SingleProjectPage extends React.Component {
   constructor(props) {
@@ -222,49 +223,67 @@ class SingleProjectPage extends React.Component {
 
   render() {
     return (
-      <Container>
-        <h1>{this.state.project.name}</h1>
-        <p>
+      <Container className="page">
+        <h1 className="page__title">{this.state.project.name}</h1>
+        <p className="page__description">
           {this.state.project.description} {this.state.project.academicID}
         </p>
-        {this.props.usertype === "researcher" &&
-          this.state.projectState === undefined && (
-            <Button onClick={this.applyProject} variant="primary">
-              Apply
+        {!!(this.state.project.tags || []).length && (
+          <div className="single-project__tags">
+            <div className="single-project__tags__label">Tags:</div>
+
+            <div className="tags">
+              {this.state.project.tags.map((tag, index) => {
+                return (
+                  <div key={`tag-${index}`} className="tag">
+                    {tag}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+        <div className="single-project__actions">
+          {this.props.usertype === "researcher" &&
+            this.state.projectState === undefined && (
+              <Button onClick={this.applyProject} variant="primary">
+                Apply
+              </Button>
+            )}
+          {this.props.usertype === "researcher" &&
+            this.state.projectState === "applied" && (
+              <div>
+                <h4>You have applied to this project.</h4>
+                <Button onClick={this.withdrawApplication} variant="primary">
+                  Withdraw application
+                </Button>
+              </div>
+            )}
+          {this.props.usertype === "researcher" &&
+            this.state.projectState === "approved" && (
+              <h4>You have been approved to this project.</h4>
+            )}
+          {this.props.usertype === "researcher" &&
+            this.state.projectState === "rejected" && (
+              <h4>You have been rejected from this project.</h4>
+            )}
+          {this.state.project.academicid === this.props.userid && (
+            <Link to={`/edit-project/${this.state.project.projectid}`}>
+              <Button variant="primary">Edit Project</Button>
+            </Link>
+          )}
+          {this.state.project.academicid === this.props.userid && (
+            <Button onClick={this.getAllApplications} variant="warning">
+              Show Researchers{" "}
+              <Badge variant="light">{this.state.counter}</Badge>
             </Button>
           )}
-        {this.props.usertype === "researcher" &&
-          this.state.projectState === "applied" && (
-            <div>
-              <h4>You have applied to this project.</h4>
-              <Button onClick={this.withdrawApplication} variant="primary">
-                Withdraw application
-              </Button>
-            </div>
+          {this.state.project.academicid === this.props.userid && (
+            <Button onClick={this.deleteProject} variant="danger">
+              <span className="fa fa-trash" />
+            </Button>
           )}
-        {this.props.usertype === "researcher" &&
-          this.state.projectState === "approved" && (
-            <h4>You have been approved to this project.</h4>
-          )}
-        {this.props.usertype === "researcher" &&
-          this.state.projectState === "rejected" && (
-            <h4>You have been rejected from this project.</h4>
-          )}
-        {this.state.project.academicid === this.props.userid && (
-          <Link to={`/edit-project/${this.state.project.projectid}`}>
-            <Button variant="primary">Edit Project</Button>
-          </Link>
-        )}
-        {this.state.project.academicid === this.props.userid && (
-          <Button onClick={this.deleteProject} variant="danger">
-            Delete Project
-          </Button>
-        )}
-        {this.state.project.academicid === this.props.userid && (
-          <Button onClick={this.getAllApplications} variant="warning">
-            Show Researchers <Badge variant="light">{this.state.counter}</Badge>
-          </Button>
-        )}
+        </div>
         {this.state.display && (
           <Table striped bordered hover>
             <thead>

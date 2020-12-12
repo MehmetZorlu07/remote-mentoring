@@ -3,10 +3,10 @@ import Hero from "../Hero/Hero";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
 
-function HomePage({ name }) {
+function HomePage({ name, isSignedIn = false }) {
   return (
     <div>
-      <Hero name={name} />
+      <Hero name={name} height={isSignedIn ? "100px" : "100vh"} />
       <Jumbotron>
         <h1>Research Categories</h1>
         <p>Checkout these project categories below that might interest you!</p>

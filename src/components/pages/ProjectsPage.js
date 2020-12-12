@@ -1,12 +1,17 @@
 import React from "react";
 import "./ProjectsPage.css";
 import Project from "../Project/Project";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 class ProjectsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      allProjects: [],
       projects: [],
+      search: "",
     };
     this.getProjects = this.getProjects.bind(this);
   }
@@ -15,11 +20,20 @@ class ProjectsPage extends React.Component {
     this.getProjects();
   }
 
+  onSearchChange = (e) => {
+    let text = e.target.value;
+    this.setState({
+      projects: this.state.allProjects.filter((project) => {
+        return project.name.toLowerCase().includes(text);
+      }),
+    });
+  };
+
   getProjects = () => {
     fetch("http://localhost:3000/projects")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ projects: data });
+        this.setState({ allProjects: data, projects: data });
       });
   };
 
@@ -37,7 +51,23 @@ class ProjectsPage extends React.Component {
       );
     }
 
-    return <div className="grid-container">{projectsList}</div>;
+    return (
+      <Container className="page">
+        <h1 className="page__title">Projects</h1>
+        <input
+          placeholder="Search projects"
+          onChange={this.onSearchChange}
+          className="form-control project__search"
+        />
+        <Row>
+          {projectsList.length ? (
+            projectsList
+          ) : (
+            <Col xs={12}>No projects found</Col>
+          )}
+        </Row>
+      </Container>
+    );
   }
 }
 

@@ -64,8 +64,9 @@ class EditProfile extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Card>
+      <Container className="page">
+        <Card className="form">
+          <div className="form__title">Edit Profile</div>
           <Form>
             <Form.Group controlId="formBasicName">
               <Form.Label>Name</Form.Label>
@@ -99,9 +100,11 @@ class EditProfile extends React.Component {
                 <option>academic</option>
               </Form.Control>
             </Form.Group>
-            <Button variant="primary" onClick={this.onUpdateProfile}>
-              Update Profile
-            </Button>
+            <div className="form__footer">
+              <Button variant="primary" onClick={this.onUpdateProfile}>
+                Update Profile
+              </Button>
+            </div>
           </Form>
         </Card>
       </Container>

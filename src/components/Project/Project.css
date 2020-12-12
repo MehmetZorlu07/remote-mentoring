@@ -1,4 +1,16 @@
-.card {
+.project-card {
   border-style: solid;
   border-width: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.project-card .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 120px;
+}
+@media only screen and (max-width: 768px) {
 }

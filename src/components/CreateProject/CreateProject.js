@@ -2,7 +2,10 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 import history from "../../history";
+import "./CreateProject.css";
+import { TAGS } from "../../utils/config";
 
 class CreateProject extends React.Component {
   constructor(props) {
@@ -10,6 +13,7 @@ class CreateProject extends React.Component {
     this.state = {
       title: "",
       description: "",
+      tags: [],
     };
   }
 
@@ -21,6 +25,16 @@ class CreateProject extends React.Component {
     this.setState({ description: event.target.value });
   };
 
+  onTagsChange = (tag) => {
+    if (!this.state.tags.includes(tag)) {
+      this.setState({ tags: this.state.tags.concat([tag]) });
+    }
+  };
+
+  onRemoveTag = (tag) => {
+    this.setState({ tags: this.state.tags.filter((t) => t !== tag) });
+  };
+
   onCreateProject = () => {
     fetch("http://localhost:3000/createProject", {
       method: "post",
@@ -29,6 +43,7 @@ class CreateProject extends React.Component {
         name: this.state.title,
         description: this.state.description,
         academicid: this.props.academicid,
+        tags: this.state.tags,
       }),
     })
       .then((response) => response.json())
@@ -41,30 +56,107 @@ class CreateProject extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Form>
-          <Form.Group controlId="formBasicTitle">
-            <Form.Label>Project Title</Form.Label>
-            <Form.Control
-              placeholder="Enter a title"
-              onChange={this.onTitleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="formBasicDescription">
-            <Form.Label>Project Description</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={5}
-              placeholder="Enter a description"
-              onChange={this.onDescriptionChange}
-            />
-          </Form.Group>
+      <Container className="page">
+        <Card className="form">
+          <div className="form__title">Create Project</div>
+          <Form>
+            <Form.Group controlId="formBasicTitle">
+              <Form.Label>Project Title</Form.Label>
+              <Form.Control
+                placeholder="Enter a title"
+                onChange={this.onTitleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicDescription">
+              <Form.Label>Project Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                placeholder="Enter a description"
+                onChange={this.onDescriptionChange}
+              />
+            </Form.Group>
 
-          <Button variant="primary" onClick={this.onCreateProject}>
-            Create Project
-          </Button>
-        </Form>
+            <Form.Group controlId="formTags">
+              <Form.Label>Project Tags</Form.Label>
+              <TagsInput onChange={this.onTagsChange} />
+              {!!this.state.tags.length && (
+                <div className="tags">
+                  {this.state.tags.map((tag, index) => {
+                    return (
+                      <div key={`tag-${index}`} className="tag">
+                        {tag}
+                        <span
+                          className="tag__icon fa fa-times-circle"
+                          onClick={this.onRemoveTag.bind(this, tag)}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </Form.Group>
+
+            <div className="form__footer">
+              <Button variant="primary" onClick={this.onCreateProject}>
+                Create Project
+              </Button>
+            </div>
+          </Form>
+        </Card>
       </Container>
+    );
+  }
+}
+
+class TagsInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: "",
+      tags: [],
+    };
+  }
+
+  onInputChange = (e) => {
+    let value = e.target.value;
+    let tags = TAGS.filter((tag) => {
+      return tag.toLowerCase().includes(value.toLowerCase());
+    });
+
+    this.setState({ value, tags });
+  };
+
+  onSelectTag = (tag) => {
+    this.props.onChange(tag);
+    this.setState({ value: "", tags: [] });
+  };
+
+  render() {
+    return (
+      <div className="">
+        <input
+          className="form-control tags-input"
+          value={this.state.value}
+          onChange={this.onInputChange}
+        />
+        {!!this.state.tags.length && (
+          <div className="tags-input__tags">
+            {this.state.tags.map((tag, index) => {
+              return (
+                <div
+                  key={`tag-item-${index}`}
+                  className="tags-input__tags__item"
+                  onClick={this.onSelectTag.bind(this, tag)}
+                >
+                  {tag}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     );
   }
 }
