@@ -12,10 +12,20 @@ class Project extends React.Component {
         <Card className="project-card">
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {this.props.academicID}
-            </Card.Subtitle>
             <Card.Text>{this.props.description}</Card.Text>
+            {!!(this.props.tags || []).length && (
+              <div className="single-project__tags">
+                <div className="tags">
+                  {this.props.tags.map((tag, index) => {
+                    return (
+                      <div key={`tag-${index}`} className="tag">
+                        {tag}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
             <Link to={`project/${this.props.projectid}`}>
               <Button variant="primary">View Project</Button>
             </Link>
