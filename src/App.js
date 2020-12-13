@@ -27,6 +27,7 @@ const initialState = {
     information: "",
     joined: "",
     type: "",
+    tags: [],
   },
 };
 
@@ -46,6 +47,7 @@ class App extends Component {
         information: data.information,
         joined: data.joined,
         type: data.type,
+        tags: data.tags,
       },
     });
   };

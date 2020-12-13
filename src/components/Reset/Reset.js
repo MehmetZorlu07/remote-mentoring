@@ -64,7 +64,9 @@ class Reset extends Component {
         <Card className="form">
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Enter email address for password reset</Form.Label>
+              <Form.Label>
+                Enter your email address for password reset:
+              </Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Email address"

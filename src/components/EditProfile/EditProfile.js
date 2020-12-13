@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import history from "../../history";
+import { TAGS } from "../../utils/config";
 
 class EditProfile extends React.Component {
   constructor() {
@@ -13,6 +14,7 @@ class EditProfile extends React.Component {
       email: "",
       information: "",
       type: "",
+      tags: [],
     };
   }
 
@@ -23,6 +25,9 @@ class EditProfile extends React.Component {
       information: this.props.user.information,
       type: this.props.user.type,
     });
+    if (this.props.user.tags != null) {
+      this.setState({ tags: this.props.user.tags });
+    }
   }
 
   onNameChange = (event) => {
@@ -41,6 +46,16 @@ class EditProfile extends React.Component {
     this.setState({ type: event.target.value });
   };
 
+  onTagsChange = (tag) => {
+    if (!this.state.tags.includes(tag)) {
+      this.setState({ tags: this.state.tags.concat([tag]) });
+    }
+  };
+
+  onRemoveTag = (tag) => {
+    this.setState({ tags: this.state.tags.filter((t) => t !== tag) });
+  };
+
   onUpdateProfile = () => {
     fetch("http://localhost:3000/updateProfile", {
       method: "put",
@@ -51,6 +66,7 @@ class EditProfile extends React.Component {
         email: this.state.email,
         information: this.state.information,
         type: this.state.type,
+        tags: this.state.tags,
       }),
     })
       .then((response) => response.json())
@@ -69,7 +85,7 @@ class EditProfile extends React.Component {
           <div className="form__title">Edit Profile</div>
           <Form>
             <Form.Group controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Name: </Form.Label>
               <Form.Control
                 defaultValue={this.state.name}
                 type="name"
@@ -77,7 +93,7 @@ class EditProfile extends React.Component {
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email address: </Form.Label>
               <Form.Control
                 defaultValue={this.state.email}
                 type="email"
@@ -85,7 +101,7 @@ class EditProfile extends React.Component {
               />
             </Form.Group>
             <Form.Group controlId="formBasicInformation">
-              <Form.Label>Information</Form.Label>
+              <Form.Label>Information: </Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
@@ -94,11 +110,30 @@ class EditProfile extends React.Component {
               />
             </Form.Group>
             <Form.Group controlId="formBasicType">
-              <Form.Label>Type</Form.Label>
+              <Form.Label>Type: </Form.Label>
               <Form.Control as="select" onChange={this.onTypeChange}>
                 <option>researcher</option>
                 <option>academic</option>
               </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="formTags">
+              <Form.Label>Interests: </Form.Label>
+              <TagsInput onChange={this.onTagsChange} />
+              {!!this.state.tags.length && (
+                <div className="tags">
+                  {this.state.tags.map((tag, index) => {
+                    return (
+                      <div key={`tag-${index}`} className="tag">
+                        {tag}
+                        <span
+                          className="tag__icon fa fa-times-circle"
+                          onClick={this.onRemoveTag.bind(this, tag)}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </Form.Group>
             <div className="form__footer">
               <Button variant="primary" onClick={this.onUpdateProfile}>
@@ -108,6 +143,58 @@ class EditProfile extends React.Component {
           </Form>
         </Card>
       </Container>
+    );
+  }
+}
+
+class TagsInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: "",
+      tags: [],
+    };
+  }
+
+  onInputChange = (e) => {
+    let value = e.target.value;
+    let tags = TAGS.filter((tag) => {
+      return tag.toLowerCase().includes(value.toLowerCase());
+    });
+
+    this.setState({ value, tags });
+  };
+
+  onSelectTag = (tag) => {
+    this.props.onChange(tag);
+    this.setState({ value: "", tags: [] });
+  };
+
+  render() {
+    return (
+      <div className="">
+        <input
+          className="form-control tags-input"
+          value={this.state.value}
+          onChange={this.onInputChange}
+        />
+        {!!this.state.tags.length && (
+          <div className="tags-input__tags">
+            {this.state.tags.map((tag, index) => {
+              return (
+                <div
+                  key={`tag-item-${index}`}
+                  className="tags-input__tags__item"
+                  onClick={this.onSelectTag.bind(this, tag)}
+                >
+                  {tag}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     );
   }
 }

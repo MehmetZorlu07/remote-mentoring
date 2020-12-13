@@ -15,10 +15,26 @@ class AccountPage extends React.Component {
           <div className="account__value">{this.props.user.name}</div>
           <div className="account__label">Email: </div>
           <div className="account__value">{this.props.user.email}</div>
-          <div className="account__label">Information: </div>
-          <div className="account__value">{this.props.user.type}</div>
           <div className="account__label">Type: </div>
+          <div className="account__value">{this.props.user.type}</div>
+          <div className="account__label">Information: </div>
           <div className="account__value">{this.props.user.information}</div>
+          {!!(this.props.user.tags || []).length && (
+            <>
+              <div className="account__label">Interests: </div>
+              <div className="single-project__tags">
+                <div className="tags">
+                  {this.props.user.tags.map((tag, index) => {
+                    return (
+                      <div key={`tag-${index}`} className="tag">
+                        {tag}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
+          )}
           <Link to={"/edit-profile"}>
             <Button variant="primary">Edit Profile</Button>
           </Link>

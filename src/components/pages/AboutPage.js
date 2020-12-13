@@ -1,11 +1,11 @@
 import React from "react";
-import Jumbotron from "react-bootstrap/Jumbotron";
+import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 
 function AboutPage() {
   return (
-    <Container>
-      <Jumbotron>
+    <Container className="page">
+      <Card className="form">
         <h1>About Us</h1>
         <p>
           {" "}
@@ -32,7 +32,7 @@ function AboutPage() {
           ipsum arcu, euismod et velit sed, tincidunt eleifend tortor.
           Vestibulum elit leo, eleifend sed odio ut, pretium placerat odio.{" "}
         </p>
-      </Jumbotron>
+      </Card>
     </Container>
   );
 }
