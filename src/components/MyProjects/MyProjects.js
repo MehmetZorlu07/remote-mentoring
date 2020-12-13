@@ -59,7 +59,7 @@ class MyProjects extends React.Component {
               projectid={project.projectid}
               name={project.name}
               description={project.description}
-              academicID={project.academicID}
+              tags={project.tags}
             />
           );
         }
@@ -73,7 +73,7 @@ class MyProjects extends React.Component {
               projectid={project.projectid}
               name={project.name}
               description={project.description}
-              academicID={project.academicID}
+              tags={project.tags}
             />
           );
         }
