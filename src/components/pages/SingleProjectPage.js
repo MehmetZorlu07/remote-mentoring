@@ -152,35 +152,47 @@ class SingleProjectPage extends React.Component {
     };
     return (
       <tr key={index}>
+        <td>{researcher.name}</td>
         <td>{researcher.email}</td>
-        <td>{researcher.information}</td>
         <td>{researcher.state}</td>
         <td>
-          <>
-            <Button variant="primary" keyprop={index} onClick={handleShow}>
-              Display
-            </Button>
-
+          <Button variant="primary" keyprop={index} onClick={handleShow}>
+            Display
+          </Button>
+          <Container className="page">
             <Modal show={this.state.show} onHide={this.handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>
-                  {this.state.researchers[this.state.researcherIndex].email}
+                  <div className="account__label">
+                    Researcher:{" "}
+                    {this.state.researchers[this.state.researcherIndex].name}
+                  </div>
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                {this.state.researchers[this.state.researcherIndex].information}
-              </Modal.Body>
-              <Modal.Footer>
-                <div>
-                  <p>Application State: </p>
+                <div className="account__label">Email: </div>
+                <div className="account__value">
+                  {this.state.researchers[this.state.researcherIndex].email}
+                </div>
+                <div className="account__label">Application State: </div>
+                <div className="account__value">
                   {this.state.researchers[this.state.researcherIndex].state}
                 </div>
+                <div className="account__label">Information: </div>
+                <div className="account__value">
+                  {
+                    this.state.researchers[this.state.researcherIndex]
+                      .information
+                  }
+                </div>
+              </Modal.Body>
+              <Modal.Footer className="form__footer">
                 <Button variant="secondary" onClick={this.handleClose}>
                   Close
                 </Button>
                 {this.state.researchers[this.state.researcherIndex].state ===
                   "applied" && (
-                  <div>
+                  <>
                     <Button
                       variant="danger"
                       onClick={() => this.changeApplicationState("declined")}
@@ -193,7 +205,7 @@ class SingleProjectPage extends React.Component {
                     >
                       Approve
                     </Button>
-                  </div>
+                  </>
                 )}
                 {this.state.researchers[this.state.researcherIndex].state ===
                   "approved" && (
@@ -215,7 +227,7 @@ class SingleProjectPage extends React.Component {
                 )}
               </Modal.Footer>
             </Modal>
-          </>
+          </Container>
         </td>
       </tr>
     );
@@ -288,8 +300,8 @@ class SingleProjectPage extends React.Component {
           <Table striped bordered hover>
             <thead>
               <tr>
+                <th>Name</th>
                 <th>Email</th>
-                <th>Information</th>
                 <th>State</th>
                 <th>Details</th>
               </tr>

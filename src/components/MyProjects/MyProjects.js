@@ -1,6 +1,8 @@
 import React from "react";
-import "./MyProjects.css";
 import Project from "../Project/Project";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class MyProjects extends React.Component {
   constructor(props) {
@@ -78,7 +80,18 @@ class MyProjects extends React.Component {
       }
     }
 
-    return <div className="grid-container">{projectsList}</div>;
+    return (
+      <Container className="page">
+        <h1 className="page__title">My Projects</h1>
+        <Row>
+          {projectsList.length ? (
+            projectsList
+          ) : (
+            <Col xs={12}>No projects found</Col>
+          )}
+        </Row>
+      </Container>
+    );
   }
 }
 

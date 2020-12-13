@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
+import Container from "react-bootstrap/Container";
 
 class Reset extends Component {
   constructor() {
@@ -59,8 +60,8 @@ class Reset extends Component {
 
   render() {
     return (
-      <div>
-        <Card style={{ width: "40rem" }}>
+      <Container className="page">
+        <Card className="form">
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Enter email address for password reset</Form.Label>
@@ -70,13 +71,15 @@ class Reset extends Component {
                 onChange={this.onEmailChange}
               />
             </Form.Group>
-            <Button variant="primary" onClick={this.onSubmitEmail}>
-              Send Email
-            </Button>
+            <div className="form__footer">
+              <Button variant="primary" onClick={this.onSubmitEmail}>
+                Send Email
+              </Button>
+            </div>
           </Form>
         </Card>
         <this.displayMessage />
-      </div>
+      </Container>
     );
   }
 }

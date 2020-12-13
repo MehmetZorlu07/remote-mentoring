@@ -66,7 +66,7 @@ class Register extends Component {
           <Form>
             <div className="form__title">Register</div>
             <Form.Group controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Name:</Form.Label>
               <Form.Control
                 type="name"
                 placeholder="Name"
@@ -74,7 +74,7 @@ class Register extends Component {
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email address:</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -83,7 +83,7 @@ class Register extends Component {
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -92,7 +92,7 @@ class Register extends Component {
             </Form.Group>
 
             <Form.Group controlId="formBasicInformation">
-              <Form.Label>Information</Form.Label>
+              <Form.Label>Information:</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
@@ -102,7 +102,7 @@ class Register extends Component {
             </Form.Group>
 
             <Form.Group controlId="formBasicType">
-              <Form.Label>Type</Form.Label>
+              <Form.Label>Type:</Form.Label>
               <Form.Control
                 as="select"
                 onChange={this.onTypeChange}
