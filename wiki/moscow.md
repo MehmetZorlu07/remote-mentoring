@@ -9,17 +9,17 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
 
 ## Must Have
 
-  * Private routing
-  * Forgot Password - Almost Done
+  * Private routing - Done
+  * Forgot Password -  Done
   * Withdraw applications of projects - Done
   * Notifications - Done
   * View applications (academics) and decide as approved/declined - Done
   
 ## Should Have
 
-  * Searching
-  * Filtering
-  * Tags
+  * Searching - Done
+  * Filtering - Done
+  * Tags - Done
   * Project capacity
   * Marking/reviewing system
   
