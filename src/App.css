@@ -7,6 +7,16 @@ body {
 .page {
   margin-top: 30px;
 }
+
+.page__container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content__wrap {
+  padding-bottom: 2.5rem;
+}
+
 .page__title {
   font-size: 28px;
   line-height: 32px;
