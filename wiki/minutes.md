@@ -39,3 +39,6 @@ I showed the new features to Dr. Olaosebikan which included seeing who applied t
 
 ## Week 11 - 03/12/2020 (Duration: 1.5 hours)
 This meeting was a special one as the application demonstrated to a researcher and an academic to get their general opinions. First, the application has shown to the academic and we got very useful feedback. According to her, putting a capacity on the project applications is a must have feature and dividing the project description into smaller pieces with more distinguished labels would be beneficial for academics. She also added that the matching algorithm would be too complicated due to the nature of the application and it is sufficient enough for academics to decide on the applications. Finally, she added that archiving past projects would be also beneficial. On the other hand, our researcher participant really liked the general idea of the application and its current version, even though it requires so many improvements. 
+
+## Week 12 
+(No meeting occured)
