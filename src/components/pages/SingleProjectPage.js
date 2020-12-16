@@ -51,6 +51,7 @@ class SingleProjectPage extends React.Component {
       .then((response) => response.json())
       .then((researcherProject) => {
         this.setState({ projectState: researcherProject.state });
+        this.getAllApplications();
       });
   };
 
@@ -114,11 +115,12 @@ class SingleProjectPage extends React.Component {
     })
       .then((response) => response.json())
       .then((researchersList) => {
-        this.setState({
-          researchers: researchersList,
-          counter: researchersList.length,
-        });
-        this.setDisplayState();
+        if (researchersList !== "not found") {
+          this.setState({
+            researchers: researchersList,
+            counter: researchersList.length,
+          });
+        }
       });
   };
 
@@ -260,7 +262,7 @@ class SingleProjectPage extends React.Component {
         <Card className="form">
           <h1 className="page__title">{this.state.project.name}</h1>
           <p className="page__description">
-            {this.state.project.description} {this.state.project.academicID}
+            {this.state.project.description} {this.state.project.academicID}{" "}
           </p>
           {!!(this.state.project.tags || []).length && (
             <div className="single-project__tags">
@@ -306,12 +308,19 @@ class SingleProjectPage extends React.Component {
                 <Button variant="primary">Edit Project</Button>
               </Link>
             )}
-            {this.state.project.academicid === this.props.userid && (
-              <Button onClick={this.getAllApplications} variant="warning">
-                Show Researchers{" "}
-                <Badge variant="light">{this.state.counter}</Badge>
-              </Button>
-            )}
+            {this.state.project.academicid === this.props.userid &&
+              this.state.counter > 0 && (
+                <Button onClick={this.setDisplayState} variant="warning">
+                  Show Researchers{" "}
+                  <Badge variant="light">{this.state.counter}</Badge>
+                </Button>
+              )}
+            {this.state.project.academicid === this.props.userid &&
+              this.state.counter === 0 && (
+                <Button variant="warning" disabled>
+                  No Applicants
+                </Button>
+              )}
             {this.state.project.academicid === this.props.userid && (
               <Button onClick={this.deleteProject} variant="danger">
                 <span className="fa fa-trash" />
