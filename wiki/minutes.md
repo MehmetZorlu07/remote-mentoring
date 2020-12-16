@@ -24,3 +24,18 @@ I have described the improvements made on the app to Dr. Olaosebikan and provide
 
 ## Week 7 - 03/11/2020 (Duration: 0)
 Meeting postponed. 
+
+
+## Week 8 - 10/11/2020
+(No information)
+
+
+## Week 9 - 19/11/2020 (Duration: 0.5 hour)
+In this meeting, I have demonstrated to Dr. Olaosebikan what I have acheived in the past week. More importantly, we have agreed on the Moscow Principles I have prepared for the remaining of the project in order to prioritise the features. An important criteria affecting the principles was to decreasing the focus on each aspect that would slow down the testing phase of the app such as admin interface. Finally, we have decided on to put the image gathering API to pause until a good solution is found. 
+
+
+## Week 10 - 26/11/2020 (Duration: 0.5 hour)
+I showed the new features to Dr. Olaosebikan which included seeing who applied to projects from the perspective of academics, academics being able to decide on whether or not to approve a project application of a researcher, and finally the ability of a researcher to withdraw from an applied project. Additionally, we have agreed on to demonstrate the application to a researcher and an academic to obtain a certain amount of feedback about the general idea of the application and the user experience/interface. 
+
+## Week 11 - 03/12/2020 (Duration: 1.5 hours)
+This meeting was a special one as the application demonstrated to a researcher and an academic to get their general opinions. First, the application has shown to the academic and we got very useful feedback. According to her, putting a capacity on the project applications is a must have feature and dividing the project description into smaller pieces with more distinguished labels would be beneficial for academics. She also added that the matching algorithm would be too complicated due to the nature of the application and it is sufficient enough for academics to decide on the applications. Finally, she added that archiving past projects would be also beneficial. On the other hand, our researcher participant really liked the general idea of the application and its current version, even though it requires so many improvements. 
