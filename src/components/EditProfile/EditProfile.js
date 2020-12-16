@@ -42,10 +42,6 @@ class EditProfile extends React.Component {
     this.setState({ information: event.target.value });
   };
 
-  onTypeChange = (event) => {
-    this.setState({ type: event.target.value });
-  };
-
   onTagsChange = (tag) => {
     if (!this.state.tags.includes(tag)) {
       this.setState({ tags: this.state.tags.concat([tag]) });
@@ -111,10 +107,11 @@ class EditProfile extends React.Component {
             </Form.Group>
             <Form.Group controlId="formBasicType">
               <Form.Label>Type: </Form.Label>
-              <Form.Control as="select" onChange={this.onTypeChange}>
-                <option>researcher</option>
-                <option>academic</option>
-              </Form.Control>
+              <Form.Control
+                type="text"
+                placeholder={this.state.type}
+                readOnly
+              />
             </Form.Group>
             <Form.Group controlId="formTags">
               <Form.Label>Interests: </Form.Label>
