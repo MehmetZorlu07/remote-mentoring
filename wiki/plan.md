@@ -43,7 +43,12 @@ Week-by-week plan for the whole project. Update this as you go along.
 * **Week 10**
   * Implement the remaining features in must have part of Moscow Principles (3 features)
 * **Week 11 [PROJECT WEEK]**
+  * Start improving the User Interface. 
+  * Implement the features in should have part of Moscow Principles 
+  * Start planning the evaluation. 
 * **Week 12 [PROJECT WEEK]** Status report submitted.
+  * Continue improving the UI.
+  * Continue implementing the Moscow Principle features. 
 
 ## Winter break
 
