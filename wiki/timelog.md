@@ -269,3 +269,59 @@
 
 * *3 hours* Completed withdrawal functionality. 
 * *0.5 hour* Meeting with the supervisor.
+
+## Week 11 
+
+### 1 Dec 2020
+
+* *2 hours* Researched about the e-mail API to be used.
+* *3 hours* Started improving the notification system.
+
+### 2 Dec 2020 
+
+* *5 hours* Completed improving the notification system.  
+
+### 3 Dec 2020 
+
+* *5 hours* Completed the e-mail API which sends the applicant an e-mail on decision.
+
+## Week 12 
+
+### 8 Dec 2020 
+
+* *3 hours* Researched on private routing more detailly. 
+* *6 hours* Implemented private routing on all parts of the application. 
+
+### 9 Dec 2020 
+
+* *5 hours* Fixed the container bug on the frontend. 
+* *2 hours* Re-planning the rest of the project. 
+
+### 10 Dec 2020 
+
+* *8 hours* Improved visually almost all parts of the user interface. 
+
+### 11 Dec 2020 
+
+* *6 hours* Added the "tags" feature to projects in the application.
+* *3 hours* Search functionality is added to the projects page. 
+
+### 12 Dec 2020 
+
+* *3 hours* Improved the remaining visuals of the frontend.
+* *4 hours* Added tags to the users as well. 
+
+## Week 13 
+
+### 14 Dec 2020 
+
+* *6 hours* Researched on tokens, cookies and sessions. 
+
+### 15 Dec 2020 
+
+* *6 hours* Added the sessions and tokens feature. 
+* *3 hours* Forgot password feature is added. 
+
+### 16 Dec 2020 
+
+* *3 hours* Wiki is updated. 
