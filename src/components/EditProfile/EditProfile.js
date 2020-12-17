@@ -30,14 +30,6 @@ class EditProfile extends React.Component {
     }
   }
 
-  onNameChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
-
-  onEmailChange = (event) => {
-    this.setState({ email: event.target.value });
-  };
-
   onInformationChange = (event) => {
     this.setState({ information: event.target.value });
   };
@@ -83,17 +75,17 @@ class EditProfile extends React.Component {
             <Form.Group controlId="formBasicName">
               <Form.Label>Name: </Form.Label>
               <Form.Control
-                defaultValue={this.state.name}
-                type="name"
-                onChange={this.onNameChange}
+                type="text"
+                placeholder={this.state.name}
+                readOnly
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address: </Form.Label>
               <Form.Control
-                defaultValue={this.state.email}
-                type="email"
-                onChange={this.onEmailChange}
+                type="text"
+                placeholder={this.state.email}
+                readOnly
               />
             </Form.Group>
             <Form.Group controlId="formBasicInformation">
