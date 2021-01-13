@@ -13,6 +13,7 @@ class CreateProject extends React.Component {
     this.state = {
       title: "",
       description: "",
+      requirements: "",
       tags: [],
     };
   }
@@ -23,6 +24,10 @@ class CreateProject extends React.Component {
 
   onDescriptionChange = (event) => {
     this.setState({ description: event.target.value });
+  };
+
+  onRequirementsChange = (event) => {
+    this.setState({ requirements: event.target.value });
   };
 
   onTagsChange = (tag) => {
@@ -44,6 +49,7 @@ class CreateProject extends React.Component {
         description: this.state.description,
         academicid: this.props.academicid,
         tags: this.state.tags,
+        requirements: this.state.requirements,
       }),
     })
       .then((response) => response.json())
@@ -76,7 +82,15 @@ class CreateProject extends React.Component {
                 onChange={this.onDescriptionChange}
               />
             </Form.Group>
-
+            <Form.Group controlId="formBasicRequirements">
+              <Form.Label>Minimum Requirements</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={1}
+                placeholder="Example: MSc or MA"
+                onChange={this.onRequirementsChange}
+              />
+            </Form.Group>
             <Form.Group controlId="formTags">
               <Form.Label>Project Tags</Form.Label>
               <TagsInput onChange={this.onTagsChange} />

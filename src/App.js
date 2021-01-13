@@ -15,6 +15,7 @@ import EditProject from "./components/EditProject/EditProject";
 import EditProfile from "./components/EditProfile/EditProfile";
 import Reset from "./components/Reset/Reset";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
+import EditCredentials from "./components/EditCredentials/EditCredentials";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -178,6 +179,17 @@ class App extends Component {
                       user={this.state.user}
                       loadUser={this.loadUser}
                     />
+                  ) : (
+                    <Redirect to="/sign-in" />
+                  )
+                }
+              />
+              <Route
+                path="/edit-credentials"
+                exact
+                render={() =>
+                  this.state.isSignedIn ? (
+                    <EditCredentials user={this.state.user} />
                   ) : (
                     <Redirect to="/sign-in" />
                   )

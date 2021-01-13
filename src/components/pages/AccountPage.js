@@ -35,9 +35,14 @@ class AccountPage extends React.Component {
               </div>
             </>
           )}
-          <Link to={"/edit-profile"}>
-            <Button variant="primary">Edit Profile</Button>
-          </Link>
+          <div className="single-project__actions">
+            <Link to={"/edit-profile"}>
+              <Button variant="primary">Edit Profile</Button>
+            </Link>
+            <Link to={"/edit-credentials"}>
+              <Button variant="warning">Reset Password</Button>
+            </Link>
+          </div>
         </Card>
       </Container>
     );

@@ -12,7 +12,10 @@ class Project extends React.Component {
         <Card className="project-card">
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
-            <Card.Text>{this.props.description}</Card.Text>
+            <Card.Text>
+              <div>{this.props.description}</div>
+              <div>Minimum Requirements: {this.props.requirements}</div>
+            </Card.Text>
             {!!(this.props.tags || []).length && (
               <div className="single-project__tags">
                 <div className="tags">

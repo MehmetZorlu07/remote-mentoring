@@ -262,7 +262,10 @@ class SingleProjectPage extends React.Component {
         <Card className="form">
           <h1 className="page__title">{this.state.project.name}</h1>
           <p className="page__description">
-            {this.state.project.description} {this.state.project.academicID}{" "}
+            <div>{this.state.project.description} </div>
+            {this.state.project.requirements !== null && (
+              <div>Minimum Requirements: {this.state.project.requirements}</div>
+            )}
           </p>
           {!!(this.state.project.tags || []).length && (
             <div className="single-project__tags">

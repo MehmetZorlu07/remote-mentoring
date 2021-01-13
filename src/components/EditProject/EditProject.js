@@ -14,6 +14,7 @@ class EditProject extends React.Component {
       title: "",
       description: "",
       tags: [],
+      requirements: "",
     };
 
     this.getProject = this.getProject.bind(this);
@@ -30,6 +31,10 @@ class EditProject extends React.Component {
 
   onDescriptionChange = (event) => {
     this.setState({ description: event.target.value });
+  };
+
+  onRequirementsChange = (event) => {
+    this.setState({ requirements: event.target.value });
   };
 
   onTagsChange = (tag) => {
@@ -51,6 +56,7 @@ class EditProject extends React.Component {
         name: this.state.title,
         description: this.state.description,
         tags: this.state.tags,
+        requirements: this.state.requirements,
       }),
     })
       .then((response) => response.json())
@@ -68,6 +74,7 @@ class EditProject extends React.Component {
         this.setState({ project: data });
         this.setState({ title: data.name });
         this.setState({ description: data.description });
+        this.setState({ requirements: data.requirements });
         if (data.tags != null) {
           this.setState({ tags: data.tags });
         }
@@ -94,6 +101,15 @@ class EditProject extends React.Component {
                 rows={5}
                 defaultValue={this.state.project.description}
                 onChange={this.onDescriptionChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicRequirements">
+              <Form.Label>Minimum Requirements</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={1}
+                defaultValue={this.state.project.requirements}
+                onChange={this.onRequirementsChange}
               />
             </Form.Group>
             <Form.Group controlId="formTags">

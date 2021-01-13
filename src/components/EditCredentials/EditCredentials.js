@@ -5,25 +5,22 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import history from "../../history";
 
-class ResetPassword extends Component {
+class EditCredentials extends Component {
   constructor() {
     super();
     this.state = {
-      password: "",
+      oldPassword: "",
+      newPassword: "",
       confirmPassword: "",
-      token: "",
     };
   }
 
-  componentDidMount() {
-    this.setState({ token: this.props.match.params.token });
-    if (this.state.token.length < 25) {
-      history.push("/");
-    }
-  }
+  onOldPasswordChange = (event) => {
+    this.setState({ oldPassword: event.target.value });
+  };
 
-  onPasswordChange = (event) => {
-    this.setState({ password: event.target.value });
+  onNewPasswordChange = (event) => {
+    this.setState({ newPassword: event.target.value });
   };
 
   onConfirmPasswordChange = (event) => {
@@ -31,20 +28,22 @@ class ResetPassword extends Component {
   };
 
   onSubmitPassword = () => {
-    if (this.state.password === this.state.confirmPassword) {
-      fetch("http://localhost:3000/reset-password/" + this.state.token, {
+    if (this.state.newPassword === this.state.confirmPassword) {
+      fetch("http://localhost:3000/edit-credentials", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          password: this.state.password,
+          email: this.props.user.email,
+          oldPassword: this.state.oldPassword,
+          newPassword: this.state.newPassword,
         }),
       })
         .then((response) => response.json())
         .then((user) => {
-          history.push("/sign-in");
+          history.push("/account");
         });
     } else {
-      console.log("passwords dont match");
+      console.log("passwords don't match");
     }
   };
 
@@ -53,12 +52,20 @@ class ResetPassword extends Component {
       <Container className="page">
         <Card className="form">
           <Form>
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group controlId="formBasicNewPassword">
+              <Form.Label>Enter your current password:</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Current Password"
+                onChange={this.onOldPasswordChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicOldPassword">
               <Form.Label>Enter a new password:</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="New Password"
-                onChange={this.onPasswordChange}
+                onChange={this.onNewPasswordChange}
               />
             </Form.Group>
             <Form.Group controlId="formBasicConfirmPassword">
@@ -81,4 +88,4 @@ class ResetPassword extends Component {
   }
 }
 
-export default ResetPassword;
+export default EditCredentials;
