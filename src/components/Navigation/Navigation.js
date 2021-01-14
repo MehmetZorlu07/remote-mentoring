@@ -39,6 +39,9 @@ class Navigation extends Component {
               <Link className="nav-link" to="/about">
                 About Us
               </Link>
+              <Link className="nav-link" to="/contact-us">
+                Contact Us
+              </Link>
               {this.props.isSignedIn && (
                 <Link className="nav-link" to="/account">
                   My Account

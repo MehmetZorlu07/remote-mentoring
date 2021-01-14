@@ -24,7 +24,7 @@ class ProjectsPage extends React.Component {
     let text = e.target.value;
     this.setState({
       projects: this.state.allProjects.filter((project) => {
-        return project.name.toLowerCase().includes(text);
+        return project.name.toLowerCase().includes(text.toLowerCase());
       }),
     });
   };

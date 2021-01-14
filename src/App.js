@@ -16,6 +16,7 @@ import EditProfile from "./components/EditProfile/EditProfile";
 import Reset from "./components/Reset/Reset";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import EditCredentials from "./components/EditCredentials/EditCredentials";
+import ContactPage from "./components/pages/ContactPage";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -205,6 +206,7 @@ class App extends Component {
                   />
                 )}
               />
+              <Route path="/contact-us" exact render={() => <ContactPage />} />
               <Route path="/reset" exact render={() => <Reset />} />
               <Route
                 path="/register"
