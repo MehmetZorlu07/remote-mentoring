@@ -311,7 +311,7 @@
 * *3 hours* Improved the remaining visuals of the frontend.
 * *4 hours* Added tags to the users as well. 
 
-## Week 13 
+## Week 13 ????????
 
 ### 14 Dec 2020 
 
@@ -325,3 +325,23 @@
 ### 16 Dec 2020 
 
 * *3 hours* Wiki is updated. 
+
+## Week 13 
+
+### 12 Jan 2021
+
+* *1 hour* Meeting with the supervisor.
+
+### 13 Jan 2021 
+
+* *1.5 hours* Planning the order of features to be implemented. 
+* *1.5 hours* Edit Credentials feature bug is fixed. 
+
+### 14 Jan 2021
+
+* *3 hours* Contact Us feature is implemented. 
+
+### 15 Jan 2021
+
+* *3 hours* Planning the project capacity feature.
+* *1 hour* Updated wiki.
