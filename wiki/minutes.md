@@ -42,3 +42,8 @@ This meeting was a special one as the application demonstrated to a researcher a
 
 ## Week 12 
 (No meeting occured)
+
+# Winter Semester
+
+## Week 13 (Duration: 1 hour) 
+At this meeting, I have demonstrated to Dr. Olaosebikan what has been achieved since the previous meeting. We have found some missing and wrong parts throughout the demonstration such as: the example field text being missing in the project tags field, the example field text in the minimum requirements being ambigous so, more descriptive text will be added like "good knowledge of Python". 
