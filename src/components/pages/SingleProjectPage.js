@@ -6,6 +6,8 @@ import Modal from "react-bootstrap/Modal";
 import Badge from "react-bootstrap/Badge";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import "./SingleProjectPage.css";
 
 class SingleProjectPage extends React.Component {
@@ -263,6 +265,10 @@ class SingleProjectPage extends React.Component {
           <h1 className="page__title">{this.state.project.name}</h1>
           <p className="page__description">
             <div>{this.state.project.description} </div>
+            <br />
+            {this.state.project.academicid === this.props.userid && (
+              <div>Project Capacity: {this.state.project.capacity} </div>
+            )}
             {this.state.project.requirements !== null && (
               <div>Minimum Requirements: {this.state.project.requirements}</div>
             )}
@@ -284,10 +290,28 @@ class SingleProjectPage extends React.Component {
           )}
           <div className="single-project__actions">
             {this.props.usertype === "researcher" &&
-              this.state.projectState === undefined && (
+              this.state.projectState === undefined &&
+              this.state.counter < this.state.project.capacity && (
                 <Button onClick={this.applyProject} variant="primary">
                   Apply
                 </Button>
+              )}
+            {this.props.usertype === "researcher" &&
+              this.state.projectState === undefined &&
+              this.state.counter >= this.state.project.capacity && (
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id="tooltip-disabled">
+                      Project capacity is full.
+                    </Tooltip>
+                  }
+                >
+                  <span className="d-inline-block">
+                    <Button disabled style={{ pointerEvents: "none" }}>
+                      Apply
+                    </Button>
+                  </span>
+                </OverlayTrigger>
               )}
             {this.props.usertype === "researcher" &&
               this.state.projectState === "applied" && (

@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import history from "../../history";
 import "./CreateProject.css";
+import RangeSlider from "react-bootstrap-range-slider";
 import { TAGS } from "../../utils/config";
 
 class CreateProject extends React.Component {
@@ -15,6 +16,7 @@ class CreateProject extends React.Component {
       description: "",
       requirements: "",
       tags: [],
+      rangeValue: 1,
     };
   }
 
@@ -40,6 +42,10 @@ class CreateProject extends React.Component {
     this.setState({ tags: this.state.tags.filter((t) => t !== tag) });
   };
 
+  onRangeChange = (event) => {
+    this.setState({ rangeValue: event.target.value });
+  };
+
   onCreateProject = () => {
     fetch("http://localhost:3000/createProject", {
       method: "post",
@@ -50,6 +56,7 @@ class CreateProject extends React.Component {
         academicid: this.props.academicid,
         tags: this.state.tags,
         requirements: this.state.requirements,
+        rangeValue: this.state.rangeValue,
       }),
     })
       .then((response) => response.json())
@@ -87,7 +94,7 @@ class CreateProject extends React.Component {
               <Form.Control
                 as="textarea"
                 rows={1}
-                placeholder="Example: MSc or MA"
+                placeholder="Example: MSc or MA, Good knowledge of Python"
                 onChange={this.onRequirementsChange}
               />
             </Form.Group>
@@ -110,7 +117,13 @@ class CreateProject extends React.Component {
                 </div>
               )}
             </Form.Group>
-
+            <Form.Group controlId="formBasicCapacity">
+              <Form.Label>Project Capacity</Form.Label>
+              <RangeSlider
+                value={this.state.rangeValue}
+                onChange={this.onRangeChange}
+              />
+            </Form.Group>
             <div className="form__footer">
               <Button variant="primary" onClick={this.onCreateProject}>
                 Create Project
@@ -154,6 +167,7 @@ class TagsInput extends React.Component {
           className="form-control tags-input"
           value={this.state.value}
           onChange={this.onInputChange}
+          placeholder="Example: Mathematics"
         />
         {!!this.state.tags.length && (
           <div className="tags-input__tags">

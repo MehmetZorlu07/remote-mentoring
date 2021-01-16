@@ -167,6 +167,7 @@ class TagsInput extends React.Component {
           className="form-control tags-input"
           value={this.state.value}
           onChange={this.onInputChange}
+          placeholder="Example: Mathematics"
         />
         {!!this.state.tags.length && (
           <div className="tags-input__tags">

@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import history from "../../history";
+import RangeSlider from "react-bootstrap-range-slider";
 import { TAGS } from "../../utils/config";
 
 class EditProject extends React.Component {
@@ -15,6 +16,7 @@ class EditProject extends React.Component {
       description: "",
       tags: [],
       requirements: "",
+      rangeValue: 1,
     };
 
     this.getProject = this.getProject.bind(this);
@@ -47,6 +49,10 @@ class EditProject extends React.Component {
     this.setState({ tags: this.state.tags.filter((t) => t !== tag) });
   };
 
+  onRangeChange = (event) => {
+    this.setState({ rangeValue: event.target.value });
+  };
+
   onApplyChanges = () => {
     fetch("http://localhost:3000/applyChanges", {
       method: "put",
@@ -57,6 +63,7 @@ class EditProject extends React.Component {
         description: this.state.description,
         tags: this.state.tags,
         requirements: this.state.requirements,
+        rangeValue: this.state.rangeValue,
       }),
     })
       .then((response) => response.json())
@@ -75,6 +82,7 @@ class EditProject extends React.Component {
         this.setState({ title: data.name });
         this.setState({ description: data.description });
         this.setState({ requirements: data.requirements });
+        this.setState({ rangeValue: data.capacity });
         if (data.tags != null) {
           this.setState({ tags: data.tags });
         }
@@ -110,6 +118,7 @@ class EditProject extends React.Component {
                 rows={1}
                 defaultValue={this.state.project.requirements}
                 onChange={this.onRequirementsChange}
+                placeholder="Example: MSc or MA, Good knowledge of Python"
               />
             </Form.Group>
             <Form.Group controlId="formTags">
@@ -130,6 +139,14 @@ class EditProject extends React.Component {
                   })}
                 </div>
               )}
+            </Form.Group>
+            <Form.Group controlId="formBasicCapacity">
+              <Form.Label>Project Capacity</Form.Label>
+              <RangeSlider
+                value={this.state.rangeValue}
+                onChange={this.onRangeChange}
+                min={1}
+              />
             </Form.Group>
             <div className="form__footer">
               <Button variant="primary" onClick={this.onApplyChanges}>
@@ -174,6 +191,7 @@ class TagsInput extends React.Component {
           className="form-control tags-input"
           value={this.state.value}
           onChange={this.onInputChange}
+          placeholder="Example: Mathematics"
         />
         {!!this.state.tags.length && (
           <div className="tags-input__tags">
