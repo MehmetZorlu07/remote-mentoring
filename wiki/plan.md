@@ -55,6 +55,8 @@ Week-by-week plan for the whole project. Update this as you go along.
 ## Spring Semester
 
 * **Week 13**
+  * Implement the remaining features from the semester 1 (In Moscow principles).
+  * Implement the open, closed, ongoing projects feature. 
 * **Week 14**
 * **Week 15**
 * **Week 16**
