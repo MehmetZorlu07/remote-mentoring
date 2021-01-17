@@ -57,6 +57,7 @@ class CreateProject extends React.Component {
         tags: this.state.tags,
         requirements: this.state.requirements,
         rangeValue: this.state.rangeValue,
+        status: "open",
       }),
     })
       .then((response) => response.json())
@@ -122,6 +123,7 @@ class CreateProject extends React.Component {
               <RangeSlider
                 value={this.state.rangeValue}
                 onChange={this.onRangeChange}
+                min={1}
               />
             </Form.Group>
             <div className="form__footer">

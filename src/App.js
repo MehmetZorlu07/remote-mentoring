@@ -5,7 +5,9 @@ import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import AccountPage from "./components/pages/AccountPage";
-import ProjectsPage from "./components/pages/ProjectsPage";
+import OpenProjects from "./components/pages/OpenProjects";
+import ClosedProjects from "./components/pages/ClosedProjects";
+import OngoingProjects from "./components/pages/OngoingProjects";
 import MyProjects from "./components/MyProjects/MyProjects";
 import Register from "./components/Register/Register";
 import SignIn from "./components/Signin/Signin";
@@ -138,7 +140,21 @@ class App extends Component {
                   )
                 }
               />
-              <Route path="/projects" exact render={() => <ProjectsPage />} />
+              <Route
+                path="/open-projects"
+                exact
+                render={() => <OpenProjects />}
+              />
+              <Route
+                path="/ongoing-projects"
+                exact
+                render={() => <OngoingProjects />}
+              />
+              <Route
+                path="/closed-projects"
+                exact
+                render={() => <ClosedProjects />}
+              />
               <Route
                 path="/my-projects"
                 exact

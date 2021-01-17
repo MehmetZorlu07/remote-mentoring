@@ -272,6 +272,9 @@ class SingleProjectPage extends React.Component {
             {this.state.project.requirements !== null && (
               <div>Minimum Requirements: {this.state.project.requirements}</div>
             )}
+            {this.state.project.academicid === this.props.userid && (
+              <div>Project Status: {this.state.project.status} </div>
+            )}
           </p>
           {!!(this.state.project.tags || []).length && (
             <div className="single-project__tags">

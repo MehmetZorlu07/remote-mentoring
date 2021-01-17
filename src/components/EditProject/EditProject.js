@@ -17,6 +17,7 @@ class EditProject extends React.Component {
       tags: [],
       requirements: "",
       rangeValue: 1,
+      status: "",
     };
 
     this.getProject = this.getProject.bind(this);
@@ -53,6 +54,10 @@ class EditProject extends React.Component {
     this.setState({ rangeValue: event.target.value });
   };
 
+  onStatusChange = (event) => {
+    this.setState({ status: event.target.value });
+  };
+
   onApplyChanges = () => {
     fetch("http://localhost:3000/applyChanges", {
       method: "put",
@@ -64,6 +69,7 @@ class EditProject extends React.Component {
         tags: this.state.tags,
         requirements: this.state.requirements,
         rangeValue: this.state.rangeValue,
+        status: this.state.status,
       }),
     })
       .then((response) => response.json())
@@ -83,11 +89,14 @@ class EditProject extends React.Component {
         this.setState({ description: data.description });
         this.setState({ requirements: data.requirements });
         this.setState({ rangeValue: data.capacity });
+        this.setState({ status: data.status });
         if (data.tags != null) {
           this.setState({ tags: data.tags });
         }
       });
   };
+
+  options = ["open", "ongoing", "closed"];
 
   render() {
     return (
@@ -147,6 +156,18 @@ class EditProject extends React.Component {
                 onChange={this.onRangeChange}
                 min={1}
               />
+            </Form.Group>
+            <Form.Group controlId="formBasicStatus">
+              <Form.Label>Project Status</Form.Label>
+              <Form.Control
+                as="select"
+                onChange={this.onStatusChange}
+                value={this.state.status}
+              >
+                <option>open</option>
+                <option>ongoing</option>
+                <option>closed</option>
+              </Form.Control>
             </Form.Group>
             <div className="form__footer">
               <Button variant="primary" onClick={this.onApplyChanges}>

@@ -62,6 +62,7 @@ class ContactPage extends Component {
     return (
       <Container className="page">
         <Card className="form">
+          <div className="form__title">Contact Us</div>
           <Form>
             <Form.Group controlId="formBasicName">
               <Form.Label>Enter your name:</Form.Label>

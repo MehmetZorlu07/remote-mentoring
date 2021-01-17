@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import history from "../../history";
 
 class Navigation extends Component {
   constructor(props) {
@@ -28,9 +30,24 @@ class Navigation extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Link className="nav-link" to="/projects">
-                Projects
-              </Link>
+              <NavDropdown title="Projects" id="basic-nav-dropdown">
+                <NavDropdown.Item
+                  onSelect={() => history.push("/open-projects")}
+                >
+                  Open Projects
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onSelect={() => history.push("/ongoing-projects")}
+                >
+                  Ongoing Projects
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onSelect={() => history.push("/closed-projects")}
+                >
+                  Closed Projects
+                </NavDropdown.Item>
+              </NavDropdown>
+
               {this.props.userType === "academic" && (
                 <Link className="nav-link" to="/create-project">
                   Create Project
