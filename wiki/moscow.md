@@ -20,7 +20,7 @@ Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
   * Searching - Done
   * Filtering - Done
   * Tags - Done
-  * Project capacity
+  * Project capacity - Done
   * Marking/reviewing system
   
 ## Could Have 
