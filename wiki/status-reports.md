@@ -33,3 +33,8 @@ The functionality for displaying all the researchers related to a project is imp
 
 ## Status Report of Week 11
 (Sent in a video recording format via OneDrive) 
+
+# Spring Semester
+
+## Status Report of Week 13
+A contact us form page has been created where the users must tick a reCaptcha made by Google in order to prove that they are not a robot. This will minimise the spam e-mails. To add to this, the project capacity feature has been implemented which I will demonstrate how it's used and how it affects the users. After this feature, open/ongoing/closed projects feature has been implemented to the application. Finally, the issues we discussed in the last meeting have been fixed which includes: 1) The example field placeholder for Projects Tags was missing, 2) The example field placeholder for minimum requirements was ambigous. My aim for today before the meeting is to start implementing the marking/reviewing system. 
