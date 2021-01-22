@@ -58,6 +58,8 @@ Week-by-week plan for the whole project. Update this as you go along.
   * Implement the remaining features from the semester 1 (In Moscow principles).
   * Implement the open, closed, ongoing projects feature. 
 * **Week 14**
+  * Finish the remaining features. 
+  * Research about the institutional validation of academics. 
 * **Week 15**
 * **Week 16**
 * **Week 17**
