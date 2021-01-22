@@ -272,9 +272,7 @@ class SingleProjectPage extends React.Component {
             {this.state.project.requirements !== null && (
               <div>Minimum Requirements: {this.state.project.requirements}</div>
             )}
-            {this.state.project.academicid === this.props.userid && (
-              <div>Project Status: {this.state.project.status} </div>
-            )}
+            <div>Project Status: {this.state.project.status} </div>
           </p>
           {!!(this.state.project.tags || []).length && (
             <div className="single-project__tags">
@@ -294,6 +292,7 @@ class SingleProjectPage extends React.Component {
           <div className="single-project__actions">
             {this.props.usertype === "researcher" &&
               this.state.projectState === undefined &&
+              this.state.project.status === "open" &&
               this.state.counter < this.state.project.capacity && (
                 <Button onClick={this.applyProject} variant="primary">
                   Apply

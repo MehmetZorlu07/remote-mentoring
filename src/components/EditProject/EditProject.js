@@ -155,6 +155,7 @@ class EditProject extends React.Component {
                 value={this.state.rangeValue}
                 onChange={this.onRangeChange}
                 min={1}
+                max={20}
               />
             </Form.Group>
             <Form.Group controlId="formBasicStatus">

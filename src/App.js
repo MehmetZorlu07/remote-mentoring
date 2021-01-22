@@ -19,6 +19,7 @@ import Reset from "./components/Reset/Reset";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import EditCredentials from "./components/EditCredentials/EditCredentials";
 import ContactPage from "./components/pages/ContactPage";
+import AdminPage from "./components/pages/AdminPage";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -170,7 +171,8 @@ class App extends Component {
                 path="/create-project"
                 exact
                 render={() =>
-                  this.state.user.type === "academic" ? (
+                  this.state.user.type === "academic" ||
+                  this.state.user.type === "admin" ? (
                     <CreateProject academicid={this.state.user.id} />
                   ) : (
                     <Redirect to="/sign-in" />
@@ -181,7 +183,8 @@ class App extends Component {
                 exact
                 path="/edit-project/:projectid"
                 render={(props) =>
-                  this.state.user.type === "academic" ? (
+                  this.state.user.type === "academic" ||
+                  this.state.user.type === "admin" ? (
                     <EditProject {...props} />
                   ) : (
                     <Redirect to="/sign-in" />
@@ -246,6 +249,17 @@ class App extends Component {
                     usertype={this.state.user.type}
                   />
                 )}
+              />
+              <Route
+                path="/admin-page"
+                exact
+                render={() =>
+                  this.state.isSignedIn && this.state.user.type === "admin" ? (
+                    <AdminPage user={this.state.user} />
+                  ) : (
+                    <Redirect to="/sign-in" />
+                  )
+                }
               />
             </div>
             <Footer />
