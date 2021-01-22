@@ -345,3 +345,29 @@
 
 * *3 hours* Planning the project capacity feature.
 * *1 hour* Updated wiki.
+
+### 16 Jan 2021
+
+* *3 hours* Implemented the project capacity feature.
+
+### 17 Jan 2021
+
+* *3 hours* Implemented the project status as open/closed/ongoing.
+
+### 19 Jan 2021
+
+* *1 hour* Meeting with the supervisor.
+* *0.5 hours* Updated wiki.
+
+### 20 Jan 2021
+
+* *1 hour* Set-up the dissertation on Overlay.
+
+### 22 Jan 2021
+
+* *2 hours* Improved the style of the application.
+
+### 22 Jan 2021
+
+* *3 hours* Implemented admin interface.
+* *0.5 hours* Updated wiki.
