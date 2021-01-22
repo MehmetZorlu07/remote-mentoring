@@ -354,6 +354,8 @@
 
 * *3 hours* Implemented the project status as open/closed/ongoing.
 
+## Week 14 
+
 ### 19 Jan 2021
 
 * *1 hour* Meeting with the supervisor.
