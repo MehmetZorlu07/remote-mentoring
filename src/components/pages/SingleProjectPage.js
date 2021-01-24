@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import MarkingModal from "../MarkingModal/MarkingModal";
 import "./SingleProjectPage.css";
 
 class SingleProjectPage extends React.Component {
@@ -16,6 +17,7 @@ class SingleProjectPage extends React.Component {
     this.state = {
       project: {},
       projectState: "",
+      projectRating: null,
       display: false,
       researchers: [],
       show: false,
@@ -53,6 +55,7 @@ class SingleProjectPage extends React.Component {
       .then((response) => response.json())
       .then((researcherProject) => {
         this.setState({ projectState: researcherProject.state });
+        this.setState({ projectRating: researcherProject.ratingbyresearcher });
         this.getAllApplications();
       });
   };
@@ -316,7 +319,8 @@ class SingleProjectPage extends React.Component {
                 </OverlayTrigger>
               )}
             {this.props.usertype === "researcher" &&
-              this.state.projectState === "applied" && (
+              this.state.projectState === "applied" &&
+              this.state.project.status === "open" && (
                 <div>
                   <h4>You have applied to this project.</h4>
                   <Button onClick={this.withdrawApplication} variant="primary">
@@ -325,11 +329,13 @@ class SingleProjectPage extends React.Component {
                 </div>
               )}
             {this.props.usertype === "researcher" &&
-              this.state.projectState === "approved" && (
+              this.state.projectState === "approved" &&
+              this.state.project.status === "open" && (
                 <h4>You have been approved to this project.</h4>
               )}
             {this.props.usertype === "researcher" &&
-              this.state.projectState === "rejected" && (
+              this.state.projectState === "rejected" &&
+              this.state.project.status === "open" && (
                 <h4>You have been rejected from this project.</h4>
               )}
             {this.state.project.academicid === this.props.userid && (
@@ -355,6 +361,14 @@ class SingleProjectPage extends React.Component {
                 <span className="fa fa-trash" />
               </Button>
             )}
+            {this.props.usertype === "researcher" &&
+              this.state.project.status === "closed" &&
+              this.state.projectRating === null && (
+                <MarkingModal
+                  researcherId={this.props.userid}
+                  projectId={this.state.project.projectid}
+                />
+              )}
           </div>
           {this.state.display && (
             <Table striped bordered hover>
