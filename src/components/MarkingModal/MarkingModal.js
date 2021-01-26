@@ -28,8 +28,28 @@ class MarkingModal extends React.Component {
     this.setState({ comment: event.target.value });
   };
 
-  onSubmit = () => {
+  onSubmitResearcher = () => {
     fetch("http://localhost:3000/submit-researcher-rating", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researcherid: this.props.researcherId,
+        projectid: this.props.projectId,
+        rating: this.state.rating,
+        comment: this.state.comment,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res) {
+          this.handleClose();
+          alert("Thank you for your feedback!");
+        }
+      });
+  };
+
+  onSubmitAcademic = () => {
+    fetch("http://localhost:3000/submit-academic-rating", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -50,11 +70,10 @@ class MarkingModal extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Button variant="primary" onClick={this.handleShow}>
-          Rate Project
+          Rate User
         </Button>
-
         <Container className="page">
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
@@ -107,13 +126,20 @@ class MarkingModal extends React.Component {
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
               </Button>
-              <Button variant="primary" onClick={this.onSubmit}>
-                Submit
-              </Button>
+              {this.props.usertype === "researcher" && (
+                <Button variant="primary" onClick={this.onSubmitResearcher}>
+                  Submit
+                </Button>
+              )}
+              {this.props.usertype !== "academic" && (
+                <Button variant="primary" onClick={this.onSubmitAcademic}>
+                  Submit
+                </Button>
+              )}
             </Modal.Footer>
           </Modal>
         </Container>
-      </div>
+      </React.Fragment>
     );
   }
 }

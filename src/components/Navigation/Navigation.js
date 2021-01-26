@@ -22,8 +22,8 @@ class Navigation extends Component {
           collapseOnSelect
           expand="lg"
           fixed="top"
-          variant="light"
-          className="nav_color"
+          variant="dark"
+          bg="dark"
         >
           <Link className="nav-link" to="/">
             <Navbar.Brand className="mr-auto">Remote Mentoring</Navbar.Brand>
@@ -74,6 +74,11 @@ class Navigation extends Component {
               {this.props.isSignedIn && (
                 <Link className="nav-link" to="/my-projects">
                   My Projects
+                </Link>
+              )}
+              {this.props.isSignedIn && (
+                <Link className="nav-link" to="/my-feedbacks">
+                  My Feedbacks
                 </Link>
               )}
               {!this.props.isSignedIn && (

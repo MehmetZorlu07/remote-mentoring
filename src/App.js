@@ -20,6 +20,7 @@ import ResetPassword from "./components/ResetPassword/ResetPassword";
 import EditCredentials from "./components/EditCredentials/EditCredentials";
 import ContactPage from "./components/pages/ContactPage";
 import AdminPage from "./components/pages/AdminPage";
+import MyFeedbacks from "./components/pages/MyFeedbacks";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -162,6 +163,17 @@ class App extends Component {
                 render={() =>
                   this.state.isSignedIn ? (
                     <MyProjects user={this.state.user} />
+                  ) : (
+                    <Redirect to="/sign-in" />
+                  )
+                }
+              />
+              <Route
+                path="/my-feedbacks"
+                exact
+                render={() =>
+                  this.state.isSignedIn ? (
+                    <MyFeedbacks user={this.state.user} />
                   ) : (
                     <Redirect to="/sign-in" />
                   )

@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "../Hero/Hero";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
+import OpenProjects from "./OpenProjects";
+import AboutPage from "./AboutPage";
 
 function HomePage({ name }) {
   return (
@@ -14,6 +16,8 @@ function HomePage({ name }) {
           <Button variant="primary">Learn more</Button>
         </p>
       </Jumbotron>
+      <OpenProjects />
+      <AboutPage />
     </div>
   );
 }

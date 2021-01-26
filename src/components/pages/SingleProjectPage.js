@@ -55,7 +55,11 @@ class SingleProjectPage extends React.Component {
       .then((response) => response.json())
       .then((researcherProject) => {
         this.setState({ projectState: researcherProject.state });
-        this.setState({ projectRating: researcherProject.ratingbyresearcher });
+        if (this.props.usertype === "researcher") {
+          this.setState({
+            projectRating: researcherProject.ratingbyresearcher,
+          });
+        }
         this.getAllApplications();
       });
   };
@@ -261,6 +265,94 @@ class SingleProjectPage extends React.Component {
     );
   };
 
+  renderApprovedResearchers = (researcher, index) => {
+    const handleShow = (e) => {
+      this.setState({ researcherIndex: e.target.getAttribute("keyprop") });
+      this.setState({ show: true });
+    };
+    if (researcher.state === "approved") {
+      return (
+        <tr key={index}>
+          <td>{researcher.name}</td>
+          <td>{researcher.email}</td>
+          <td>{researcher.state}</td>
+          <td>
+            <Button variant="primary" keyprop={index} onClick={handleShow}>
+              Display
+            </Button>
+            <Container className="page">
+              <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>
+                    <div className="account__label">
+                      Researcher:{" "}
+                      {this.state.researchers[this.state.researcherIndex].name}
+                    </div>
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="account__label">Email: </div>
+                  <div className="account__value">
+                    {this.state.researchers[this.state.researcherIndex].email}
+                  </div>
+                  <div className="account__label">Application State: </div>
+                  <div className="account__value">
+                    {this.state.researchers[this.state.researcherIndex].state}
+                  </div>
+                  <div className="account__label">Information: </div>
+                  <div className="account__value">
+                    {
+                      this.state.researchers[this.state.researcherIndex]
+                        .information
+                    }
+                  </div>
+                  {!!(
+                    this.state.researchers[this.state.researcherIndex].tags ||
+                    []
+                  ).length && (
+                    <>
+                      <div className="account__label">Interests: </div>
+                      <div className="single-project__tags">
+                        <div className="tags">
+                          {this.state.researchers[
+                            this.state.researcherIndex
+                          ].tags.map((tag, index) => {
+                            return (
+                              <div key={`tag-${index}`} className="tag">
+                                {tag}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </Modal.Body>
+                <Modal.Footer className="form__footer">
+                  <Button variant="secondary" onClick={this.handleClose}>
+                    Close
+                  </Button>
+                  {this.props.usertype !== "researcher" &&
+                    this.state.project.status === "closed" &&
+                    this.state.researchers[this.state.researcherIndex]
+                      .ratingbyacademic === null && (
+                      <MarkingModal
+                        researcherId={
+                          this.state.researchers[this.state.researcherIndex].id
+                        }
+                        projectId={this.state.project.projectid}
+                        userType={this.props.usertype}
+                      />
+                    )}
+                </Modal.Footer>
+              </Modal>
+            </Container>
+          </td>
+        </tr>
+      );
+    }
+  };
+
   render() {
     return (
       <Container className="page">
@@ -347,7 +439,9 @@ class SingleProjectPage extends React.Component {
               this.state.counter > 0 && (
                 <Button onClick={this.setDisplayState} variant="warning">
                   Show Researchers{" "}
-                  <Badge variant="light">{this.state.counter}</Badge>
+                  <Badge variant="light">
+                    {this.state.project.status === "open" && this.state.counter}
+                  </Badge>
                 </Button>
               )}
             {this.state.project.academicid === this.props.userid &&
@@ -380,7 +474,16 @@ class SingleProjectPage extends React.Component {
                   <th>Details</th>
                 </tr>
               </thead>
-              <tbody>{this.state.researchers.map(this.renderResearcher)}</tbody>
+              {this.state.project.status === "open" && (
+                <tbody>
+                  {this.state.researchers.map(this.renderResearcher)}
+                </tbody>
+              )}
+              {this.state.project.status !== "open" && (
+                <tbody>
+                  {this.state.researchers.map(this.renderApprovedResearchers)}
+                </tbody>
+              )}
             </Table>
           )}
           {Object.keys(this.state.project).length === 0 && (
