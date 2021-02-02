@@ -59,6 +59,7 @@ class ProjectsPage extends React.Component {
           placeholder="Search projects"
           onChange={this.onSearchChange}
           className="form-control project__search"
+          type="text"
         />
         <Row>
           {projectsList.length ? (

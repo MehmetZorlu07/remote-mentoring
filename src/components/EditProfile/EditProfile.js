@@ -125,7 +125,7 @@ class EditProfile extends React.Component {
               )}
             </Form.Group>
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onUpdateProfile}>
+              <Button className="custom-button" onClick={this.onUpdateProfile}>
                 Update Profile
               </Button>
             </div>

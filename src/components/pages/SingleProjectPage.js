@@ -57,7 +57,7 @@ class SingleProjectPage extends React.Component {
         this.setState({ projectState: researcherProject.state });
         if (this.props.usertype === "researcher") {
           this.setState({
-            projectRating: researcherProject.ratingbyresearcher,
+            projectRating: researcherProject.ratingbyacademic,
           });
         }
         this.getAllApplications();
@@ -168,7 +168,11 @@ class SingleProjectPage extends React.Component {
         <td>{researcher.email}</td>
         <td>{researcher.state}</td>
         <td>
-          <Button variant="primary" keyprop={index} onClick={handleShow}>
+          <Button
+            className="custom-button"
+            keyprop={index}
+            onClick={handleShow}
+          >
             Display
           </Button>
           <Container className="page">
@@ -277,7 +281,11 @@ class SingleProjectPage extends React.Component {
           <td>{researcher.email}</td>
           <td>{researcher.state}</td>
           <td>
-            <Button variant="primary" keyprop={index} onClick={handleShow}>
+            <Button
+              className="custom-button"
+              keyprop={index}
+              onClick={handleShow}
+            >
               Display
             </Button>
             <Container className="page">
@@ -432,12 +440,15 @@ class SingleProjectPage extends React.Component {
               )}
             {this.state.project.academicid === this.props.userid && (
               <Link to={`/edit-project/${this.state.project.projectid}`}>
-                <Button variant="primary">Edit Project</Button>
+                <Button className="custom-button">Edit Project</Button>
               </Link>
             )}
             {this.state.project.academicid === this.props.userid &&
               this.state.counter > 0 && (
-                <Button onClick={this.setDisplayState} variant="warning">
+                <Button
+                  onClick={this.setDisplayState}
+                  className="button-yellow"
+                >
                   Show Researchers{" "}
                   <Badge variant="light">
                     {this.state.project.status === "open" && this.state.counter}
@@ -446,12 +457,12 @@ class SingleProjectPage extends React.Component {
               )}
             {this.state.project.academicid === this.props.userid &&
               this.state.counter === 0 && (
-                <Button variant="warning" disabled>
+                <Button className="button-yellow" disabled>
                   No Applicants
                 </Button>
               )}
             {this.state.project.academicid === this.props.userid && (
-              <Button onClick={this.deleteProject} variant="danger">
+              <Button onClick={this.deleteProject} className="button-red">
                 <span className="fa fa-trash" />
               </Button>
             )}

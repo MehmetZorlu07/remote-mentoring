@@ -77,7 +77,7 @@ class EditCredentials extends Component {
               />
             </Form.Group>
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onSubmitPassword}>
+              <Button className="custom-button" onClick={this.onSubmitPassword}>
                 Reset
               </Button>
             </div>

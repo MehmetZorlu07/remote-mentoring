@@ -9,11 +9,32 @@ import "./Navigation.css";
 class Navigation extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showProjects: false,
+      showAccount: false,
+    };
     this.handleChange = this.handleChange.bind(this);
   }
+
   handleChange() {
     this.props.setLoginState(false);
   }
+
+  showProjectsDropdown = (e) => {
+    this.setState({ showProjects: true });
+  };
+
+  hideProjectsDropdown = (e) => {
+    this.setState({ showProjects: false });
+  };
+
+  showAccountDropdown = (e) => {
+    this.setState({ showAccount: true });
+  };
+
+  hideAccountDropdown = (e) => {
+    this.setState({ showAccount: false });
+  };
 
   render() {
     return (
@@ -23,7 +44,7 @@ class Navigation extends Component {
           expand="lg"
           fixed="top"
           variant="dark"
-          bg="dark"
+          className="nav_bar_color"
         >
           <Link className="nav-link" to="/">
             <Navbar.Brand className="mr-auto">Remote Mentoring</Navbar.Brand>
@@ -36,7 +57,13 @@ class Navigation extends Component {
                   Admin
                 </Link>
               )}
-              <NavDropdown title="Projects" id="basic-nav-dropdown">
+              <NavDropdown
+                title="Projects"
+                id="basic-nav-dropdown"
+                show={this.state.showProjects}
+                onMouseEnter={this.showProjectsDropdown}
+                onMouseLeave={this.hideProjectsDropdown}
+              >
                 <NavDropdown.Item
                   onSelect={() => history.push("/open-projects")}
                 >
@@ -53,33 +80,40 @@ class Navigation extends Component {
                   Closed Projects
                 </NavDropdown.Item>
               </NavDropdown>
-
-              {(this.props.userType === "academic" ||
-                this.props.userType === "admin") && (
-                <Link className="nav-link" to="/create-project">
-                  Create Project
-                </Link>
-              )}
               <Link className="nav-link" to="/about">
                 About Us
               </Link>
               <Link className="nav-link" to="/contact-us">
                 Contact Us
               </Link>
-              {this.props.isSignedIn && (
-                <Link className="nav-link" to="/account">
-                  My Account
+              {(this.props.userType === "academic" ||
+                this.props.userType === "admin") && (
+                <Link className="nav-link" to="/create-project">
+                  Create Project
                 </Link>
               )}
               {this.props.isSignedIn && (
-                <Link className="nav-link" to="/my-projects">
-                  My Projects
-                </Link>
-              )}
-              {this.props.isSignedIn && (
-                <Link className="nav-link" to="/my-feedbacks">
-                  My Feedbacks
-                </Link>
+                <NavDropdown
+                  title="My Account"
+                  id="basic-nav-dropdown"
+                  show={this.state.showAccount}
+                  onMouseEnter={this.showAccountDropdown}
+                  onMouseLeave={this.hideAccountDropdown}
+                >
+                  <NavDropdown.Item onSelect={() => history.push("/account")}>
+                    Account Details
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    onSelect={() => history.push("/my-projects")}
+                  >
+                    My Projects
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    onSelect={() => history.push("/my-feedbacks")}
+                  >
+                    My Feedbacks
+                  </NavDropdown.Item>
+                </NavDropdown>
               )}
               {!this.props.isSignedIn && (
                 <Link className="nav-link" to="/sign-in">

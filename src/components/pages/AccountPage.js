@@ -37,10 +37,12 @@ class AccountPage extends React.Component {
           )}
           <div className="single-project__actions">
             <Link to={"/edit-profile"}>
-              <Button variant="primary">Edit Profile</Button>
+              <Button variant="primary" className="custom-button">
+                Edit Profile
+              </Button>
             </Link>
             <Link to={"/edit-credentials"}>
-              <Button variant="warning">Reset Password</Button>
+              <Button className="button-yellow">Reset Password</Button>
             </Link>
           </div>
         </Card>

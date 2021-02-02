@@ -171,7 +171,7 @@ class EditProject extends React.Component {
               </Form.Control>
             </Form.Group>
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onApplyChanges}>
+              <Button className="custom-button" onClick={this.onApplyChanges}>
                 Apply Changes
               </Button>
             </div>

@@ -74,7 +74,7 @@ class Reset extends Component {
               />
             </Form.Group>
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onSubmitEmail}>
+              <Button className="custom-button" onClick={this.onSubmitEmail}>
                 Send Email
               </Button>
             </div>

@@ -113,7 +113,7 @@ class Register extends Component {
               </Form.Control>
             </Form.Group>
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onSubmitRegister}>
+              <Button className="custom-button" onClick={this.onSubmitRegister}>
                 Submit
               </Button>
             </div>

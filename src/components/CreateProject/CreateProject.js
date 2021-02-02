@@ -47,7 +47,7 @@ class CreateProject extends React.Component {
   };
 
   onCreateProject = () => {
-    fetch("http://localhost:3000/createProject", {
+    fetch("http://localhost:3000/create-project", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -77,6 +77,7 @@ class CreateProject extends React.Component {
             <Form.Group controlId="formBasicTitle">
               <Form.Label>Project Title</Form.Label>
               <Form.Control
+                type="text"
                 placeholder="Enter a title"
                 onChange={this.onTitleChange}
               />
@@ -128,8 +129,12 @@ class CreateProject extends React.Component {
               />
             </Form.Group>
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onCreateProject}>
-                Create Project
+              <Button
+                variant="primary"
+                onClick={this.onCreateProject}
+                className="custom-button"
+              >
+                Create
               </Button>
             </div>
           </Form>

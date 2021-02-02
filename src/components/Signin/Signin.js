@@ -90,7 +90,7 @@ class Signin extends Component {
               <Button variant="link" onClick={this.resetPassword}>
                 Forgot Password
               </Button>
-              <Button variant="primary" onClick={this.onSubmitSignIn}>
+              <Button className="custom-button" onClick={this.onSubmitSignIn}>
                 Submit
               </Button>
             </div>

@@ -30,7 +30,7 @@ class Project extends React.Component {
               </div>
             )}
             <Link to={`project/${this.props.projectid}`}>
-              <Button variant="primary">View Project</Button>
+              <Button className="custom-button">View Project</Button>
             </Link>
           </Card.Body>
         </Card>

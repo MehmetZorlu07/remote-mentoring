@@ -1,3 +1,21 @@
 .project__search {
+  appearance: none !important;
+  background: rgba(144, 144, 144, 0.075) !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border: solid 1px #dbdbdb !important;
+  color: inherit !important;
+  outline: 0 !important;
+  text-decoration: none !important;
+  width: 100% !important;
   margin-bottom: 30px;
+}
+
+.project__search:invalid {
+  box-shadow: none !important;
+}
+
+.project__search:focus {
+  border-color: #5385c1 !important;
+  box-shadow: 0 0 0 1px #5385c1 !important;
 }

@@ -65,7 +65,7 @@ class ContactPage extends Component {
           <div className="form__title">Contact Us</div>
           <Form>
             <Form.Group controlId="formBasicName">
-              <Form.Label>Enter your name:</Form.Label>
+              <Form.Label className="form__label">Enter your name:</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Name"
@@ -96,7 +96,7 @@ class ContactPage extends Component {
               verifyCallback={this.verifyCallback}
             />
             <div className="form__footer">
-              <Button variant="primary" onClick={this.onSubmitForm}>
+              <Button onClick={this.onSubmitForm} className="custom-button">
                 Submit
               </Button>
             </div>
