@@ -17,9 +17,6 @@ class ResetPassword extends Component {
 
   componentDidMount() {
     this.setState({ token: this.props.match.params.token });
-    if (this.state.token.length < 25) {
-      history.push("/");
-    }
   }
 
   onPasswordChange = (event) => {

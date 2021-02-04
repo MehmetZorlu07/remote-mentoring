@@ -71,7 +71,7 @@ class MarkingModal extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Button variant="primary" onClick={this.handleShow}>
+        <Button className="custom-button" onClick={this.handleShow}>
           Rate User
         </Button>
         <Container className="page">
@@ -126,12 +126,12 @@ class MarkingModal extends React.Component {
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
               </Button>
-              {this.props.usertype === "researcher" && (
+              {this.props.userType === "researcher" && (
                 <Button variant="primary" onClick={this.onSubmitResearcher}>
                   Submit
                 </Button>
               )}
-              {this.props.usertype !== "academic" && (
+              {this.props.userType !== "researcher" && (
                 <Button variant="primary" onClick={this.onSubmitAcademic}>
                   Submit
                 </Button>

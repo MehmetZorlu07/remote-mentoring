@@ -57,7 +57,7 @@ class SingleProjectPage extends React.Component {
         this.setState({ projectState: researcherProject.state });
         if (this.props.usertype === "researcher") {
           this.setState({
-            projectRating: researcherProject.ratingbyacademic,
+            projectRating: researcherProject.ratingbyresearcher,
           });
         }
         this.getAllApplications();
@@ -397,7 +397,7 @@ class SingleProjectPage extends React.Component {
               this.state.projectState === undefined &&
               this.state.project.status === "open" &&
               this.state.counter < this.state.project.capacity && (
-                <Button onClick={this.applyProject} variant="primary">
+                <Button onClick={this.applyProject} className="custom-button">
                   Apply
                 </Button>
               )}
@@ -423,7 +423,10 @@ class SingleProjectPage extends React.Component {
               this.state.project.status === "open" && (
                 <div>
                   <h4>You have applied to this project.</h4>
-                  <Button onClick={this.withdrawApplication} variant="primary">
+                  <Button
+                    onClick={this.withdrawApplication}
+                    className="custom-button"
+                  >
                     Withdraw application
                   </Button>
                 </div>
@@ -434,7 +437,7 @@ class SingleProjectPage extends React.Component {
                 <h4>You have been approved to this project.</h4>
               )}
             {this.props.usertype === "researcher" &&
-              this.state.projectState === "rejected" &&
+              this.state.projectState === "declined" &&
               this.state.project.status === "open" && (
                 <h4>You have been rejected from this project.</h4>
               )}
@@ -472,6 +475,7 @@ class SingleProjectPage extends React.Component {
                 <MarkingModal
                   researcherId={this.props.userid}
                   projectId={this.state.project.projectid}
+                  userType={this.props.usertype}
                 />
               )}
           </div>

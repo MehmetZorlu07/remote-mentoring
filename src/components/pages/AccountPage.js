@@ -10,7 +10,7 @@ class AccountPage extends React.Component {
     return (
       <Container className="page">
         <Card className="account">
-          <div className="page__title">Account Details</div>
+          <h1 className="page__title">Account Details</h1>
           <div className="account__label">Username: </div>
           <div className="account__value">{this.props.user.name}</div>
           <div className="account__label">Email: </div>
