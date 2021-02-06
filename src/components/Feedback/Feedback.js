@@ -20,6 +20,7 @@ class Feedback extends React.Component {
                     color={
                       ratingValue <= this.props.rating ? "#ffc107" : "#e4e5e9"
                     }
+                    style={{ cursor: "auto" }}
                   />
                 );
               })}

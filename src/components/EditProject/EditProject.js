@@ -107,6 +107,7 @@ class EditProject extends React.Component {
             <Form.Group controlId="formBasicTitle">
               <Form.Label>Project Title</Form.Label>
               <Form.Control
+                type="text"
                 defaultValue={this.state.project.name}
                 onChange={this.onTitleChange}
               />

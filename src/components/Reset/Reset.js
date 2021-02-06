@@ -2,85 +2,94 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  emailAddress: yup
+    .string()
+    .email("Invalid Email")
+    .required("*Email is a required field"),
+});
 
 class Reset extends Component {
   constructor() {
     super();
     this.state = {
-      resetEmail: "",
-      show: false,
+      emailAddress: "",
     };
   }
-
-  onEmailChange = (event) => {
-    this.setState({ resetEmail: event.target.value });
-  };
 
   onSubmitEmail = () => {
     fetch("http://localhost:3000/reset", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        email: this.state.resetEmail,
+        email: this.state.emailAddress,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
-        this.handleShow();
+        alert("We have sent you an e-mail.");
       });
-  };
-
-  handleShow = () => {
-    this.setState({ show: true });
-  };
-
-  handleClose = () => {
-    this.setState({ show: false });
-  };
-
-  displayMessage = () => {
-    return (
-      <>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Password Reset</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>We have sent you an email.</Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
   };
 
   render() {
     return (
       <Container className="page">
         <Card className="form">
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>
-                Enter your email address for password reset:
-              </Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Email address"
-                onChange={this.onEmailChange}
-              />
-            </Form.Group>
-            <div className="form__footer">
-              <Button className="custom-button" onClick={this.onSubmitEmail}>
-                Send Email
-              </Button>
-            </div>
-          </Form>
+          <Formik
+            initialValues={this.state}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              this.setState({
+                emailAddress: values.emailAddress,
+              });
+              this.onSubmitEmail();
+            }}
+          >
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              touched,
+              errors,
+            }) => {
+              return (
+                <>
+                  <Form>
+                    <Form.Group controlId="emailAddress">
+                      <Form.Label>
+                        Enter your email address for password reset:
+                      </Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="Email address"
+                        name="emailAddress"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.emailAddress && errors.emailAddress}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.emailAddress}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Form>
+                  <div className="form__footer">
+                    <Button
+                      className="custom-button"
+                      onClick={() => handleSubmit()}
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </>
+              );
+            }}
+          </Formik>
         </Card>
-        <this.displayMessage />
       </Container>
     );
   }

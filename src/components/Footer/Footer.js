@@ -4,10 +4,10 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer id="footer">
-      <div class="inner">
-        <div class="flex">
-          <div class="copyright">&copy; Remote Mentoring</div>
-          <div class="copyright">Design: Mehmet Zorlu</div>
+      <div className="inner">
+        <div className="flex">
+          <div className="copyright">&copy; Remote Mentoring</div>
+          <div className="copyright">Design: Mehmet Zorlu</div>
         </div>
       </div>
     </footer>

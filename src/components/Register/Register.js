@@ -4,12 +4,27 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import history from "../../history";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  name: yup.string().required("*Name is a required field"),
+  emailAddress: yup
+    .string()
+    .email("Invalid Email")
+    .required("*Email is a required field"),
+  password: yup
+    .string()
+    .required("*Password is a required field")
+    .min(6, "*Your password must be at least 6 characters"),
+  information: yup.string().required("*Details is a required field"),
+});
 
 class Register extends Component {
   constructor(props) {
     super();
     this.state = {
-      email: "",
+      emailAddress: "",
       password: "",
       name: "",
       information: "",
@@ -17,32 +32,12 @@ class Register extends Component {
     };
   }
 
-  onNameChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
-
-  onEmailChange = (event) => {
-    this.setState({ email: event.target.value });
-  };
-
-  onPasswordChange = (event) => {
-    this.setState({ password: event.target.value });
-  };
-
-  onInformationChange = (event) => {
-    this.setState({ information: event.target.value });
-  };
-
-  onTypeChange = (event) => {
-    this.setState({ type: event.target.value });
-  };
-
   onSubmitRegister = () => {
     fetch("http://localhost:3000/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        email: this.state.email,
+        email: this.state.emailAddress,
         password: this.state.password,
         name: this.state.name,
         information: this.state.information,
@@ -63,61 +58,121 @@ class Register extends Component {
     return (
       <Container className="page">
         <Card className="form">
-          <Form>
-            <div className="form__title">Register</div>
-            <Form.Group controlId="formBasicName">
-              <Form.Label>Name:</Form.Label>
-              <Form.Control
-                type="name"
-                placeholder="Name"
-                onChange={this.onNameChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address:</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                onChange={this.onEmailChange}
-              />
-            </Form.Group>
+          <Formik
+            initialValues={this.state}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              this.setState({
+                name: values.name,
+                emailAddress: values.emailAddress,
+                password: values.password,
+                information: values.information,
+                type: values.type,
+              });
+              this.onSubmitRegister();
+            }}
+          >
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              touched,
+              errors,
+            }) => {
+              return (
+                <>
+                  <Form>
+                    <div className="form__title">Register</div>
+                    <Form.Group controlId="name">
+                      <Form.Label>Enter your name:</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Name"
+                        name="name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.name && errors.name}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.name}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label>Enter your e-mail address:</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="E-mail address"
+                        name="emailAddress"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.emailAddress && errors.emailAddress}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.emailAddress}
+                      </Form.Control.Feedback>
+                    </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password:</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                onChange={this.onPasswordChange}
-              />
-            </Form.Group>
+                    <Form.Group controlId="password">
+                      <Form.Label>Enter a password:</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.password && errors.password}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.password}
+                      </Form.Control.Feedback>
+                    </Form.Group>
 
-            <Form.Group controlId="formBasicInformation">
-              <Form.Label>Information:</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Information"
-                onChange={this.onInformationChange}
-              />
-            </Form.Group>
+                    <Form.Group controlId="information">
+                      <Form.Label>Tell us about yourself:</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        name="information"
+                        placeholder="Ex: I love solving Maths problems! "
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.information && errors.information}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.information}
+                      </Form.Control.Feedback>
+                    </Form.Group>
 
-            <Form.Group controlId="formBasicType">
-              <Form.Label>Type:</Form.Label>
-              <Form.Control
-                as="select"
-                onChange={this.onTypeChange}
-                defaultValue="researcher"
-              >
-                <option>researcher</option>
-                <option>academic</option>
-              </Form.Control>
-            </Form.Group>
-            <div className="form__footer">
-              <Button className="custom-button" onClick={this.onSubmitRegister}>
-                Submit
-              </Button>
-            </div>
-          </Form>
+                    <Form.Group controlId="type">
+                      <Form.Label>
+                        Are you a researcher or an academic?
+                      </Form.Label>
+                      <Form.Control
+                        as="select"
+                        name="type"
+                        defaultValue="researcher"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.type && errors.type}
+                      >
+                        <option>researcher</option>
+                        <option>academic</option>
+                      </Form.Control>
+                    </Form.Group>
+                  </Form>
+                  <div className="form__footer">
+                    <Button
+                      className="custom-button"
+                      onClick={() => handleSubmit()}
+                    >
+                      Register
+                    </Button>
+                  </div>
+                </>
+              );
+            }}
+          </Formik>
         </Card>
       </Container>
     );

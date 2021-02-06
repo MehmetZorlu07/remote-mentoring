@@ -7,6 +7,13 @@ import history from "../../history";
 import "./CreateProject.css";
 import RangeSlider from "react-bootstrap-range-slider";
 import { TAGS } from "../../utils/config";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  title: yup.string().required("*Project Title is a required field"),
+  description: yup.string().required("*Description is a required field"),
+});
 
 class CreateProject extends React.Component {
   constructor(props) {
@@ -14,19 +21,11 @@ class CreateProject extends React.Component {
     this.state = {
       title: "",
       description: "",
-      requirements: "",
+      requirements: "None",
       tags: [],
       rangeValue: 1,
     };
   }
-
-  onTitleChange = (event) => {
-    this.setState({ title: event.target.value });
-  };
-
-  onDescriptionChange = (event) => {
-    this.setState({ description: event.target.value });
-  };
 
   onRequirementsChange = (event) => {
     this.setState({ requirements: event.target.value });
@@ -73,71 +72,106 @@ class CreateProject extends React.Component {
       <Container className="page">
         <Card className="form">
           <div className="form__title">Create Project</div>
-          <Form>
-            <Form.Group controlId="formBasicTitle">
-              <Form.Label>Project Title</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter a title"
-                onChange={this.onTitleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicDescription">
-              <Form.Label>Project Description</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={5}
-                placeholder="Enter a description"
-                onChange={this.onDescriptionChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicRequirements">
-              <Form.Label>Minimum Requirements</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={1}
-                placeholder="Example: MSc or MA, Good knowledge of Python"
-                onChange={this.onRequirementsChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="formTags">
-              <Form.Label>Project Tags</Form.Label>
-              <TagsInput onChange={this.onTagsChange} />
-              {!!this.state.tags.length && (
-                <div className="tags">
-                  {this.state.tags.map((tag, index) => {
-                    return (
-                      <div key={`tag-${index}`} className="tag">
-                        {tag}
-                        <span
-                          className="tag__icon fa fa-times-circle"
-                          onClick={this.onRemoveTag.bind(this, tag)}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </Form.Group>
-            <Form.Group controlId="formBasicCapacity">
-              <Form.Label>Project Capacity</Form.Label>
-              <RangeSlider
-                value={this.state.rangeValue}
-                onChange={this.onRangeChange}
-                min={1}
-                max={20}
-              />
-            </Form.Group>
-            <div className="form__footer">
-              <Button
-                variant="primary"
-                onClick={this.onCreateProject}
-                className="custom-button"
-              >
-                Create
-              </Button>
-            </div>
-          </Form>
+          <Formik
+            initialValues={this.state}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              this.setState({
+                title: values.title,
+                description: values.description,
+              });
+              this.onCreateProject();
+            }}
+          >
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              touched,
+              errors,
+            }) => {
+              return (
+                <>
+                  <Form>
+                    <Form.Group controlId="title">
+                      <Form.Label>Enter the project title:</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Project Title"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.title && errors.title}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.title}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group controlId="description">
+                      <Form.Label>Enter the project description:</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={5}
+                        placeholder="Project Description"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.description && errors.description}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.description}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group controlId="requirements">
+                      <Form.Label>Enter the minimum requirements:</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Example: MSc or MA, Good knowledge of Python"
+                        onChange={this.onRequirementsChange}
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="tags">
+                      <Form.Label>Select the project tags:</Form.Label>
+                      <TagsInput onChange={this.onTagsChange} />
+                      {!!this.state.tags.length && (
+                        <div className="tags">
+                          {this.state.tags.map((tag, index) => {
+                            return (
+                              <div key={`tag-${index}`} className="tag">
+                                {tag}
+                                <span
+                                  className="tag__icon fa fa-times-circle"
+                                  onClick={this.onRemoveTag.bind(this, tag)}
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </Form.Group>
+                    <Form.Group controlId="capacity">
+                      <Form.Label>Set the project capacity:</Form.Label>
+                      <RangeSlider
+                        value={this.state.rangeValue}
+                        onChange={this.onRangeChange}
+                        min={1}
+                        max={20}
+                      />
+                    </Form.Group>
+                  </Form>
+                  <div className="form__footer">
+                    <Button
+                      variant="primary"
+                      onClick={() => handleSubmit()}
+                      className="custom-button"
+                    >
+                      Create
+                    </Button>
+                  </div>
+                </>
+              );
+            }}
+          </Formik>
         </Card>
       </Container>
     );

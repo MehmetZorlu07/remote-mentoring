@@ -4,23 +4,25 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import history from "../../history";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  emailAddress: yup
+    .string()
+    .email("Invalid Email")
+    .required("*Email is a required field"),
+  password: yup.string().required("*Password is a required field"),
+});
 
 class Signin extends Component {
   constructor() {
     super();
     this.state = {
-      signInEmail: "",
-      signInPassword: "",
+      emailAddress: "",
+      password: "",
     };
   }
-
-  onEmailChange = (event) => {
-    this.setState({ signInEmail: event.target.value });
-  };
-
-  onPasswordChange = (event) => {
-    this.setState({ signInPassword: event.target.value });
-  };
 
   saveAuthTokenInSession = (token) => {
     window.sessionStorage.setItem("token", token);
@@ -31,8 +33,8 @@ class Signin extends Component {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword,
+        email: this.state.emailAddress,
+        password: this.state.password,
       }),
     })
       .then((response) => response.json())
@@ -67,34 +69,73 @@ class Signin extends Component {
     return (
       <Container className="page">
         <Card className="form">
-          <Form>
-            <div className="form__title">Signin</div>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address:</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                onChange={this.onEmailChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password:</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                onChange={this.onPasswordChange}
-              />
-            </Form.Group>
-            <div className="form__footer">
-              <Button variant="link" onClick={this.resetPassword}>
-                Forgot Password
-              </Button>
-              <Button className="custom-button" onClick={this.onSubmitSignIn}>
-                Submit
-              </Button>
-            </div>
-          </Form>
+          <Formik
+            initialValues={this.state}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              this.setState({
+                emailAddress: values.emailAddress,
+                password: values.password,
+              });
+              this.onSubmitSignIn();
+            }}
+          >
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              touched,
+              errors,
+            }) => {
+              return (
+                <>
+                  <Form>
+                    <div className="form__title">Sign in</div>
+                    <Form.Group controlId="emailAddress">
+                      <Form.Label>Enter your e-mail address:</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="E-mail address"
+                        name="emailAddress"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.emailAddress && errors.emailAddress}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.emailAddress}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group controlId="password">
+                      <Form.Label>Enter your password:</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.password && errors.password}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.password}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Form>
+                  <div className="form__footer">
+                    <Button variant="link" onClick={this.resetPassword}>
+                      Forgot Password
+                    </Button>
+                    <Button
+                      className="custom-button"
+                      onClick={() => handleSubmit()}
+                    >
+                      Sign in
+                    </Button>
+                  </div>
+                </>
+              );
+            }}
+          </Formik>
         </Card>
       </Container>
     );

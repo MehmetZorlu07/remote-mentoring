@@ -4,6 +4,19 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import history from "../../history";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  password: yup
+    .string()
+    .required("*Password is a required field")
+    .min(6, "*Your password must be at least 6 characters"),
+  confirmPassword: yup
+    .string()
+    .required("*Confirm password is a required field")
+    .oneOf([yup.ref("password"), null], "*Passwords must match"),
+});
 
 class ResetPassword extends Component {
   constructor() {
@@ -18,14 +31,6 @@ class ResetPassword extends Component {
   componentDidMount() {
     this.setState({ token: this.props.match.params.token });
   }
-
-  onPasswordChange = (event) => {
-    this.setState({ password: event.target.value });
-  };
-
-  onConfirmPasswordChange = (event) => {
-    this.setState({ confirmPassword: event.target.value });
-  };
 
   onSubmitPassword = () => {
     if (this.state.password === this.state.confirmPassword) {
@@ -49,29 +54,71 @@ class ResetPassword extends Component {
     return (
       <Container className="page">
         <Card className="form">
-          <Form>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Enter a new password:</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="New Password"
-                onChange={this.onPasswordChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicConfirmPassword">
-              <Form.Label>Confirm the new password:</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Confirm Password"
-                onChange={this.onConfirmPasswordChange}
-              />
-            </Form.Group>
-            <div className="form__footer">
-              <Button className="custom-button" onClick={this.onSubmitPassword}>
-                Reset
-              </Button>
-            </div>
-          </Form>
+          <Formik
+            initialValues={this.state}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              this.setState({
+                password: values.password,
+                confirmPassword: values.confirmPassword,
+              });
+              this.onSubmitPassword();
+            }}
+          >
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              touched,
+              errors,
+            }) => {
+              return (
+                <>
+                  <Form>
+                    <Form.Group controlId="password">
+                      <Form.Label>Enter a new password:</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="New Password"
+                        name="password"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={touched.password && errors.password}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.password}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group controlId="confirmPassword">
+                      <Form.Label>Confirm the new password:</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        isInvalid={
+                          touched.confirmPassword && errors.confirmPassword
+                        }
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.confirmPassword}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Form>
+                  <div className="form__footer">
+                    <Button
+                      className="custom-button"
+                      onClick={() => handleSubmit()}
+                    >
+                      Reset
+                    </Button>
+                  </div>
+                </>
+              );
+            }}
+          </Formik>
         </Card>
       </Container>
     );
