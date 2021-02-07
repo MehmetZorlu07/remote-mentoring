@@ -81,7 +81,7 @@ class EditProject extends React.Component {
   };
 
   getProject = (projectid) => {
-    fetch("http://localhost:3000/edit-project/" + projectid)
+    fetch("http://localhost:3000/project/" + projectid)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ project: data });

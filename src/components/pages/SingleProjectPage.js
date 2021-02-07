@@ -124,7 +124,7 @@ class SingleProjectPage extends React.Component {
     })
       .then((response) => response.json())
       .then((researchersList) => {
-        if (researchersList !== "not found") {
+        if (researchersList.length > 0) {
           this.setState({
             researchers: researchersList,
             counter: researchersList.length,

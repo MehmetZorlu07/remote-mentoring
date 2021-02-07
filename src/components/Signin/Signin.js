@@ -57,6 +57,8 @@ class Signin extends Component {
               }
             })
             .catch(console.log);
+        } else {
+          alert("Wrong Credentials.");
         }
       });
   };

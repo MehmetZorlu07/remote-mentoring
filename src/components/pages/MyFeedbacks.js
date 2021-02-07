@@ -33,7 +33,7 @@ class MyFeedbacks extends React.Component {
     })
       .then((response) => response.json())
       .then((feedbacksList) => {
-        if (feedbacksList !== "not found") {
+        if (feedbacksList.length > 0) {
           this.setState({
             feedbacks: feedbacksList,
           });
@@ -51,7 +51,7 @@ class MyFeedbacks extends React.Component {
     })
       .then((response) => response.json())
       .then((feedbacksList) => {
-        if (feedbacksList !== "not found") {
+        if (feedbacksList.length > 0) {
           this.setState({
             feedbacks: feedbacksList,
           });
