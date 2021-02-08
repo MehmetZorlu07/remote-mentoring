@@ -27,6 +27,10 @@ class ContactPage extends Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   recaptchaLoaded = () => {
     console.log("captcha loaded");
   };

@@ -30,6 +30,7 @@ class SingleProjectPage extends React.Component {
   componentDidMount() {
     let projectid = this.props.match.params.projectid;
     this.getProject(projectid.toString());
+    window.scrollTo(0, 0);
   }
 
   getProject = (projectid) => {

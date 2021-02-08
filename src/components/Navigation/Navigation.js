@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import history from "../../history";
 import "./Navigation.css";
+import Logo from "../../assets/logo.png";
 
 class Navigation extends Component {
   constructor(props) {
@@ -47,7 +48,16 @@ class Navigation extends Component {
           className="nav_bar_color"
         >
           <Link className="nav-link" to="/">
-            <Navbar.Brand className="mr-auto">Remote Mentoring</Navbar.Brand>
+            <Navbar.Brand className="mr-auto">
+              <img
+                alt=""
+                src={Logo}
+                height="30"
+                width="30"
+                className="d-inline-block align-top"
+              />{" "}
+              Remote Research
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

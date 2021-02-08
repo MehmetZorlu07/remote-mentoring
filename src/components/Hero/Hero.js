@@ -2,7 +2,7 @@ import React from "react";
 import LazyHero from "react-lazy-hero";
 import HeroImage from "../../assets/hero.jpg";
 
-const Hero = ({ name, height = "100vh" }) => {
+const Hero = ({ name, height = "70vh" }) => {
   return (
     <div>
       <LazyHero

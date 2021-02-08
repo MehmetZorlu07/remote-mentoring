@@ -1,0 +1,33 @@
+.home-jumbotron-white {
+  background-color: #fafafa !important;
+  text-align: center;
+}
+
+.home-jumbotron-blue {
+  background-color: #5385c1 !important;
+  text-align: center;
+}
+
+.home-jumbotron-card {
+  width: 35rem;
+  border-radius: 12;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.home-jumbotron-title {
+  color: #5385c1;
+  padding-top: 20px;
+}
+
+.home-jumbotron-text {
+  background-color: #5385c1;
+  text-align: left;
+  color: white;
+  font-size: larger;
+}
+
+/* .home-jumbotron-image {
+  width: 20px;
+  height: 200px;
+} */

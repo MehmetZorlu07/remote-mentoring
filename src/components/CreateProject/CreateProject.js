@@ -27,6 +27,10 @@ class CreateProject extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   onRequirementsChange = (event) => {
     this.setState({ requirements: event.target.value });
   };

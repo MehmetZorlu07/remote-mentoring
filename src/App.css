@@ -18,9 +18,8 @@ body {
 }
 
 .page__title {
-  font-size: 28px;
   line-height: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .page__description {
   font-size: 16px;

@@ -20,15 +20,6 @@ class ProjectsPage extends React.Component {
     this.getProjects();
   }
 
-  onSearchChange = (e) => {
-    let text = e.target.value;
-    this.setState({
-      projects: this.state.allProjects.filter((project) => {
-        return project.name.toLowerCase().includes(text.toLowerCase());
-      }),
-    });
-  };
-
   getProjects = () => {
     fetch("http://localhost:3000/projects")
       .then((response) => response.json())
@@ -52,21 +43,19 @@ class ProjectsPage extends React.Component {
       );
     }
 
+    var finalList = [];
+
+    if (projectsList.length >= 3) {
+      finalList = projectsList.slice(0, 3);
+    }
+
     return (
       <Container className="page">
-        <h1 className="page__title">Projects</h1>
-        <input
-          placeholder="Search projects"
-          onChange={this.onSearchChange}
-          className="form-control project__search"
-          type="text"
-        />
+        <h1 className="page__title">
+          Have you checked out these research projects?
+        </h1>
         <Row>
-          {projectsList.length ? (
-            projectsList
-          ) : (
-            <Col xs={12}>No projects found</Col>
-          )}
+          {finalList.length ? finalList : <Col xs={12}>No projects found</Col>}
         </Row>
       </Container>
     );
