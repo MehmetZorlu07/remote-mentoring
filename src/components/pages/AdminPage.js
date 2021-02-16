@@ -23,7 +23,7 @@ class AdminPage extends React.Component {
   }
 
   getProjects = () => {
-    fetch("http://localhost:3000/projects")
+    fetch("https://fathomless-gorge-74945.herokuapp.com/projects")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ allProjects: data });
@@ -31,7 +31,7 @@ class AdminPage extends React.Component {
   };
 
   getAcademics = () => {
-    fetch("http://localhost:3000/academics")
+    fetch("https://fathomless-gorge-74945.herokuapp.com/academics")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ academics: data });
@@ -39,7 +39,7 @@ class AdminPage extends React.Component {
   };
 
   getResearchers = () => {
-    fetch("http://localhost:3000/researchers")
+    fetch("https://fathomless-gorge-74945.herokuapp.com/researchers")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ researchers: data });

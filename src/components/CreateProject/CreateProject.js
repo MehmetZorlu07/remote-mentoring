@@ -50,7 +50,7 @@ class CreateProject extends React.Component {
   };
 
   onCreateProject = () => {
-    fetch("http://localhost:3000/create-project", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/create-project", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -34,13 +34,17 @@ class ResetPassword extends Component {
 
   onSubmitPassword = () => {
     if (this.state.password === this.state.confirmPassword) {
-      fetch("http://localhost:3000/reset-password/" + this.state.token, {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          password: this.state.password,
-        }),
-      })
+      fetch(
+        "https://fathomless-gorge-74945.herokuapp.com/reset-password/" +
+          this.state.token,
+        {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            password: this.state.password,
+          }),
+        }
+      )
         .then((response) => response.json())
         .then((user) => {
           history.push("/sign-in");

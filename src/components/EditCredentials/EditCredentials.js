@@ -30,7 +30,7 @@ class EditCredentials extends Component {
   }
 
   onSubmitPassword = () => {
-    fetch("http://localhost:3000/edit-credentials", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/edit-credentials", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

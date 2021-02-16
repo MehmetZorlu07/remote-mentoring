@@ -43,7 +43,7 @@ class ContactPage extends Component {
 
   onSubmitForm = () => {
     if (this.state.isVerified) {
-      fetch("http://localhost:3000/contact-page", {
+      fetch("https://fathomless-gorge-74945.herokuapp.com/contact-page", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

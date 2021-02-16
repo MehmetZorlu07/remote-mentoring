@@ -34,7 +34,7 @@ class SingleProjectPage extends React.Component {
   }
 
   getProject = (projectid) => {
-    fetch("http://localhost:3000/project/" + projectid)
+    fetch("https://fathomless-gorge-74945.herokuapp.com/project/" + projectid)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ project: data });
@@ -45,7 +45,7 @@ class SingleProjectPage extends React.Component {
   };
 
   getProjectState = () => {
-    fetch("http://localhost:3000/researcherProjects", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/researcherProjects", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -66,7 +66,7 @@ class SingleProjectPage extends React.Component {
   };
 
   applyProject = () => {
-    fetch("http://localhost:3000/applyProject", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/applyProject", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -83,7 +83,7 @@ class SingleProjectPage extends React.Component {
   };
 
   deleteProject = () => {
-    fetch("http://localhost:3000/deleteProject", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/deleteProject", {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -97,7 +97,7 @@ class SingleProjectPage extends React.Component {
   };
 
   withdrawApplication = () => {
-    fetch("http://localhost:3000/withdrawApplication", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/withdrawApplication", {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -116,7 +116,7 @@ class SingleProjectPage extends React.Component {
   };
 
   getAllApplications = () => {
-    fetch("http://localhost:3000/allApplications", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/allApplications", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -137,17 +137,20 @@ class SingleProjectPage extends React.Component {
   handleClose = () => this.setState({ show: false });
 
   changeApplicationState = (decision) => {
-    fetch("http://localhost:3000/changeApplicationState", {
-      method: "put",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        researcherid: this.state.researchers[this.state.researcherIndex].id,
-        projectid: this.state.project.projectid,
-        state: decision,
-        researcheremail: this.state.researchers[this.state.researcherIndex]
-          .email,
-      }),
-    })
+    fetch(
+      "https://fathomless-gorge-74945.herokuapp.com/changeApplicationState",
+      {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researcherid: this.state.researchers[this.state.researcherIndex].id,
+          projectid: this.state.project.projectid,
+          state: decision,
+          researcheremail: this.state.researchers[this.state.researcherIndex]
+            .email,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((researcherproject) => {
         if (researcherproject) {

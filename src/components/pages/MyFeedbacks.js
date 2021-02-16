@@ -24,7 +24,7 @@ class MyFeedbacks extends React.Component {
   }
 
   getResearcherFeedbacks = () => {
-    fetch("http://localhost:3000/allResearcherReviews", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/allResearcherReviews", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -42,7 +42,7 @@ class MyFeedbacks extends React.Component {
   };
 
   getAcademicFeedbacks = () => {
-    fetch("http://localhost:3000/allAcademicReviews", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/allAcademicReviews", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

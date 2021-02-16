@@ -49,7 +49,7 @@ class App extends Component {
   componentDidMount() {
     const token = window.sessionStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/signin", {
+      fetch("https://fathomless-gorge-74945.herokuapp.com/signin", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -59,13 +59,16 @@ class App extends Component {
         .then((res) => res.json())
         .then((data) => {
           if (data && data.id) {
-            fetch(`http://localhost:3000/profile/${data.id}`, {
-              method: "get",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: token,
-              },
-            })
+            fetch(
+              `https://fathomless-gorge-74945.herokuapp.com/profile/${data.id}`,
+              {
+                method: "get",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: token,
+                },
+              }
+            )
               .then((res) => res.json())
               .then((user) => {
                 if (user && user.email) {

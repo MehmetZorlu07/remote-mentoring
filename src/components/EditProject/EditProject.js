@@ -59,7 +59,7 @@ class EditProject extends React.Component {
   };
 
   onApplyChanges = () => {
-    fetch("http://localhost:3000/applyChanges", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/applyChanges", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -81,7 +81,7 @@ class EditProject extends React.Component {
   };
 
   getProject = (projectid) => {
-    fetch("http://localhost:3000/project/" + projectid)
+    fetch("https://fathomless-gorge-74945.herokuapp.com/project/" + projectid)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ project: data });

@@ -22,7 +22,7 @@ class Reset extends Component {
   }
 
   onSubmitEmail = () => {
-    fetch("http://localhost:3000/reset", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/reset", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

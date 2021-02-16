@@ -20,7 +20,7 @@ class MyProjects extends React.Component {
   }
 
   getProjects = () => {
-    fetch("http://localhost:3000/projects")
+    fetch("https://fathomless-gorge-74945.herokuapp.com/projects")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ projects: data });
@@ -31,13 +31,16 @@ class MyProjects extends React.Component {
   };
 
   getAllResearcherProjects = () => {
-    fetch("http://localhost:3000/allResearcherProjects", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        researcherid: this.props.user.id,
-      }),
-    })
+    fetch(
+      "https://fathomless-gorge-74945.herokuapp.com/allResearcherProjects",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researcherid: this.props.user.id,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((researcherProjects) => {
         this.setState({ ids: researcherProjects });

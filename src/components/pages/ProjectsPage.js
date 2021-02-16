@@ -21,7 +21,7 @@ class ProjectsPage extends React.Component {
   }
 
   getProjects = () => {
-    fetch("http://localhost:3000/projects")
+    fetch("https://fathomless-gorge-74945.herokuapp.com/projects")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ allProjects: data, projects: data });

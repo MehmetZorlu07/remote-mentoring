@@ -29,16 +29,19 @@ class MarkingModal extends React.Component {
   };
 
   onSubmitResearcher = () => {
-    fetch("http://localhost:3000/submit-researcher-rating", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        researcherid: this.props.researcherId,
-        projectid: this.props.projectId,
-        rating: this.state.rating,
-        comment: this.state.comment,
-      }),
-    })
+    fetch(
+      "https://fathomless-gorge-74945.herokuapp.com/submit-researcher-rating",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researcherid: this.props.researcherId,
+          projectid: this.props.projectId,
+          rating: this.state.rating,
+          comment: this.state.comment,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((res) => {
         if (res) {
@@ -49,16 +52,19 @@ class MarkingModal extends React.Component {
   };
 
   onSubmitAcademic = () => {
-    fetch("http://localhost:3000/submit-academic-rating", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        researcherid: this.props.researcherId,
-        projectid: this.props.projectId,
-        rating: this.state.rating,
-        comment: this.state.comment,
-      }),
-    })
+    fetch(
+      "https://fathomless-gorge-74945.herokuapp.com/submit-academic-rating",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researcherid: this.props.researcherId,
+          projectid: this.props.projectId,
+          rating: this.state.rating,
+          comment: this.state.comment,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((res) => {
         if (res) {

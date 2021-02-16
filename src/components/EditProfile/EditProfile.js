@@ -45,7 +45,7 @@ class EditProfile extends React.Component {
   };
 
   onUpdateProfile = () => {
-    fetch("http://localhost:3000/updateProfile", {
+    fetch("https://fathomless-gorge-74945.herokuapp.com/updateProfile", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
