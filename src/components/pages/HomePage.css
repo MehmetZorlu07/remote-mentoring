@@ -1,33 +1,44 @@
-.home-jumbotron-white {
-  background-color: #fafafa !important;
-  text-align: center;
-}
-
-.home-jumbotron-blue {
-  background-color: #5385c1 !important;
-  text-align: center;
-}
-
-.home-jumbotron-card {
-  width: 35rem;
-  border-radius: 12;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
-.home-jumbotron-title {
+.title {
   color: #5385c1;
-  padding-top: 20px;
+  margin-top: 70px;
+  text-align: center;
 }
 
-.home-jumbotron-text {
+.wrapper {
+  border-radius: 10px;
   background-color: #5385c1;
-  text-align: left;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  margin: 70px auto;
+}
+
+.wrapper_layout {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  max-width: 1300px;
+}
+
+.wrapper > div {
+  padding: 1em;
+}
+
+.wrapper_text {
   color: white;
   font-size: larger;
+  line-height: 1.5;
+  display: block;
 }
 
-/* .home-jumbotron-image {
-  width: 20px;
-  height: 200px;
-} */
+.custom-img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+@media only screen and (max-width: 950px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 0.3fr;
+  }
+}

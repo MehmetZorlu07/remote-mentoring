@@ -51,9 +51,7 @@ class ProjectsPage extends React.Component {
 
     return (
       <Container className="page">
-        <h1 className="page__title">
-          Have you checked out these research projects?
-        </h1>
+        <h1 className="page__title">Did you check these research projects?</h1>
         <Row>
           {finalList.length ? finalList : <Col xs={12}>No projects found</Col>}
         </Row>
