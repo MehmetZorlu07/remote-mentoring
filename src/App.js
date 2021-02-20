@@ -6,7 +6,7 @@ import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import AccountPage from "./components/pages/AccountPage";
 import OpenProjects from "./components/pages/OpenProjects";
-import ClosedProjects from "./components/pages/ClosedProjects";
+import CompletedProjects from "./components/pages/CompletedProjects";
 import OngoingProjects from "./components/pages/OngoingProjects";
 import MyProjects from "./components/MyProjects/MyProjects";
 import Register from "./components/Register/Register";
@@ -156,9 +156,9 @@ class App extends Component {
                 render={() => <OngoingProjects />}
               />
               <Route
-                path="/closed-projects"
+                path="/completed-projects"
                 exact
-                render={() => <ClosedProjects />}
+                render={() => <CompletedProjects />}
               />
               <Route
                 path="/my-projects"

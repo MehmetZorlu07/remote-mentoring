@@ -96,8 +96,6 @@ class EditProject extends React.Component {
       });
   };
 
-  options = ["open", "ongoing", "closed"];
-
   render() {
     return (
       <Container className="page">
@@ -168,7 +166,7 @@ class EditProject extends React.Component {
               >
                 <option>open</option>
                 <option>ongoing</option>
-                <option>closed</option>
+                <option>completed</option>
               </Form.Control>
             </Form.Group>
             <div className="form__footer">

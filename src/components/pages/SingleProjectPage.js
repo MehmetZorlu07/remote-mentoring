@@ -83,17 +83,19 @@ class SingleProjectPage extends React.Component {
   };
 
   deleteProject = () => {
-    fetch("https://fathomless-gorge-74945.herokuapp.com/deleteProject", {
-      method: "delete",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        projectid: this.state.project.projectid,
-      }),
-    })
-      .then((response) => response.json())
-      .then((amount) => {
-        this.setState({ project: {} });
-      });
+    if (window.confirm("Are you sure about deleting this project?")) {
+      fetch("https://fathomless-gorge-74945.herokuapp.com/deleteProject", {
+        method: "delete",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          projectid: this.state.project.projectid,
+        }),
+      })
+        .then((response) => response.json())
+        .then((amount) => {
+          this.setState({ project: {} });
+        });
+    }
   };
 
   withdrawApplication = () => {
@@ -345,7 +347,7 @@ class SingleProjectPage extends React.Component {
                     Close
                   </Button>
                   {this.props.usertype !== "researcher" &&
-                    this.state.project.status === "closed" &&
+                    this.state.project.status === "completed" &&
                     this.state.researchers[this.state.researcherIndex]
                       .ratingbyacademic === null && (
                       <MarkingModal
@@ -426,7 +428,7 @@ class SingleProjectPage extends React.Component {
               this.state.projectState === "applied" &&
               this.state.project.status === "open" && (
                 <div>
-                  <h4>You have applied to this project.</h4>
+                  <h5>You have applied to this project.</h5>
                   <Button
                     onClick={this.withdrawApplication}
                     className="custom-button"
@@ -438,12 +440,12 @@ class SingleProjectPage extends React.Component {
             {this.props.usertype === "researcher" &&
               this.state.projectState === "approved" &&
               this.state.project.status === "open" && (
-                <h4>You have been approved to this project.</h4>
+                <h5>You have been approved to this project.</h5>
               )}
             {this.props.usertype === "researcher" &&
               this.state.projectState === "declined" &&
               this.state.project.status === "open" && (
-                <h4>You have been rejected from this project.</h4>
+                <h5>You have been rejected from this project.</h5>
               )}
             {this.state.project.academicid === this.props.userid && (
               <Link to={`/edit-project/${this.state.project.projectid}`}>
@@ -474,7 +476,7 @@ class SingleProjectPage extends React.Component {
               </Button>
             )}
             {this.props.usertype === "researcher" &&
-              this.state.project.status === "closed" &&
+              this.state.project.status === "completed" &&
               this.state.projectRating === null && (
                 <MarkingModal
                   researcherId={this.props.userid}
@@ -506,7 +508,7 @@ class SingleProjectPage extends React.Component {
             </Table>
           )}
           {Object.keys(this.state.project).length === 0 && (
-            <h1>This project does not exist.</h1>
+            <h2>This project does not exist.</h2>
           )}
         </Card>
       </Container>

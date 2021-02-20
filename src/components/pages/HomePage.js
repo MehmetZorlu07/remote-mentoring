@@ -21,7 +21,7 @@ function HomePage({ name }) {
             and interests.
           </p>
           <p>
-            As soon as a project changes state from open to closed, academics
+            As soon as a project changes state from open to completed, academics
             will approve the applications of those they want to supervise, and
             then they arrange an online meeting with supervisees to begin
             working on the project.

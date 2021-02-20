@@ -87,7 +87,7 @@ class Navigation extends Component {
                   Ongoing Projects
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                  onSelect={() => history.push("/closed-projects")}
+                  onSelect={() => history.push("/completed-projects")}
                   className="nav-dropdown-link"
                 >
                   Completed Projects

@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-class OpenProjects extends React.Component {
+class OngoingProjects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,4 +74,4 @@ class OpenProjects extends React.Component {
   }
 }
 
-export default OpenProjects;
+export default OngoingProjects;

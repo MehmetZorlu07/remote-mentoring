@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-class OpenProjects extends React.Component {
+class CompletedProjects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +40,7 @@ class OpenProjects extends React.Component {
   render() {
     const projectsList = [];
     for (const project of this.state.projects) {
-      if (project.status === "closed") {
+      if (project.status === "completed") {
         projectsList.push(
           <Project
             key={project.projectid}
@@ -74,4 +74,4 @@ class OpenProjects extends React.Component {
   }
 }
 
-export default OpenProjects;
+export default CompletedProjects;
