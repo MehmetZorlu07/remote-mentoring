@@ -47,7 +47,7 @@ class Navigation extends Component {
           variant="dark"
           className="nav_bar_color"
         >
-          <Link className="nav-link" to="/">
+          <Link className="nav-link logo" to="/">
             <Navbar.Brand className="mr-auto">
               <img
                 alt=""
@@ -76,18 +76,21 @@ class Navigation extends Component {
               >
                 <NavDropdown.Item
                   onSelect={() => history.push("/open-projects")}
+                  className="nav-dropdown-link"
                 >
                   Open Projects
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   onSelect={() => history.push("/ongoing-projects")}
+                  className="nav-dropdown-link"
                 >
                   Ongoing Projects
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   onSelect={() => history.push("/closed-projects")}
+                  className="nav-dropdown-link"
                 >
-                  Closed Projects
+                  Completed Projects
                 </NavDropdown.Item>
               </NavDropdown>
               <Link className="nav-link" to="/about">
@@ -110,16 +113,21 @@ class Navigation extends Component {
                   onMouseEnter={this.showAccountDropdown}
                   onMouseLeave={this.hideAccountDropdown}
                 >
-                  <NavDropdown.Item onSelect={() => history.push("/account")}>
+                  <NavDropdown.Item
+                    onSelect={() => history.push("/account")}
+                    className="nav-dropdown-link"
+                  >
                     Account Details
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     onSelect={() => history.push("/my-projects")}
+                    className="nav-dropdown-link"
                   >
                     My Projects
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     onSelect={() => history.push("/my-feedbacks")}
+                    className="nav-dropdown-link"
                   >
                     My Feedbacks
                   </NavDropdown.Item>

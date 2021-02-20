@@ -172,10 +172,3 @@ textarea:focus {
   cursor: default !important;
   opacity: 0.5 !important;
 }
-
-@media screen and (max-width: 480px) {
-  .custom-button {
-    padding: 0;
-    width: 100%;
-  }
-}

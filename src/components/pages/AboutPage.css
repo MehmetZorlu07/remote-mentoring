@@ -4,6 +4,10 @@
   font-size: 40px !important;
 }
 
+.wrapper_align {
+  align-items: start !important;
+}
+
 ul {
   list-style-type: none;
 }

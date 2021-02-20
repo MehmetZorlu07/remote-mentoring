@@ -42,7 +42,7 @@ class AboutPage extends React.Component {
           to tackle the problems around them.
         </h4>
 
-        <div className="wrapper wrapper_layout">
+        <div className="wrapper wrapper_layout wrapper_align">
           <div className="wrapper_text">
             <h2 className="wrapper_title">Academics</h2>
             <p>

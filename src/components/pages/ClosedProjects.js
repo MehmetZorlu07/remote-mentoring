@@ -56,7 +56,7 @@ class OpenProjects extends React.Component {
 
     return (
       <Container className="page">
-        <h1 className="page__title">Closed Projects</h1>
+        <h1 className="page__title">Completed Projects</h1>
         <input
           placeholder="Search projects"
           onChange={this.onSearchChange}
