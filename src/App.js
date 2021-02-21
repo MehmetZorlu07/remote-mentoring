@@ -40,9 +40,6 @@ const initialState = {
   },
 };
 
-ReactGA.initialize("G-DL1GXTXV9W");
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 class App extends Component {
   constructor() {
     super();
@@ -51,6 +48,8 @@ class App extends Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize("G-DL1GXTXV9W");
+    ReactGA.pageview(window.location.pathname + window.location.search);
     const token = window.sessionStorage.getItem("token");
     if (token) {
       fetch("https://fathomless-gorge-74945.herokuapp.com/signin", {
