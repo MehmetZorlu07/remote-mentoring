@@ -40,6 +40,8 @@ const initialState = {
   },
 };
 
+ReactGA.initialize("G-232TBJ204Z");
+
 class App extends Component {
   constructor() {
     super();
@@ -48,7 +50,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    ReactGA.initialize("G-DL1GXTXV9W");
     ReactGA.pageview(window.location.pathname + window.location.search);
     const token = window.sessionStorage.getItem("token");
     if (token) {
@@ -85,6 +86,9 @@ class App extends Component {
         .catch(console.log);
     }
   }
+
+  componentDidUpdate = () =>
+    ReactGA.pageview(window.location.pathname + window.location.search);
 
   loadUser = (data) => {
     this.setState({
