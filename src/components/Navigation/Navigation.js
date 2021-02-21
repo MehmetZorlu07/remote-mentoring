@@ -47,7 +47,7 @@ class Navigation extends Component {
           variant="dark"
           className="nav_bar_color"
         >
-          <Link className="nav-link logo" to="/">
+          <Nav.Link className="nav-link logo" to="/" eventKey="1" as={Link}>
             <Navbar.Brand className="mr-auto">
               <img
                 alt=""
@@ -58,15 +58,18 @@ class Navigation extends Component {
               />{" "}
               Remote Research
             </Navbar.Brand>
-          </Link>
+          </Nav.Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
               {this.props.isSignedIn && this.props.userType === "admin" && (
-                <Link className="nav-link" to="/admin-page">
+                <Nav.Link className="nav-link" to="/admin-page" eventKey="2">
                   Admin
-                </Link>
+                </Nav.Link>
               )}
+              <Nav.Link className="nav-link" to="/" eventKey="3" as={Link}>
+                Home
+              </Nav.Link>
               <NavDropdown
                 title="Projects"
                 id="basic-nav-dropdown"
@@ -77,33 +80,49 @@ class Navigation extends Component {
                 <NavDropdown.Item
                   onSelect={() => history.push("/open-projects")}
                   className="nav-dropdown-link"
+                  eventKey="4"
+                  as={Link}
                 >
                   Open Projects
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   onSelect={() => history.push("/ongoing-projects")}
                   className="nav-dropdown-link"
+                  eventKey="5"
+                  as={Link}
                 >
                   Ongoing Projects
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   onSelect={() => history.push("/completed-projects")}
                   className="nav-dropdown-link"
+                  eventKey="6"
+                  as={Link}
                 >
                   Completed Projects
                 </NavDropdown.Item>
               </NavDropdown>
-              <Link className="nav-link" to="/about">
+              <Nav.Link className="nav-link" to="/about" eventKey="7" as={Link}>
                 About Us
-              </Link>
-              <Link className="nav-link" to="/contact-us">
+              </Nav.Link>
+              <Nav.Link
+                className="nav-link"
+                to="/contact-us"
+                eventKey="8"
+                as={Link}
+              >
                 Contact Us
-              </Link>
+              </Nav.Link>
               {(this.props.userType === "academic" ||
                 this.props.userType === "admin") && (
-                <Link className="nav-link" to="/create-project">
+                <Nav.Link
+                  className="nav-link"
+                  to="/create-project"
+                  eventKey="9"
+                  as={Link}
+                >
                   Create Project
-                </Link>
+                </Nav.Link>
               )}
               {this.props.isSignedIn && (
                 <NavDropdown
@@ -116,37 +135,59 @@ class Navigation extends Component {
                   <NavDropdown.Item
                     onSelect={() => history.push("/account")}
                     className="nav-dropdown-link"
+                    eventKey="10"
+                    as={Link}
                   >
                     Account Details
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     onSelect={() => history.push("/my-projects")}
                     className="nav-dropdown-link"
+                    eventKey="11"
+                    as={Link}
                   >
                     My Projects
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     onSelect={() => history.push("/my-feedbacks")}
                     className="nav-dropdown-link"
+                    eventKey="12"
+                    as={Link}
                   >
                     My Feedbacks
                   </NavDropdown.Item>
                 </NavDropdown>
               )}
               {!this.props.isSignedIn && (
-                <Link className="nav-link" to="/sign-in">
+                <Nav.Link
+                  className="nav-link"
+                  to="/sign-in"
+                  eventKey="13"
+                  as={Link}
+                >
                   Sign In
-                </Link>
+                </Nav.Link>
               )}
               {!this.props.isSignedIn && (
-                <Link className="nav-link" to="/register">
+                <Nav.Link
+                  className="nav-link"
+                  to="/register"
+                  eventKey="14"
+                  as={Link}
+                >
                   Register
-                </Link>
+                </Nav.Link>
               )}
               {this.props.isSignedIn && (
-                <Link onClick={this.handleChange} className="nav-link" to="/">
+                <Nav.Link
+                  onClick={this.handleChange}
+                  className="nav-link"
+                  to="/"
+                  eventKey="15"
+                  as={Link}
+                >
                   Sign Out
-                </Link>
+                </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
