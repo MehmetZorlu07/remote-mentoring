@@ -38,6 +38,7 @@ const initialState = {
     type: "",
     tags: [],
   },
+  start: null,
 };
 
 ReactGA.initialize("G-232TBJ204Z");
@@ -109,7 +110,12 @@ class App extends Component {
       this.setState({
         isSignedIn: data,
       });
+      this.setState({ start: new Date() });
     } else {
+      const end = new Date();
+      alert(
+        "Time on tasks: " + (end.getTime() - this.state.start.getTime()) / 1000
+      );
       this.setState(initialState);
     }
   };
