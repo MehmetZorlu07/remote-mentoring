@@ -22,6 +22,7 @@ import ContactPage from "./components/pages/ContactPage";
 import AdminPage from "./components/pages/AdminPage";
 import MyFeedbacks from "./components/pages/MyFeedbacks";
 import Footer from "./components/Footer/Footer";
+import ReactGA from "react-ga";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
@@ -38,6 +39,9 @@ const initialState = {
     tags: [],
   },
 };
+
+ReactGA.initialize("G-DL1GXTXV9W");
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   constructor() {
