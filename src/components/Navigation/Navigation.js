@@ -72,10 +72,10 @@ class Navigation extends Component {
               </Nav.Link>
               <NavDropdown
                 title="Projects"
-                id="basic-nav-dropdown"
                 show={this.state.showProjects}
                 onMouseEnter={this.showProjectsDropdown}
                 onMouseLeave={this.hideProjectsDropdown}
+                id="default-cursor"
               >
                 <NavDropdown.Item
                   onSelect={() => history.push("/open-projects")}
@@ -127,7 +127,7 @@ class Navigation extends Component {
               {this.props.isSignedIn && (
                 <NavDropdown
                   title="My Account"
-                  id="basic-nav-dropdown"
+                  id="default-cursor"
                   show={this.state.showAccount}
                   onMouseEnter={this.showAccountDropdown}
                   onMouseLeave={this.hideAccountDropdown}

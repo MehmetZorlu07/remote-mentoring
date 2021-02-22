@@ -39,3 +39,12 @@
   color: white !important;
   background-color: #5385c1 !important;
 }
+
+#default-cursor {
+  cursor: default !important;
+}
+
+#default-cursor:hover {
+  color: white !important;
+  background-color: #5385c1 !important;
+}

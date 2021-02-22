@@ -23,6 +23,7 @@ class SingleProjectPage extends React.Component {
       show: false,
       researcherIndex: 0,
       counter: 0,
+      deleted: false,
     };
     this.getProject = this.getProject.bind(this);
   }
@@ -93,7 +94,7 @@ class SingleProjectPage extends React.Component {
       })
         .then((response) => response.json())
         .then((amount) => {
-          this.setState({ project: {} });
+          this.setState({ project: {}, deleted: true });
         });
     }
   };
@@ -371,17 +372,30 @@ class SingleProjectPage extends React.Component {
     return (
       <Container className="page">
         <Card className="form">
-          <h1 className="page__title">{this.state.project.name}</h1>
+          <h4 className="card-title">{this.state.project.name}</h4>
           <p className="page__description">
             <div>{this.state.project.description} </div>
             <br />
             {this.state.project.academicid === this.props.userid && (
-              <div>Project Capacity: {this.state.project.capacity} </div>
+              <div>
+                {" "}
+                <span className="account__label">Project Capacity:</span>{" "}
+                {this.state.project.capacity}{" "}
+              </div>
             )}
-            {this.state.project.requirements !== null && (
-              <div>Minimum Requirements: {this.state.project.requirements}</div>
+            {this.state.project.requirements !== null && !this.state.deleted && (
+              <div>
+                <span className="account__label">Minimum Requirements:</span>{" "}
+                {this.state.project.requirements}
+              </div>
             )}
-            <div>Project Status: {this.state.project.status} </div>
+            {!this.state.deleted && (
+              <div>
+                {" "}
+                <span className="account__label">Project Status:</span>{" "}
+                {this.state.project.status}{" "}
+              </div>
+            )}
           </p>
           {!!(this.state.project.tags || []).length && (
             <div className="single-project__tags">
@@ -507,9 +521,7 @@ class SingleProjectPage extends React.Component {
               )}
             </Table>
           )}
-          {Object.keys(this.state.project).length === 0 && (
-            <h2>This project does not exist.</h2>
-          )}
+          {this.state.deleted && <h3>This project is deleted.</h3>}
         </Card>
       </Container>
     );
