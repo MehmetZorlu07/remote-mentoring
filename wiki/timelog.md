@@ -365,7 +365,7 @@
 
 * *1 hour* Set-up the dissertation on Overlay.
 
-### 22 Jan 2021
+### 21 Jan 2021
 
 * *2 hours* Improved the style of the application.
 
@@ -373,3 +373,22 @@
 
 * *3 hours* Implemented admin interface.
 * *0.5 hours* Updated wiki.
+
+### 23 Jan 2021
+
+* *3 hours* Started implementing marking system.
+
+
+### 24 Jan 2021
+
+* *3 hours* Continued implementing marking system.
+
+## Week 15 
+
+### 25 Jan 2021
+
+* *4 hours* Continued implementing marking system.
+
+### 26 Jan 2021
+
+* *3 hours* Completed marking system.
