@@ -433,6 +433,59 @@
 
 ## Week 17
 
-### 7 Feb 2021 
+### 8 Feb 2021 
 
 * *3 hours* Finished user interface improvement. 
+
+### 9 Feb 2021 
+
+* *3 hours* Researched about deployment.
+* *0.5 hours* Meeting with the supervisor.
+
+### 10 Feb 2021 
+
+* *3 hours* Started planning evaluation.
+
+### 11 Feb 2021 
+
+* *3 hours* Continued evaluation planning.
+
+### 12 Feb 2021 
+
+* *3 hours* Continued evaluation planning.
+
+## Week 18
+
+### 15 Feb 2021 
+
+* *3.5 hours* Completed evaluation planning.
+
+### 16 Feb 2021 
+
+* *3 hours* Deployed back end on heroku.
+
+### 17 Feb 2021 
+
+* *3 hours* Deployed front end on heroku.
+
+### 18 Feb 2021 
+
+* *2 hours* Improving the user interface.
+
+### 19 Feb 2021 
+
+* *3 hours* Improving the user interface.
+
+### 20 Feb 2021 
+
+* *2 hours* Finished improving the user interface.
+
+## Week 19
+
+### 22 Feb 2021 
+
+* *4 hours* Conducted two pilot studies.
+
+### 23 Feb 2021 
+
+* *1 hour* Meeting with the supervisor. 
