@@ -378,7 +378,6 @@
 
 * *3 hours* Started implementing marking system.
 
-
 ### 24 Jan 2021
 
 * *3 hours* Continued implementing marking system.
@@ -392,3 +391,23 @@
 ### 26 Jan 2021
 
 * *3 hours* Completed marking system.
+* *0.5 hours* Meeting with the supervisor.
+
+### 27 Jan 2021
+
+* *5 hours* Improving the user interface.
+
+### 28 Jan 2021
+
+* *2 hours* Improving the user interface.
+
+### 29 Jan 2021
+
+* *4 hours* Improving the user interface.
+
+### 30 Jan 2021
+
+* *3 hours* Improving the user interface.
+
+## Week 16
+
