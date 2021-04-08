@@ -411,3 +411,28 @@
 
 ## Week 16
 
+### 2 Feb 2021 
+
+* *3 hours* Improving the user interface.
+
+### 4 Feb 2021 
+
+* *5 hours* Refactored the whole back end structure.
+
+### 5 Feb 2021 
+
+* *4 hours* Researched about form validation.
+
+### 6 Feb 2021 
+
+* *4 hours* Implemented form validation.
+
+### 7 Feb 2021 
+
+* *2 hours* Fixed minor issues.
+
+## Week 17
+
+### 7 Feb 2021 
+
+* *3 hours* Finished user interface improvement. 
