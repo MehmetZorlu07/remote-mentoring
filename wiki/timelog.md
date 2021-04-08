@@ -489,3 +489,63 @@
 ### 23 Feb 2021 
 
 * *1 hour* Meeting with the supervisor. 
+
+### 24 Feb 2021 
+
+* *3 hours* User evaluations conducted. 
+
+### 25 Feb 2021 
+
+* *1 hour* User evaluations conducted. 
+
+### 26 Feb 2021 
+
+* *2 hours* User evaluations conducted. 
+
+### 27 Feb 2021 
+
+* *2 hours* User evaluations conducted. 
+
+## Week 20
+
+### 1 Mar 2021 
+
+* *3 hours* User evaluations conducted. 
+
+### 2 Mar 2021 
+
+* *1 hour* User evaluations conducted. 
+
+### 3 Mar 2021 
+
+* *4 hours* User evaluations conducted. 
+
+### 4 Mar 2021 
+
+* *2 hours* User evaluations conducted. 
+
+
+### 5 Mar 2021 
+
+* *3 hours* Evaluation results analysed. 
+
+
+### 6 Mar 2021 
+
+* *3 hours* Evaluation results analysed.  
+
+
+### 7 Mar 2021 
+
+* *3 hours* Evaluation results analysed.  
+
+## Week 21
+
+### 8 Mar 2021 
+
+* *3 hours* Evaluation results analysed. 
+
+### 9 Mar 2021 
+
+* *2 hours* Evaluation results analysed. 
+* *1 hour* Meeting with the supervisor.
