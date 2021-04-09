@@ -5,8 +5,6 @@
 * STUDENT_ID: 2328759z
 * SUPERVISOR NAME: Dr. Sofiat Olaosebikan 
 
-Click to go back to [Home](https://github.com/MehmetZorlu07/remote-mentoring)
-
 Week-by-week plan for the whole project. Update this as you go along.
 
 ## Winter semester
