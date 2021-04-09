@@ -61,11 +61,26 @@ Week-by-week plan for the whole project. Update this as you go along.
   * Finish the remaining features. 
   * Research about the institutional validation of academics. 
 * **Week 15**
+  * Improve the user interface. 
 * **Week 16**
+  * Research about form validation. 
+  * Implement form validation. 
+  * Research about deployment.
 * **Week 17**
+  * Make a plan for evaluation. 
+  * Deploy the application.
 * **Week 19**
+  * Start the user evaluations.
 * **Week 20**
+  * Finish the user evaluations.
+  * Analyse the results.
 * **Week 21**
+  * Start dissertation.
 * **Week 22**
+  * Continue dissertation.
 * **Week 23 [TERM ENDS]**
+  * Continue dissertation.
 * **Week 24** Dissertation submission deadline and presentations.
+  * Finish dissertation.
+  * Record the presentation.
+  * Submit the files.
