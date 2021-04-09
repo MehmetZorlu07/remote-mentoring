@@ -549,3 +549,72 @@
 
 * *2 hours* Evaluation results analysed. 
 * *1 hour* Meeting with the supervisor.
+
+
+### 10 Mar 2021 
+
+* *3 hours* Dissertation writing. 
+
+
+### 11 Mar 2021 
+
+* *3 hours* Dissertation writing. 
+
+
+### 12 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+## Week 22
+
+### 15 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 16 Mar 2021 
+
+* *5 hours* Dissertation writing.
+
+### 17 Mar 2021 
+
+* *1.5 hours* Dissertation writing.
+
+### 18 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 19 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+## Week 23
+
+### 22 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 23 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 24 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 25 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 26 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+## Week 24
+
+### 29 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 30 Mar 2021 
+
+* *2 hours* Dissertation writing.
