@@ -365,7 +365,7 @@
 
 * *1 hour* Set-up the dissertation on Overlay.
 
-### 22 Jan 2021
+### 21 Jan 2021
 
 * *2 hours* Improved the style of the application.
 
@@ -373,3 +373,290 @@
 
 * *3 hours* Implemented admin interface.
 * *0.5 hours* Updated wiki.
+
+### 23 Jan 2021
+
+* *3 hours* Started implementing marking system.
+
+### 24 Jan 2021
+
+* *3 hours* Continued implementing marking system.
+
+## Week 15 
+
+### 25 Jan 2021
+
+* *4 hours* Continued implementing marking system.
+
+### 26 Jan 2021
+
+* *3 hours* Completed marking system.
+* *0.5 hours* Meeting with the supervisor.
+
+### 27 Jan 2021
+
+* *5 hours* Improving the user interface.
+
+### 28 Jan 2021
+
+* *2 hours* Improving the user interface.
+
+### 29 Jan 2021
+
+* *4 hours* Improving the user interface.
+
+### 30 Jan 2021
+
+* *3 hours* Improving the user interface.
+
+## Week 16
+
+### 2 Feb 2021 
+
+* *3 hours* Improving the user interface.
+
+### 4 Feb 2021 
+
+* *5 hours* Refactored the whole back end structure.
+
+### 5 Feb 2021 
+
+* *4 hours* Researched about form validation.
+
+### 6 Feb 2021 
+
+* *4 hours* Implemented form validation.
+
+### 7 Feb 2021 
+
+* *2 hours* Fixed minor issues.
+
+## Week 17
+
+### 8 Feb 2021 
+
+* *3 hours* Finished user interface improvement. 
+
+### 9 Feb 2021 
+
+* *3 hours* Researched about deployment.
+* *0.5 hours* Meeting with the supervisor.
+
+### 10 Feb 2021 
+
+* *3 hours* Started planning evaluation.
+
+### 11 Feb 2021 
+
+* *3 hours* Continued evaluation planning.
+
+### 12 Feb 2021 
+
+* *3 hours* Continued evaluation planning.
+
+## Week 18
+
+### 15 Feb 2021 
+
+* *3.5 hours* Completed evaluation planning.
+
+### 16 Feb 2021 
+
+* *3 hours* Deployed back end on heroku.
+
+### 17 Feb 2021 
+
+* *3 hours* Deployed front end on heroku.
+
+### 18 Feb 2021 
+
+* *2 hours* Improving the user interface.
+
+### 19 Feb 2021 
+
+* *3 hours* Improving the user interface.
+
+### 20 Feb 2021 
+
+* *2 hours* Finished improving the user interface.
+
+## Week 19
+
+### 22 Feb 2021 
+
+* *4 hours* Conducted two pilot studies.
+
+### 23 Feb 2021 
+
+* *1 hour* Meeting with the supervisor. 
+
+### 24 Feb 2021 
+
+* *3 hours* User evaluations conducted. 
+
+### 25 Feb 2021 
+
+* *1 hour* User evaluations conducted. 
+
+### 26 Feb 2021 
+
+* *2 hours* User evaluations conducted. 
+
+### 27 Feb 2021 
+
+* *2 hours* User evaluations conducted. 
+
+## Week 20
+
+### 1 Mar 2021 
+
+* *3 hours* User evaluations conducted. 
+
+### 2 Mar 2021 
+
+* *1 hour* User evaluations conducted. 
+
+### 3 Mar 2021 
+
+* *4 hours* User evaluations conducted. 
+
+### 4 Mar 2021 
+
+* *2 hours* User evaluations conducted. 
+
+
+### 5 Mar 2021 
+
+* *3 hours* Evaluation results analysed. 
+
+
+### 6 Mar 2021 
+
+* *3 hours* Evaluation results analysed.  
+
+
+### 7 Mar 2021 
+
+* *3 hours* Evaluation results analysed.  
+
+## Week 21
+
+### 8 Mar 2021 
+
+* *3 hours* Evaluation results analysed. 
+
+### 9 Mar 2021 
+
+* *2 hours* Evaluation results analysed. 
+* *1 hour* Meeting with the supervisor.
+
+
+### 10 Mar 2021 
+
+* *3 hours* Dissertation writing. 
+
+
+### 11 Mar 2021 
+
+* *3 hours* Dissertation writing. 
+
+
+### 12 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+## Week 22
+
+### 15 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 16 Mar 2021 
+
+* *5 hours* Dissertation writing.
+
+### 17 Mar 2021 
+
+* *1.5 hours* Dissertation writing.
+
+### 18 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 19 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+## Week 23
+
+### 22 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 23 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 24 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 25 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 26 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+## Week 24
+
+### 29 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 30 Mar 2021 
+
+* *2 hours* Dissertation writing.
+
+### 31 Mar 2021 
+
+* *3 hours* Dissertation writing.
+
+### 1 Apr 2021 
+
+* *3 hours* Dissertation writing.
+
+### 2 Apr 2021 
+
+* *3 hours* Dissertation writing.
+
+### 3 Apr 2021 
+
+* *5 hours* Dissertation writing.
+
+### 4 Apr 2021 
+
+* *5 hours* Dissertation writing.
+
+## Week 25
+
+### 5 Apr 2021 
+
+* *6 hours* Dissertation writing.
+
+### 6 Apr 2021 
+
+* *6 hours* Dissertation writing.
+
+### 7 Apr 2021 
+
+* *7 hours* Dissertation writing.
+
+### 8 Apr 2021 
+
+* *5 hours* Dissertation writing.
+
+### 9 Apr 2021 
+
+* *8 hours* Dissertation writing.
